@@ -1,6 +1,7 @@
 <div>
     <div>
-        <img src="">
+        <img [src]="imageUrl">
+        <div>{{imageOverlayText}}</div>
     </div>
     <div class="flex-row" >
          <div *ngFor="let navButton of navBarOptions?.navPages" class="btn" (click)="navigateRoute(navButton?.path)">{{navButton?.title}}</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { masterPlanPageConstants } from 'src/app/common/constant';
 
 @Component({
   selector: 'app-master-plan',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./master-plan.component.scss']
 })
 export class MasterPlanComponent {
-
+imageUrl=masterPlanPageConstants?.imageUrl;
 }

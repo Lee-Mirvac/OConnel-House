@@ -1,8 +1,9 @@
-<div >
+<div class="home-page" >
     <div class="flex-row">  
         <img [src]="imageUrl" alt="Loading ... ">
+        <div>{{imageOverlayText}}</div>
     </div>
-    <div>
-        <div class="btn" (click)="navigateRoute(button.route)">{{button.title}}</div>
+    <div class="button-container">
+        <div class="home-page-button" (click)="navigateRoute(button.route)">{{button.title}}</div>
     </div>
 </div>

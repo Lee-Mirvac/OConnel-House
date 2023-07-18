@@ -9,7 +9,7 @@ import { homePageConstants } from 'src/app/common/constant';
 export class HomeComponent {
 imageUrl=homePageConstants?.imageUrl;
 button=homePageConstants?.button;
-
+imageOverlayText=homePageConstants?.imageOverlayText
 constructor(private _router:Router){
 
 }

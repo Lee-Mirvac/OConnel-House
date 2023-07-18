@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { navbarOptions } from 'src/app/common/constant';
+import { navbarOptions,menuPageConstants } from 'src/app/common/constant';
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
@@ -9,6 +9,8 @@ import { navbarOptions } from 'src/app/common/constant';
 export class NavMenuComponent {
   constructor(private _router:Router){}
 navBarOptions=navbarOptions;
+imageUrl=menuPageConstants?.imageUrl;
+imageOverlayText=menuPageConstants?.imageOverlayText;
 navigateRoute(path:any){
   this._router.navigate([path])
 }
