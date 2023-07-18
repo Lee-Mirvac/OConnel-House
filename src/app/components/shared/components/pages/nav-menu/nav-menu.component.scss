@@ -1,0 +1,10 @@
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 4px;
+}
+.nav-buttons{
+    border: solid 1px;
+    cursor:pointer;
+}

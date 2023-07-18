@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div>
+    <button *ngFor="let button of amenityConstants.buttons;let index=index"
+             [ngClass]="currentView===index?'selected':'un-selected'"
+             (click)="currentView=index"
+             >{{button?.title}}</button>
+</div>
+<img [src]="imageUrls[currentView]" alt="Loading ...">

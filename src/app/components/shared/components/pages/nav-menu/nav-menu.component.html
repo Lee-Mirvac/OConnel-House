@@ -1,0 +1,8 @@
+<div>
+    <div>
+        <img src="">
+    </div>
+    <div class="flex-row" >
+         <div *ngFor="let navButton of navBarOptions?.navPages" class="btn" (click)="navigateRoute(navButton?.path)">{{navButton?.title}}</div>
+    </div>    
+</div>

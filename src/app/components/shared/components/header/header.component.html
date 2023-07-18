@@ -1,0 +1,7 @@
+<!-- Nav-Bar -->
+<div class="flex-row">
+    <div class="navTitle " (click)="navigateRoute(navBarOptions.navTitle.path)" >{{navBarOptions.navTitle.title}}</div>
+    <div class="navTabs" *ngFor="let navItems of navBarOptions?.navPages">
+         <div class="navItem " (click)="navigateRoute(navItems?.path)" >{{navItems?.title}}</div>   
+    </div>
+</div>
