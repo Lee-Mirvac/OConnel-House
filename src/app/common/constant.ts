@@ -25,8 +25,15 @@ export const navbarOptions={
 }
 
 export const homePageConstants={
-    imageUrl:'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
+    imageUrl:'../../assets/_L5A7002-01 1.jpg',
+    imageOverlayText:'ascott green',
     button:{title:navbarOptions?.navTitle?.title,route:appRoutes?.navMenu}
+}
+
+
+export const menuPageConstants={
+    imageUrl:'../../assets/_L5A6709-01 1.png',
+    imageOverlayText:"O'CONNELL HOUSE",
 }
 
 export const amenityPageConstants={
@@ -37,5 +44,9 @@ export const amenityPageConstants={
 }
 
 export const locationPageConstants={
-    imageUrl:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"
+    imageUrl:'../../assets/image 2.png'
+}
+
+export const masterPlanPageConstants={
+    imageUrl:'../../assets/image 3.png'
 }
