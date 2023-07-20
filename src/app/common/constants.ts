@@ -399,7 +399,8 @@ export const MIRVAC = {
 };
 
 export const AMENITY = {
-  ROOF_TOP_IMAGE_URL:'assets/images/splash/_L5A6709-01 1.png',
+  ROOF_TOP_IMAGE_URL:'assets/img/amenity/rooftop.png',
+  GROUND_LEVEL:'assets/img/amenity/ground.png',
   ROOF_TOP_IMAGE: 'assets/img/amenity.jpg',
   ROOF_TOP_SIDEBAR: [
     { id: 'bbq', title: 'BBQ Bench' },
