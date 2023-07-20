@@ -1,6 +1,11 @@
 <div class="front-screen">
     <div class="login-bg">
-        <img [src]="imageUrl" alt="mirvac"  />
+        <img [src]="imageUrl" alt="Oconnell"  />
     </div>
     <div>{{overlayText}}</div>
+</div>
+
+<!-- Footer Nav-Buttons Home page -->
+<div class="d-flex">
+    <div *ngFor="let navButton of navBarOptions" class="btn" (click)="navigateRoute(navButton?.path)">{{navButton?.title}}</div>
 </div>

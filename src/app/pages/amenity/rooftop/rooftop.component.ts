@@ -7,7 +7,7 @@ import { AMENITY} from 'src/app/common/constants';
 })
 export class RooftopComponent  {
   status: boolean = true;
-  rooftopImg = AMENITY.rooftopImageUrl;
+  rooftopImg = AMENITY.ROOF_TOP_IMAGE_URL;
   rooftopImgmb: any;
  
 }

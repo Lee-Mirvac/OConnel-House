@@ -8,9 +8,9 @@ import { RoutingViewService } from 'src/app/core/services/routing-view.service';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnDestroy {
-  imageUrl=MAIN.imageUrl;
-  overlayText=MAIN.overlayText;
-  buttons=MAIN.buttons;
+  imageUrl=MAIN.IMAGE_URL;
+  overlayText=MAIN.OVERLAY_TEXT;
+  buttons=MAIN.BUTTONS;
 JSN=JSON;
 
   constructor(private routingViewService:RoutingViewService,

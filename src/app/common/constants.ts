@@ -193,7 +193,7 @@ export const HEADER = {
 };
 
 export const LOCATION = {
-  imageUrl:'assets/images/splash/image 2.png',
+  IMAGE_URL:'assets/images/splash/image 2.png',
   ID: {
     PARKS: 0,
     EAT: 1,
@@ -308,7 +308,7 @@ export const LOCATION = {
   ],
 };
 export const MASTERPLAN = {
-  imageUrl:'/assets/images/splash/image 3.png',
+  IMAGE_URL:'/assets/images/splash/image 3.png',
   SIDE_MENU: [
     {
       id: 'pier',
@@ -399,7 +399,7 @@ export const MIRVAC = {
 };
 
 export const AMENITY = {
-  rooftopImageUrl:'assets/images/splash/_L5A6709-01 1.png',
+  ROOF_TOP_IMAGE_URL:'assets/images/splash/_L5A6709-01 1.png',
   ROOF_TOP_IMAGE: 'assets/img/amenity.jpg',
   ROOF_TOP_SIDEBAR: [
     { id: 'bbq', title: 'BBQ Bench' },
@@ -671,16 +671,21 @@ export const AERIAL = {
   ],
 };
 
+
 export const HOME={
-  imageUrl:'assets/images/splash/_L5A6709-01 1.png',
-  overlayText:"O'CONNELL HOUSE"
+  IMAGE_URL:'assets/images/splash/_L5A6709-01 1.png',
+  OVERLAY_TEXT:"O'CONNELL HOUSE"
 }
 
 export const MAIN={
-    imageUrl:'assets/images/splash/_L5A7002-01 1.jpg',
-    overlayText:"ascott green",
-    buttons:[
-      {title:"O'CONNELL HOUSE",path:'/home'},
-      // {title:'CHARLTON HOUSE',path:''}
-    ]
+  IMAGE_URL:'assets/images/splash/_L5A7002-01 1.jpg',
+  OVERLAY_TEXT:"ascott green",
+  BUTTONS:[
+    {title:"O'CONNELL HOUSE",path:'/home'},
+    // {title:'CHARLTON HOUSE',path:''}
+  ]
+}
+
+export const VIDEO={
+  VIDEO_URL:'assets/video/home.mp4'
 }

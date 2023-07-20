@@ -7,7 +7,7 @@ import { MASTERPLAN } from 'src/app/common/constants';
   styleUrls: ['./master-plan.component.scss']
 })
 export class MasterPlanComponent implements OnInit {
-  imageUrl=MASTERPLAN.imageUrl
+  imageUrl=MASTERPLAN.IMAGE_URL
   constructor() { }
 
   ngOnInit(): void {

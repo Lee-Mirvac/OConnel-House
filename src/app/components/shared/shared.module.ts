@@ -16,6 +16,7 @@ import { MainPageComponent } from 'src/app/pages/main-page/main-page.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { MasterPlanComponent } from 'src/app/pages/master-plan/master-plan.component';
 import { VideoComponent } from 'src/app/pages/video/video.component';
+
 const route: Routes = [];
 
 @NgModule({
@@ -28,7 +29,7 @@ const route: Routes = [];
                   MainPageComponent,
                   HomeComponent,
                   MasterPlanComponent,
-                  VideoComponent
+                  VideoComponent,
                 ],
   imports: [
     CommonModule,
