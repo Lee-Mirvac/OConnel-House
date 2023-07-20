@@ -1,0 +1,9 @@
+<div class="home-page" >
+    <div class="flex-row">  
+        <img [src]="imageUrl" alt="Loading ... ">
+        <div>{{overlayText}}</div>
+    </div>
+    <div class="button-container" *ngFor="let button of buttons">
+       <button (click)="navigateRoute(button?.path)">{{button?.title}}</button>
+    </div>
+</div>

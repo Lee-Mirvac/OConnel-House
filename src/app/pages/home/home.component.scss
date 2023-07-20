@@ -1,0 +1,33 @@
+.front-screen{
+    margin: 0;
+    @media (max-width:991px){
+        min-height: calc(100vh - 50px);
+        height: calc(100vh - 50px);
+    }
+    .login-bg{
+        z-index:1;
+        height: 100%;
+        position: relative;
+        @media (max-width:991px){
+            height: calc(100vh - 50px);
+        }
+        img{
+            width: auto;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+            padding: 125px 0;
+            @media(max-width:991px){
+                padding: 40px 15px;
+            }
+
+            
+        }
+        video{
+            object-fit: cover;
+        }
+    }
+}

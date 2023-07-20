@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #directionImage {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #directionImage img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* canvas {
+            object-fit: none;
+        } */
+    </style>
+</head>
+
+<body style="margin: 0px;">
+    <div style="position: relative;">
+        <div id="gameCanvas"></div>
+        <div id="directionImage">
+            <img src="icon.png" alt="" />
+        </div>
+        <div class="preloader-container" id="top">
+            <div class="preloader-wrapper">
+                <div class="preloader-border"></div>
+                <div class="preloader-line-mask">
+                    <div class="preloader-line"></div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./intuiface.js"></script>
+</body>
+
+</html>

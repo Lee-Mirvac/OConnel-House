@@ -1,0 +1,117 @@
+// @import '../main-gallery/main-gallery.component.scss';
+
+@import '../../../../assets/css/base.scss';
+@import '../../../../assets/css/default.scss';
+
+::ng-deep {
+  .lg-container .lg-outer {
+    background: $rounded_color;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    z-index: 11;
+    .lg-toolbar .lg-icon.lg-close {
+      right: 20px; top: 0;
+      @media (max-width:1600px) {
+        right: 60px;
+      }
+      @media (max-width:1200px) {
+        right: 20px;
+      }
+    }
+    .lg-components {
+      .lg-sub-html {
+        .lightGallery-captions {
+          padding: 0 100px;
+          @media (max-width:1200px) {
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+    .lg-img-wrap {
+      padding: 0;
+    }
+    .lg-group {
+      top: 20px;
+      margin: 0;
+      width: 100%;
+      padding: 0 20px;
+    }
+    .lg-object {
+      object-fit: $contain;
+    }
+  }
+}
+  
+.gallery_slider {
+  padding: 0;
+  @media (max-width:1600px) {
+    height: calc(100vh - 128px);
+  }
+  @media (max-width:840px) {
+    height: calc(100vh - 14px);
+  }
+}
+.gallery-main {
+  @media (min-width: 768px) {
+    position: $relative;
+    height: 100%;
+  } 
+  .slide {
+    margin: 10px $auto 0;
+    height: calc(50vh - 120px - 5px);
+    position:$relative;
+    @media (max-width:1600px){
+      height: calc(50vh - 37px - 72px);
+    }
+    @media (max-width:840px){
+      height: calc(50vh - 37px - 30px);
+    }
+    overflow: $visible;
+    figure {
+      height: 100%;
+      position: $relative;
+    }
+    img {
+      cursor: $pointer;
+      height: 100%;
+      object-fit: $cover;
+    }
+    figcaption {
+      position: $absolute;
+      bottom: 10px;
+      padding:0 10px;
+      height: $auto;
+      font-size: $f10 - 2;
+      color:$white;
+      line-height: 1;
+      width: 100%;
+      small {
+        font-size: $f10 - 2;
+        color: $white;
+        font-weight: $font-bold;
+        margin: 0;
+        line-height: 1;
+         @media (max-width:1300px){
+          font-size: $f10 - 1;
+         }
+      }
+    }
+    h6 {
+      margin:10px 0 0;
+      font-size: $f16;
+      text-align: $center;
+      font-weight: $font-bold;
+    }
+  }  
+}
+
+::ng-deep {
+  .slick-slide,
+  .slick-slide.slick-active,
+  .slick-slide.slick-cloned {
+    margin: $auto 10px;
+    overflow: $hidden;
+  }  
+}

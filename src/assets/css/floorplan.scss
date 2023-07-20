@@ -1,0 +1,43 @@
+@import 'base.scss';
+.floorplan_sec{
+    background: rgba(227, 209, 196, 0.7);
+    .floor-apartment {
+        width: 100%;
+        display: $flex;
+        flex-wrap: wrap;
+        padding: 35px 45px;
+        .floor-apartment-desc {
+            flex-basis: calc(33.33% - 40px);
+            background: $cream;
+            padding: 20px;
+            margin: 20px;
+            position: $relative;
+            @media (max-width: 575px){
+                flex-basis: 100%;
+            }
+            h6 {
+                position: $absolute;
+                z-index: 9;
+                font-family: $untitledsans-light;
+                font-weight: $font-regular;
+                margin: 0;
+            }
+            figure {
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                text-align: $center;
+                z-index: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*.floorplan-detail {padding: 35px 45px;}*/

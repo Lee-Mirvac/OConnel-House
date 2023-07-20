@@ -1,0 +1,79 @@
+@import "../../../assets/css/base.scss";
+
+.location-main {
+  height: 100vh;
+  background: $light-blue1;
+  position: $fixed;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.frame_cls {
+    position: $relative;
+    width: 100%; height: 100%;
+    padding-bottom: 64%;
+    iframe {
+        position: $fixed;
+        top: 0; left: 0;
+        object-fit: contain;
+        height: 100%;
+        width: 100%; 
+    }
+}
+
+.location-sec { 
+  img {
+    &.main_map {
+      visibility: $visible;
+      z-index: -1;
+      opacity: 1;
+      transition: none 0.5s ease-in-out;
+    }
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 70px;
+    // pointer-events: $none;
+    object-position: right;
+    position: $absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    // visibility: $hidden;
+    // opacity: 0;
+    @media (max-width: 830px) {
+      padding-bottom: 60px;
+    }
+    &.show {
+      visibility: $visible;
+      opacity: 1;
+    }
+  }
+
+  .commonCSS{
+    top:0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    position: $absolute;
+    z-index: 1111;
+  }
+}
+
+.show {
+  display: $block;
+}
+
+.hide {
+  display: $none;
+}
+
+.video_map {
+  position: $fixed;
+  left: 0; right: 0;
+  width: 100%; height: 100%;
+  top:0;
+}
