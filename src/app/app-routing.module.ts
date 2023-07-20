@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'video',
     component:VideoComponent
+  },
+  {
+    path:'**',
+    redirectTo:''
   }
 ];
 

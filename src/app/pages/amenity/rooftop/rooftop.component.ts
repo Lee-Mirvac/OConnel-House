@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AMENITY, COMMON } from 'src/app/common/constants';
-
+import { AMENITY} from 'src/app/common/constants';
 @Component({
   selector: 'app-rooftop',
   templateUrl: './rooftop.component.html',
@@ -8,7 +7,7 @@ import { AMENITY, COMMON } from 'src/app/common/constants';
 })
 export class RooftopComponent  {
   status: boolean = true;
-  rooftopImg: any = 'assets/img/amenity/rooftop.png';
+  rooftopImg = AMENITY.rooftopImageUrl;
   rooftopImgmb: any;
  
 }
