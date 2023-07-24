@@ -2,10 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
-Run  `npm install`
-Run  `npm install ngx-socket-io@4.1.0 --force`
-Run  `npm i lightgallery@2.2.0 --force --save`
-Run  `npm start`
+Run  
+
+``` sh
+npm install
+npm install ngx-socket-io@4.1.0 --force
+npm i lightgallery@2.2.0 --force --save
+npm start```
 
 ## Development server
 
