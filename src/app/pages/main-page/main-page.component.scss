@@ -1,0 +1,72 @@
+@import '../../../assets/css/base.scss';
+
+.splash-screen {
+    height: 100vh;
+    padding: 15px;
+    overflow: $hidden;
+    background: $primary-color;
+    @at-root {
+        .spalsh_banner {
+            width: 100%;
+            height: 70vh;
+            overflow: $hidden;
+            position: $relative;
+            &::before {
+                content: '';
+                background-color: rgba($black, 0.2);
+                width: 100%;
+                height: 100%;
+                position: $absolute;
+                left: 0;
+                z-index: 1;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: $cover;
+                object-position: $center;
+            }
+            figcaption{
+                position: $absolute;
+                top: 50%;
+                width: 100%;
+                text-align: $center;
+                color: $white;
+                font-weight: $font-regular;
+                z-index: 1;
+                @media (min-width:1200px){
+                    font-size: 4rem;
+                }
+                @media (max-width:1200px){
+                    font-size: 2.6em;
+                }
+            }
+        }
+    }
+}
+
+.splash_buttons {
+    width:100%;
+    @include flexbox;
+    @include align-items ($center);
+    @include justify-content ($center);
+    height: 30vh;
+    @media (max-width:991px){
+        @include flex-wrap (wrap);
+    }
+}
+.button-container {
+    border: 2px solid $white;
+    padding: 2px;
+    margin: 5px;
+    width: $auto;
+    @media (min-width:1440px){
+        margin: 5px 20px;
+    }
+    span {
+        display: $inline-block;
+        width: 250px;
+        font-size: $f16;
+        letter-spacing: 0;
+    }
+}

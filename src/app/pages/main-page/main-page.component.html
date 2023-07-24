@@ -1,9 +1,13 @@
-<div class="home-page" >
-    <div class="flex-row">  
-        <img [src]="imageUrl" alt="Loading ... ">
-        <div>{{overlayText}}</div>
-    </div>
-    <div class="button-container" *ngFor="let button of buttons">
-       <button (click)="navigateRoute(button?.path)">{{button?.title}}</button>
+<div class="splash-screen">
+    <figure class="spalsh_banner">
+        <img [src]="imageUrl" alt="O'Connell" width="1000" height="200" />
+        <figcaption>{{overlayText}}</figcaption>
+    </figure>
+
+    <div class="splash_buttons">
+        <div class="button-container" *ngFor="let button of buttons">
+            <button class="btn btn-lg btn-outline-white text-uppercase"
+                (click)="navigateRoute(button?.path)"><span>{{button?.title}}</span></button>
+        </div>
     </div>
 </div>

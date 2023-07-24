@@ -1,4 +1,4 @@
-/* 
+/*
 ==========================================================
 Mirvac DASHBOARD Template
 ==========================================================
@@ -61,15 +61,6 @@ h6,
 .h6 {
   font-size: $f16;
 }
-
-// @media (min-width:1900px){
-//   h1, .h1 {font-size:50px;}
-//   h2, .h2 {font-size:44px;}
-//   h3, .h3 {font-size:40px;}
-//   h4, .h4 {font-size:30px;}
-//   h5, .h5 {font-size:25px;}
-//   h6, .h6 {font-size:20px;}
-// }
 @media (max-width: 1440px) {
   h1 {
     font-size: 36px;
@@ -112,6 +103,7 @@ span {
 
 img {
   max-width: 100%;
+  height: $auto;
   border: 0;
   outline: 0 !important;
   -webkit-user-select: $none;
@@ -145,7 +137,7 @@ Default CSS
 @-moz-document url-prefix() {
   .subtitle {
       font-weight: $font-regular;
-        
+
     }
 }
 label {
@@ -159,24 +151,22 @@ label {
   padding: 9px 20px;
   outline: $none;
   transition: all 0.5s ease-in-out;
-  text-transform: uppercase;
+  text-transform: $uppercase;
   line-height: 1;
-  text-align: center;
-  letter-spacing: 0.2em;
+  text-align: $center;
+  // letter-spacing: 0.2em;
   cursor: $pointer;
   font-family: $sweet_sans_probold;
 }
 .btn:focus,
 .btn:hover {
-  background: inherit;
+  background: $inherit;
   box-shadow: $none;
 }
 .btn-lg {
   font-size: $f16;
   min-height: 50px;
   min-width: 200px;
-  // min-height: 55px;
-  // min-width: 180px;
 }
 .btn-md {
   font-size: $f14;
@@ -188,14 +178,26 @@ label {
   border-radius: 0;
   position: $relative;
 }
-.btn-outline-primary {
-  border: 1px solid $base-color;
-  color: $base-color;
-  background: $transparent;
-}
 .btn-outline-primary:hover {
   color: $base-color;
   background: $white;
+}
+
+.btn {
+  &-outline{
+    &-white {
+      border: 1px solid $white;
+      background: rgba($white, .1);
+      color: $white;
+      &:hover, &:focus {
+        background: $white;
+        color: $primary-color;
+      }
+    }
+  }
+}
+.text-uppercase {
+  text-transform: $uppercase;
 }
 .form-control {
   background: $transparent;
@@ -341,7 +343,7 @@ input[type="checkbox"] {
   background-color: $transparent;
   border: 1px solid $base-color;
   padding: 10px;
-  display: inline-block;
+  display: $inline-block;
   position: $relative;
   vertical-align: middle;
   cursor: $pointer;
@@ -407,7 +409,7 @@ input[type="checkbox"] {
 //lightgallery
 ::ng-deep {
   .lg-container {
-    .lg-backdrop {   
+    .lg-backdrop {
       position: $fixed;
       background: $cream;
       height: calc(100% - 0px);
@@ -521,13 +523,13 @@ input[type="checkbox"] {
               text-align: $left;
 
                    @include flexbox;
-                    @include align-items(flex-start); 
+                    @include align-items(flex-start);
                     @include flex-flow(column);
                     @include justify-content(space-between);
                       font-family: $untitledsans-light;
                       font-weight: $font-regular;
                     h4 {
-                      font-size:$f20 + 2; 
+                      font-size:$f20 + 2;
                       font-weight: $font-bold;
                     }
                     p {
@@ -543,7 +545,7 @@ input[type="checkbox"] {
         object-fit: cover;
       }
     }
-    
+
   }
 }
 
@@ -796,17 +798,17 @@ input[type="checkbox"] {
       }
        @media (min-width: 1400px) and (max-width: 1800px) {
                 padding: 0 68px 15px;
-        }  
+        }
         .link-group {
             @media (min-width: 1400px) and (max-width: 1800px) {
                 padding: 10px 0px 0;
-           }  
+           }
          img {
             @media (min-width: 1400px) and (max-width: 1800px) {
                 max-width: 60px;
-          }  
+          }
          }
-        }     
+        }
     }
   }
 }
@@ -1172,20 +1174,20 @@ input[type="checkbox"] {
       border: 0 !important;
       height: 40px;
       width: 40px;
-      padding: 0;     
-      position: $absolute;      
+      padding: 0;
+      position: $absolute;
     }
     &.slick-prev {
       left: 15px;
       &::before {
-        left: 0; 
+        left: 0;
       }
     }
     &.slick-next {
       right: 15px;
       &::before {
         transform: rotate(180deg);
-        right: 0; 
+        right: 0;
       }
     }
   }

@@ -1,11 +1,12 @@
-<div class="front-screen">
-    <div class="login-bg">
-        <img [src]="imageUrl" alt="Oconnell"  />
+<div class="splash-screen">
+    <figure class="spalsh_banner">
+        <img [src]="imageUrl" alt="Oconnell" />
+        <figcaption>{{overlayText}}</figcaption>
+    </figure>
+    <!-- Footer Nav-Buttons Home page -->
+    <div class="splash_buttons">
+        <div ngClass="button-container" *ngFor="let navButton of navBarOptions" class="btn" (click)="navigateRoute(navButton?.path)">
+            <button class="btn btn-lg btn-outline-white text-uppercase">{{navButton?.title}}</button>
+        </div>
     </div>
-    <div>{{overlayText}}</div>
-</div>
-
-<!-- Footer Nav-Buttons Home page -->
-<div class="d-flex">
-    <div *ngFor="let navButton of navBarOptions" class="btn" (click)="navigateRoute(navButton?.path)">{{navButton?.title}}</div>
 </div>
