@@ -20,6 +20,8 @@
     .main-logo {
         margin-right: 70px;
         font-size: $f20;
+        cursor: $pointer;
+        white-space: nowrap;
         @media (max-width: 1280px) {
             font-size: $f16+2;
             margin-right: 10px;
@@ -269,7 +271,7 @@
     padding: 2px;
     width: 30px;
     height: 30px;
-    // box-shadow: 0px 5px 15.36px 0.64px rgb(0 0 0 / 30%);
+    cursor: $pointer;
     @media (min-width: 992px) {
         display: $none;
         margin-left: $auto;
