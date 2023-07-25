@@ -193,7 +193,7 @@ export const HEADER = {
 };
 
 export const LOCATION = {
-  IMAGE_URL:'assets/images/splash/image 2.png',
+  IMAGE_URL:'assets/images/splash/location.png',
   ID: {
     PARKS: 0,
     EAT: 1,
@@ -308,7 +308,7 @@ export const LOCATION = {
   ],
 };
 export const MASTERPLAN = {
-  IMAGE_URL:'/assets/images/splash/image 3.png',
+  IMAGE_URL:'/assets/images/splash/masterplan.png',
   SIDE_MENU: [
     {
       id: 'pier',
@@ -674,12 +674,12 @@ export const AERIAL = {
 
 
 export const HOME={
-  IMAGE_URL:'assets/images/splash/_L5A6709-01 1.png',
+  IMAGE_URL:'assets/images/splash/home.png',
   OVERLAY_TEXT:"O'CONNELL HOUSE"
 }
 
 export const MAIN={
-  IMAGE_URL:'assets/images/splash/_L5A7002-01 1.jpg',
+  IMAGE_URL:'assets/images/splash/main.jpg',
   OVERLAY_TEXT:"ascott green",
   BUTTONS:[
     {title:"O'CONNELL HOUSE",path:'/home'},
