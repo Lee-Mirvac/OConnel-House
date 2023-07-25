@@ -2,28 +2,26 @@
 
 .hdr-main {
     width: 100%;
-    padding: 14px 60px;    
-    background: rgb(89, 133, 167);
-    background: linear-gradient(270deg, #5985a7 0%, #d3a08d 26%, #5985a7 80%);    
+    padding: 10px 40px;
+    background: $white;
     @include flexbox;
     @include align-items (center);
     position: $fixed;
     left: 0;
-    right: 0; 
+    right: 0;
     bottom: 0;
     z-index: 9;
     @media (max-width: 1280px) {
-        padding: 15px 30px;
+        padding: 10px 25px;
     }
     @media (min-width:992px) and (max-width: 1199px) {
         padding: 15px 40px 15px 30px;
     }
-    @media (max-width: 991px) {
-        padding: 10px $f14+1;
-    }
     .main-logo {
         margin-right: 70px;
+        font-size: $f20;
         @media (max-width: 1280px) {
+            font-size: $f16+2;
             margin-right: 10px;
         }
         a {
@@ -44,7 +42,7 @@
 
     .hdr-right {
         width: 7%;
-        text-align: right;
+        text-align: $right;
         @media (max-width: 991px) {
             width: 50%;
             @include flexbox;
@@ -63,7 +61,6 @@
                         @media (max-width: 991px) {
                             width: 30px;
                         }
-
                     }
                 }
                 &:last-child {
@@ -85,16 +82,15 @@
             ul {
                 li {
                     a,span {
-                        font-size: $f14+1;
-                        color: $white;
+                        font-size: $f16;
                         text-align: $center;
-                        padding: 10px 13px;
+                        color: $dark-grey-color;
                         text-decoration: $none;
-                        font-weight: $font-extrabold;
-                        font-family: $font-SweetSans;
+                        font-weight: $font-regular;
+                        font-family: $font-lexendMega;
+                        letter-spacing: 0;
                         line-height: 24px;
                         align-items: $center;
-                        letter-spacing: 0.15em;
                         text-transform: $uppercase;
                         position: $relative;
                         display: $inline-block;
@@ -102,14 +98,34 @@
                         &:hover, &:focus-visible {
                             outline: 0;
                             border: 0;
-                        } 
+                        }
+                        @media (min-width: 1400px) {
+                            padding: 10px 34px;
+                        }
+                        @media (max-width: 1400px) {
+                            padding: 16px 24px;
+                        }
+                        @media (max-width: 1400px) {
+                            font-size: $f14 - 1;
+                        }
+                        @media (max-width: 1280px) {
+                            font-size: $f12;
+                            padding: 10px;
+                        }
+                        @media (max-width: 991px) {
+                            font-size: $f14;
+                        }
+                        &.active::before,
+                        &:hover::before {
+                            opacity: 1;
+                        }
                         &::before {
                             content: '';
                             position: $absolute;
-                            background: $sky-blue;
+                            background: $primary-color;
                             width: 80%;
                             height: 3px;
-                            bottom: -14px;
+                            bottom: -10px;
                             left: 0;
                             right: 0;
                             text-align: $center;
@@ -121,55 +137,30 @@
                                 bottom: 0;
                             }
                         }
-                       @media (max-width: 1600px) {
-                            padding: 16px 24px;
-                        } 
-                        @media (max-width: 1440px) {
-                            padding: 16px 22px;
-                        } 
-                        @media (max-width: 1400px) {
-                            font-size: $f14 - 1;
-                        }
-                        @media (max-width: 1280px) {
-                            font-size: $f12;
-                            padding: 10px;
-                        }                                                                      
-                        @media (max-width: 991px) {
-                            font-size: $f14 + 1;
-                        }
-                        @media (min-width: 1601px) {
-                            padding: 24px 25px;
-                        }                                               
-                        &.active::before,
-                        &:hover::before {
-                            opacity: 1;
-                        }                       
                     }
-
                     .sub-menu {
+                        display: $none;
                         left: 0;
-                        background-color: $light-orange;
-                        width: 100%;
+                        width: $auto;
                         z-index: 1;
                         text-align: $center;
-                        display: $none;
+                        background-color: $secondary-color;
                         @media (min-width:992px) {
                             position: $absolute;
                             top: -54px;
-                            right: 0;
-                        }                         
+                        }
                         @media (max-width:1600px) {
                             top: -44px;
                         }
                         @media (max-width: 1024px) {
                             padding: 0px 15px;
                             overflow: $hidden;
-                             top: -36px;
+                            top: -36px;
                         }
                         @media (max-width:991px) {
                             position: $relative;
                             margin: 0;
-                        }                        
+                        }
                         &.highLight {
                             display: $none;
                             @include justify-content ($center);
@@ -187,26 +178,33 @@
                             background-color: $light-blue;
                         }
                         li {
+                            border-right: 1px solid $white;
+                            &:last-child {
+                                border-right: 0;
+                            }
                             a,span {
-                                color: $base-color;
+                                color: $white;
                                 text-decoration: $none;
-                                padding: 15px 18px;
-                                @media (max-width: 1600px) {
+                                font-size: $f16 - 1;
+                                padding: 15px 25px;
+                                @media (max-width: 1400px) {
                                     padding: 10px 18px;
                                 }
                                 @media (max-width: 1024px) {
                                     padding: 6px 10px;
                                 }
                                 &::before {
-                                    background: $base-color;
-                                    bottom: -1px;
+                                    display: $none;
+                                    // background: $base-color;
+                                }
+                                &.active {
+                                    background: $primary-color;
                                 }
                             }
                         }
                     }
                 }
             }
-
             &.show {
                 @media (max-width: 991px) {
                     display: $block;
@@ -282,8 +280,8 @@
         path {
             stroke: $white;
         }
-        
-    }   
+
+    }
 }
 .line {
     fill: $none;

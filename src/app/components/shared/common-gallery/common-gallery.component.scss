@@ -43,7 +43,7 @@
     }
   }
 }
-  
+
 .gallery_slider {
   padding: 0;
   @media (max-width:1600px) {
@@ -57,18 +57,18 @@
   @media (min-width: 768px) {
     position: $relative;
     height: 100%;
-  } 
+  }
   .slide {
     margin: 10px $auto 0;
-    height: calc(50vh - 120px - 5px);
+    height: calc(50vh - 60px - 16px);
     position:$relative;
-    @media (max-width:1600px){
+    overflow: $visible;
+    @media (max-width:1200px){
       height: calc(50vh - 37px - 72px);
     }
     @media (max-width:840px){
       height: calc(50vh - 37px - 30px);
     }
-    overflow: $visible;
     figure {
       height: 100%;
       position: $relative;
@@ -104,7 +104,7 @@
       text-align: $center;
       font-weight: $font-bold;
     }
-  }  
+  }
 }
 
 ::ng-deep {
@@ -113,5 +113,5 @@
   .slick-slide.slick-cloned {
     margin: $auto 10px;
     overflow: $hidden;
-  }  
+  }
 }
