@@ -6,5 +6,6 @@ import { LOCATION } from 'src/app/common/constants';
   styleUrls: ['./location.component.scss'],
 })
 export class LocationComponent  {
+  // Image Url For Location Page
   imageUrl=LOCATION.IMAGE_URL;
 }

@@ -4,17 +4,20 @@ import { AmenityComponent } from './amenity.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RooftopComponent } from './rooftop/rooftop.component';
 import { GroundLevelComponent } from './ground-level/ground-level.component';
+import { ROUTE_DEFINATION } from 'src/app/common/constants';
+
+const amenityRoutes=ROUTE_DEFINATION.AMENITY_ROUTING;
 const routes: Routes = [
   {
     path: '', component: AmenityComponent, children: [
       {
-        path: '', redirectTo: 'rooftop', pathMatch: 'full'
+        path: '', redirectTo:amenityRoutes.ROOF_TOP, pathMatch: 'full'
       },
       {
-        path: 'rooftop', component: RooftopComponent
+        path: amenityRoutes.ROOF_TOP, component: RooftopComponent
       },
       {
-        path: 'ground_level_2', component: GroundLevelComponent
+        path: amenityRoutes.GROUND_LEVEL_2, component: GroundLevelComponent
       },
     ],
   },

@@ -6,41 +6,43 @@ import { VideoComponent } from './pages/video/video.component';
 import { MasterPlanComponent } from './pages/master-plan/master-plan.component';
 import { LocationComponent } from './pages/location/location.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { ROUTE_DEFINATION } from './common/constants';
 
+const appRoutes=ROUTE_DEFINATION?.APP_ROUTING
 const routes: Routes = [
   {
-    path: '',
+    path:appRoutes.MAIN,
     component:MainPageComponent,
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path:appRoutes.HOME,
     component: HomeComponent,
   },
   {
-    path: 'location',
+    path:appRoutes.LOCATION,
     component:LocationComponent
   },
   {
-    path: 'masterplan',
+    path:appRoutes.MASTERPLAN,
     component:MasterPlanComponent
   },
   {
-    path: 'gallery',
+    path:appRoutes.GALLERY,
     component:GalleryComponent
   },
   {
-    path: 'amenity',
+    path:appRoutes.AMENITY,
     loadChildren: () =>
       import('./pages/amenity/amenity.module').then((x) => x.AmenityModule),
   },
   {
-    path: 'video',
+    path:appRoutes.AMENITY,
     component:VideoComponent
   },
   {
     path:'**',
-    redirectTo:''
+    redirectTo:appRoutes.MAIN
   }
 ];
 

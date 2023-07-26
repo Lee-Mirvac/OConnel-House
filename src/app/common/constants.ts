@@ -690,3 +690,22 @@ export const MAIN={
 export const VIDEO={
   VIDEO_URL:'assets/video/home.mp4'
 }
+
+
+export const ROUTE_DEFINATION={
+
+  APP_ROUTING:{
+    MAIN:'',
+    HOME:'home',
+    LOCATION:'location',
+    MASTERPLAN:'masterplan',
+    GALLERY:'gallery',
+    AMENITY:'amenity',
+    VIDEO:'video'
+  },
+  AMENITY_ROUTING:{
+    ROOF_TOP:'rooftop',
+    GROUND_LEVEL_2:'ground_level_2'
+  }
+
+} 
