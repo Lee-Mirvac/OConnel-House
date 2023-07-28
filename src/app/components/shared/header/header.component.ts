@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   selectedID: any;
   role: any;
   roleBased: any;
-
+  currentLocation=location;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -51,30 +51,31 @@ export class HeaderComponent implements OnInit {
         this.roleBased = 'Agent';
       }
     });
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        var data = (event.url).substring(1);
-        if (data) {
-          if (data.includes('masterplan')) {
-            this.selectedID = "masterplan"
-          } else if (data.includes('gallery')) {
-            this.selectedID = "gallery"
-          }
+    // this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    //   .subscribe((event: any) => {
+    //     var data = (event.url).substring(1);
+    //     if (data) {
+    //       if (data.includes('masterplan')) {
+    //         this.selectedID = "masterplan"
+    //       } else if (data.includes('gallery')) {
+    //         this.selectedID = "gallery"
+    //       }
 
-          else if (data.includes('mirvac')) {
-            this.selectedID = "mirvac"
-          }
-          else if (data.includes('amenity')) {
-            this.selectedID = "amenity"
-          }
-          else if (data.includes('apartments')) {
-            this.selectedID = "apartments"
-          }
-          else {
+    //       else if (data.includes('mirvac')) {
+    //         this.selectedID = "mirvac"
+    //       }
+    //       else if (data.includes('amenity')) {
+    //         this.selectedID = "amenity"
+    //       }
+    //       else if (data.includes('apartments')) {
+    //         this.selectedID = "apartments"
+    //       }
+    //       else {
 
-          }
-        }
-      })
+    //       }
+    //     }
+    //     console.error(this.selectedID)
+    //   })
   }
 
   checkID(id?: any) {

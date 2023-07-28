@@ -10,7 +10,7 @@
         <li id="show-sub-menu" *ngFor="let menu of menu_list"><span routerLinkActive="active" [routerLink]="menu?.path"
             (click)="checkID(menu?.id)">{{menu?.title}}<i *ngIf="menu?.sub_menu" class="sub-menu-icon"><img
                 src="assets/img/icons/down-arrow-icon.svg" alt="mirvac" width="15"></i></span>
-          <ul [id]="menu?.id" class="sub-menu d-flex" [class]="selectedID==menu.id?'highLight active_sub_menu':'' ">
+          <ul [id]="menu?.id" class="sub-menu d-flex" [class]="currentLocation.href.substring(1).includes(menu.id)?'highLight active_sub_menu':'' ">
             <li *ngFor="let subMenu of menu?.sub_menu"><span routerLinkActive="active"
                 [routerLink]="subMenu?.path">{{subMenu?.title}}</span></li>
           </ul>
