@@ -37,8 +37,15 @@ const routes: Routes = [
       import('./pages/amenity/amenity.module').then((x) => x.AmenityModule),
   },
   {
-    path:appRoutes.AMENITY,
+    path:appRoutes.VIDEO,
     component:VideoComponent
+  },
+  {
+    path:appRoutes.APARTMENTS,
+    loadChildren: () =>
+      import('./pages/apartments/apartments.module').then(
+        (x) => x.ApartmentsModule
+      ),
   },
   {
     path:'**',

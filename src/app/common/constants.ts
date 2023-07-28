@@ -106,39 +106,39 @@ export const PAGE_ROUTES = {
 export const HEADER = {
   NAV_HEADING:{title:"O'CONNELL HOUSE",path:'/'},
   LIST_VIEW: [
-    // {
-    //   path: '/apartments',
-    //   title: 'Apartments',
-    //   src: '',
-    //   link: '',
-    //   id: 'apartments',
-    //   sub_menu: [
-    //     {
-    //       path: '/apartments/model',
-    //       title: '3D Model',
-    //       src: '',
-    //       link: '',
-    //     },
-    //     {
-    //       path: '/apartments/floorplan',
-    //       title: 'Floorplans',
-    //       src: '',
-    //       link: '',
-    //     },
-    //     {
-    //       path: '/apartments/floor-plate',
-    //       title: 'Floorplates',
-    //       src: '',
-    //       link: '',
-    //     },
-    //     {
-    //       path: '/apartments/views',
-    //       title: 'Views',
-    //       src: '',
-    //       link: '',
-    //     },
-    //   ],
-    // },
+    {
+      path: '/apartments',
+      title: 'Apartments',
+      src: '',
+      link: '',
+      id: 'apartments',
+      sub_menu: [
+        {
+          path: '/apartments/model',
+          title: '3D Model',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/floorplan',
+          title: 'Floorplans',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/floor-plate',
+          title: 'Floorplates',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/views',
+          title: 'Views',
+          src: '',
+          link: '',
+        },
+      ],
+    },
     {
       path: '/location',
       title: 'Location',
@@ -186,7 +186,7 @@ export const HEADER = {
       title: 'Video',
       src: '',
       link: '',
-      id: 'apartments'
+      id: 'video'
     }
    
   ],
@@ -697,11 +697,13 @@ export const ROUTE_DEFINATION={
   APP_ROUTING:{
     MAIN:'',
     HOME:'home',
+    APARTMENTS:'apartments',
     LOCATION:'location',
     MASTERPLAN:'masterplan',
     GALLERY:'gallery',
     AMENITY:'amenity',
     VIDEO:'video'
+
   },
   AMENITY_ROUTING:{
     ROOF_TOP:'rooftop',

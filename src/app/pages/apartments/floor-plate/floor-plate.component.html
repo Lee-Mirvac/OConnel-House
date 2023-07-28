@@ -1,0 +1,28 @@
+<div class="main-sec floorplate-sec" id="step3">
+  <div class="apartment-pic">
+    <!-- <h1 class="h6 floor-title">Apartment 1042</h1> -->
+    <p *ngIf="showText" class="select-txt">{{ chooseLevelText }}</p>
+    <!-- <img *ngIf="showSrc" [src]="imgSrc" alt="mirvac" /> -->
+    <div class="floor-img" [class]="showimgSrc? 'show': 'hide'" id="imgID1">
+    </div>
+    <div class="floor-img" [class]="showPlan? 'show': 'hide'" [innerHTML]="imgSrc"></div>
+    <div class="view-detail" *ngIf="showView">
+      <h6 class="view-heading">
+        LEVEL {{ viewData.field_286 }}
+        <span>ASPECT: {{ viewData.field_296 }}</span>
+      </h6>
+      <div class="view-pic">
+        <div [innerHTML]="imgSrc"></div>
+      </div>
+      <div class="view-info d-flex align-items-center">
+        <p [innerHTML]="viewData.field_299"></p>
+        <div class="mail-sec">
+          <i>
+            <img src=".././../../../assets/img/icons/email-icon.svg" alt="icon" />
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--apartment-pic-->
+</div>

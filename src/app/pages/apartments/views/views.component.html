@@ -1,0 +1,74 @@
+<div class="main-sec view-main-sec" *ngIf="showMainContent">
+  <div class="view-plan">
+    <div class="view-plan-detail" *ngFor="let item of levelImg">
+      <h6 class="view-heading">
+        LEVEL {{ item.field_319 }} <span>ASPECT: {{ item.field_320 }}</span>
+      </h6>
+      <div class="view-pic view_image">
+        <div [innerHTML]="item.field_324" alt="mirvac"></div>
+      </div>
+    </div>
+    <!--view-plan-->
+  </div>
+</div>
+<div id="floor-modal" class="modalDialog floorModal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <a title="Close" class="close pointer" (click)="closeModal()"><img src=" assets/img/icons/close.svg" alt="mirvac"
+          width="25" /></a>
+      <img *ngIf="showSrc" [src]="modalSrc" alt="mvac" />
+      <!-- </figure> -->
+      <div class="floor-img" [class]="showimgSrc? 'show': 'hide'" id="imgID4">
+      </div>
+      <div [class]="showPlan? 'show': 'hide'" class="floor-img" [innerHTML]="modalSrc"></div>
+      <div class="view-detail" *ngIf="showView">
+        <h6 class="view-heading">
+          LEVEL {{ viewData.field_286 }}
+          <span>ASPECT: {{ viewData.field_296 }}</span>
+        </h6>
+        <div class="view-pic">
+          <div [innerHTML]="modalSrc"></div>
+        </div>
+        <div class="view-info d-flex align-items-center">
+          <p [innerHTML]="viewData.field_299"></p>
+          <div class="mail-sec">
+            <i>
+              <img src=".././../../../assets/img/icons/email-icon.svg" alt="icon" />
+            </i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="disclaim" class="modalDialog view-disclaim">
+  <div class="modal-content">
+    <div class="modal-body">
+      <p>View photography is correct as of 01.11.2021 and was taken approximately from the centre of the façade at
+        varying heights. Views depicted are intended as a guide only, representative of the existing general views from
+        the camera position and are subject to change. Floor plans are indicative only and subject to development
+        approval. The views are not to be relied on as representative of the views available from a proposed lot, floor
+        level or the final actual view. Purchasers should make their own enquiries in this regard. Any future
+        development, other than the buildings masses shown in the view photography, which may impact on views is not
+        within Mirvac's control. Purchasers should make their own enquiries as to the extent and possibility of any
+        future development which may impact on views.</p>
+      <p>The view photography shows building masses of future development which may be undertaken by Mirvac. The
+        building masses shown are indicative of future development as at 01.11.2021 and may be developed by Mirvac in
+        the future subject to receipt of development approvals and market conditions. Mirvac may sell some or all of
+        these sites to third party developers.Timing is unknown. The outline of these areas indicates the general
+        outline of the developable footprint for the ground floor which is permitted by the relevant planning controls.
+        Development may be permitted outside the ground floor footprint subject to receipt of development approval.
+        Above the ground floor, development may, subject to receipt of planning approval, also extend beyond the
+        footprint and extend over the area of future privately owned public open space. </p>
+      <p>Any other future development of the surrounding developments and land is not within Mirvac’s control and is
+        subject to specific statutory approval which may impact on current zoning restrictions. Purchasers should be
+        aware that future development shown by indicative building massing and the surrounds might impact on current
+        views and outlook.</p>
+      <button class="btn btn-outline-primary btn-lg" (click)="disclaimer()">
+        Accept
+      </button>
+    </div>
+  </div>
+</div>

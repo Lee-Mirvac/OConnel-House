@@ -1,0 +1,36 @@
+@import "../floor-plan/floor-plan.component.scss";
+@import "../model-three-d/model-three-d.component.scss";
+.view-plan-detail {padding: 0 0 20px;}
+.view-plan-detail:last-child{padding: 0;}
+.view-main-sec {
+    @include flexbox;
+    overflow-y: $auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e3d1c4 transparent;
+    .view-plan {
+        padding: 30px 85px 30px 45px;
+        margin: $auto;
+        @media (max-width: 991px){
+            padding: 15px;
+        }
+        .view-pic { 
+            max-height: 150px;
+           
+            @media (min-width:1024px){
+                max-height: 200px;
+            }
+            @media (min-width:1680px){
+                max-height: 300px;
+            } 
+        }
+    }
+}
+
+.main-sec-step3-view{
+    &.floorModal{
+        .modal-body {
+            padding: 60px 60px;
+        }
+    }
+} 
+

@@ -1,0 +1,298 @@
+ <!-- <aside class="location-sidebar amenity-sidebar" id="aside" *ngIf="showMenu"> -->
+ <!-- <div class="show-sidebar-inner" (click)="myFunction('hidesidebar')">
+    <span class="show-txt">Menu</span>
+    <span class="hide-txt">Hide Menu</span>
+    <i class="circle-icon">
+      <img src="assets/img/icons/left-arrow.svg" alt="left-arrow" width="26" />
+    </i>
+  </div>
+
+
+  <div class="location-menu" *ngIf="locationMenu">
+    <div class="location-menu-detail">
+      <div class="location-menu-inner" *ngFor="let item of sideMenu; let i = index"
+        (click)="aerialPathColor[i] = !aerialPathColor[i]; submit(item?.id, item?.path,i)"
+        [ngClass]="aerialPathColor[i] ? '' : 'active'">
+        <i *ngIf="!showMasterPlanMenu">
+          <img [src]="item?.src" alt="mirvac" />
+        </i>
+        <span *ngIf="!showMasterPlanMenu" [innerHTML]="item?.title"></span>
+        <button class="mp_button" *ngIf="showMasterPlanMenu" [innerHTML]="item?.title"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="amenity-sidebar-main" *ngIf="!locationMenu">
+    <ul class="amenity-list">
+      <li *ngFor="let item of sideMenu; let i = index"
+        (click)="pathColor[i] = !pathColor[i]; submit(item?.id,item?.path,i)" [ngClass]="pathColor[i] ? '' : 'active'">
+        {{ item?.title }}
+      </li>
+    </ul>
+    <div class="group-btn">
+      <div class="link-group d-flex align-items-center">
+        <a href="#"><i><img src="assets/img/icons/scan-icon.svg" alt="mirvac" width="70" /></i></a>
+        <a href="mailto:example.com"><i><img src="assets/img/icons/email-icon.svg" alt="mirvac" width="70" /></i></a>
+      </div>
+    </div>
+  </div>
+</aside> -->
+
+<aside class="right-sidebar apartment-sidebar" *ngIf="apartmentSidebar">
+  <div class="close-btn" *ngIf="displayCloseBtn" (click)="resetStepbar3()">
+    <a><i> <img src="assets/img/icons/close_white.svg" alt="icon" /> </i></a>
+  </div>
+  <div class="show-sidebar-inner" (click)="myFunction('hidesidebar')">
+    <span class="show-txt">APARTMENT SELECTOR</span>
+    <span class="hide-txt">Hide SELECTOR</span>
+    <i class="circle-icon">
+      <img src="assets/img/icons/left-arrow.svg" alt="left-arrow" width="26" />
+    </i>
+  </div>
+  <form>
+    <div class="step step1" *ngIf="sidebarStep1">
+      <div class="step-content">
+        <h2>{{ title }}</h2>
+
+        <div class="level-div">
+          <div class="label-title">
+            <h6 class="subtitle">Level</h6>
+          </div>
+          <ul class="d-flex flex-wrap level_block">
+            <li *ngFor="let item of floorLevel; let i = index">
+              <div class="check_group">
+                <input type="checkbox" [name]="item.name" [value]="i + 1" [id]="item.id" [(ngModel)]="item.isSelected"
+                  (change)="chooseFloor(i)" [disabled]="item.isDisabled" />
+                <span for="item.name">{{ i + 1 }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--level-group-->
+        <div class="level-div" *ngIf="showFloorPlate">
+          <div class="label-title">
+            <h6 class="subtitle">BEDROOM</h6>
+          </div>
+          <ul class="d-flex status_group level_block">
+            <li>
+              <div class="check_group">
+                <input type="checkbox" name="list_name" value="m1" [checked]="masterAllSelected" (change)="
+                    checkUncheckAllBed((masterAllSelected = !masterAllSelected))
+                  " />
+                <span for="bed_chk" class="bed_chk">All</span>
+              </div>
+            </li>
+            <li *ngFor="let item of bedroomSet; let i = index">
+              <div class="check_group">
+                <input type="checkbox" [name]="item.name" [value]="i + 1" [id]="item.id" [(ngModel)]="item.isSelected"
+                  (change)="isAllBedSelect()" />
+                <span for="item.name">{{ i + 1 }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--bed-group-->
+        <div class="d-flex field_group level-div" *ngIf="showFloorPlate">
+          <div class="label-title">
+            <h6 class="subtitle">APARTMENT TYPE</h6>
+          </div>
+          <div class="field_label">
+            <select class="form-control" id="myDropdown" (change)="onselectApartmentType($event.target)">
+              <option selected value="Select Apartment Types">
+                Select Apartment Types
+              </option>
+              <option *ngFor="let item of apartmentTypes" [value]="item.value">
+                {{ item.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--step-content-->
+      <div class="step_footer">
+        <!-- <div class="field_group" *ngIf="showFloorPlate">
+          <div class="d-flex field_search">
+            <input type="number" class="form-control" placeholder="type apartment number" />
+          </div>
+        </div> -->
+        <div class="field_group">
+          <div class="btn_cols d-flex">
+            <button type="button" class="btn btn-lg btn-outline-primary reset_all" (click)="resetLevel()">
+              Reset
+            </button>
+            <button name="next" type="button" class="btn btn-lg btn-outline-primary action-button" id="show_results"
+              (click)="searchLevel()" *ngIf="showFloorPlate">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--step-footer-->
+    </div>
+
+    <div class="step step2" *ngIf="sidebarStep2">
+      <div class="step-content">
+        <h2>Results</h2>
+        <div class="level-div">
+          <div class="label-title">
+            <h6 class="subtitle">TOTAL {{ totalApartments }}</h6>
+          </div>
+          <div class="appartment_results">
+            <ul class="d-flex flex-wrap result_block">
+
+              <li *ngFor="let item of sidebarStep2List">
+                <div class="result-sec d-flex align-items-center" (click)="checkAvailability(item.id, $event)">
+                  <label class="level-sec result-inner">Level {{ item.field_286 }}, {{ item.field_7 }}</label>
+                  <div class="result-pic result-inner d-flex align-items-center">
+                    <span class="d-flex align-items-center">
+                      <i><img src="assets/img/icons/bed-icon.svg" alt="mirvac" width="25" /></i>
+                      {{ item.field_15 }}
+                    </span>
+                    <span class="d-flex align-items-center">
+                      <i><img src="assets/img/icons/ship-icon.svg" alt="mirvac" width="25" /></i>
+                      {{ item.field_15 }}
+                    </span>
+                    <span class="d-flex align-items-center">
+                      <i><img src="assets/img/icons/car-icon.svg" alt="mirvac" width="25" /></i>
+                      {{ item.field_200 }}
+                    </span>
+                  </div>
+                  <label class="size-level result-inner">{{ item.field_10 }}m<sup>2</sup></label>
+                  <a class="status-sec">Available</a>
+                </div>
+                <div class="result-sec result-sec-mb d-flex align-items-center"
+                  (click)="checkAvailability(item.id, $event)">
+                  <div class="result-sec-inner d-flex flex-wrap">
+                    <label class="level-sec result-inner">Level {{ item.field_286 }}, {{ item.field_7 }}</label>
+                    <div class="result-pic result-inner d-flex align-items-center">
+                      <span class="d-flex align-items-center">
+                        <i><img src="assets/img/icons/bed-icon.svg" alt="mirvac" width="25" /></i>
+                        {{ item.field_15 }}
+                      </span>
+                      <span class="d-flex align-items-center">
+                        <i><img src="assets/img/icons/ship-icon.svg" alt="mirvac" width="25" /></i>
+                        {{ item.field_15 }}
+                      </span>
+                      <span class="d-flex align-items-center">
+                        <i><img src="assets/img/icons/car-icon.svg" alt="mirvac" width="25" /></i>
+                        {{ item.field_200 }}
+                      </span>
+                    </div>
+                    <label class="size-level result-inner">{{ item.field_10 }}m<sup>2</sup></label>
+                  </div>
+                  <a class="status-sec">Available</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <!--level-group-->
+      </div>
+      <!--step-content-->
+      <div class="step_footer">
+        <div class="field_group">
+          <div class="btn_cols">
+            <button type="button" class="btn btn-lg btn-outline-primary reset_all" (click)="resetStep2()">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--step-footer-->
+    </div>
+
+    <div class="step step3" *ngIf="sidebarStep3">
+      <div class="step-content">
+        <h2>Apartment {{ floorDetails?.field_7 }}</h2>
+        <div class="level-div">
+          <div class="label-title">
+            <h6 class="subtitle">TYPE {{ floorDetails?.field_201 }}</h6>
+          </div>
+          <ul class="d-flex align-items-center type-result">
+            <li>
+              <span class="type-info">
+                <i>
+                  <img src="assets/img/icons/bed-icon.svg" alt="mirvac" />
+                </i>
+                {{ floorDetails?.field_15 }}
+              </span>
+            </li>
+            <li>
+              <span class="type-info">
+                <i>
+                  <img src="assets/img/icons/ship-icon.svg" alt="mirvac" />
+                </i>
+                {{ floorDetails?.field_16 }}
+              </span>
+            </li>
+            <li>
+              <span class="type-info">
+                <i>
+                  <img src="assets/img/icons/car-icon.svg" alt="mirvac" />
+                </i>
+                {{ floorDetails?.field_200 }}
+              </span>
+            </li>
+          </ul>
+          <!--type-result-->
+          <ul class="type-detail">
+            <li class="d-flex align-items-center">
+              <label>Level {{ floorDetails?.field_286 }}<br />
+                {{ floorDetails?.field_296 }} Views</label>
+            </li>
+            <li class="d-flex align-items-center">
+              <label>Internal Area</label>
+              <label class="size-level">{{ floorDetails?.field_17_raw }}m<sup>2</sup></label>
+            </li>
+            <li class="d-flex align-items-center">
+              <label>External Area</label>
+              <label class="size-level">{{ floorDetails?.field_290_raw }}m<sup>2</sup></label>
+            </li>
+            <li class="d-flex align-items-center">
+              <label>Total Area</label>
+              <label class="size-level">{{ floorDetails?.field_10_raw }}m<sup>2</sup></label>
+            </li>
+          </ul>
+          <!--type-detail-->
+          <div class="btn_group">
+            <button type="button" class="btn btn-lg btn-outline-primary floor_plan"
+              (click)="viewFloorplan(floorDetails?.field_314)" [ngClass]="selectedID === 'floorPlan' ? 'active' : ''">
+              FLOORPLAN
+            </button>
+            <button type="button" class="btn btn-lg btn-outline-primary floor_plate"
+              (click)="viewFloorplate(floorDetails.field_286)" [ngClass]="selectedID === 'floorPlate' ? 'active' : ''">
+              FLOORPLATE
+            </button>
+            <button type="button" class="btn btn-lg btn-outline-primary views" *ngIf="floorDetails?.field_315"
+              (click)="viewFloor1(floorDetails)" [ngClass]="selectedID === 'view' ? 'active' : ''">
+              VIEWS
+            </button>
+          </div>
+          <!--btn-group-->
+          <div class="link-group d-flex align-items-center">
+            <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]="correctionLevel" [value]="lotPdfUrl"
+              cssClass="bshadow">
+            </ngx-qrcode>
+            <a href="mailto:example.com"><i><img src="assets/img/icons/email-icon.svg" alt="mirvac"
+                  width="70" /></i></a>
+          </div>
+        </div>
+        <!--level-group-->
+      </div>
+      <!--step-content-->
+      <div class="step_footer">
+        <div class="field_group">
+          <div class="btn_cols">
+            <button type="button" class="btn btn-lg btn-outline-primary reset_all" (click)="resetStep3()">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--step-footer-->
+    </div>
+  </form>
+
+
+</aside>

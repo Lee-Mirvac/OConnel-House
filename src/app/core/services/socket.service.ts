@@ -12,17 +12,17 @@ export class SocketService {
   constructor() { }
 
   connect() {
-    this.socket = new WebSocket(
-      `${environment.socketUrl}?clientID=${this.clientID}&isIntuiface=false`
-    );
+    // this.socket = new WebSocket(
+    //   `${environment.socketUrl}?clientID=${this.clientID}&isIntuiface=false`
+    // );
 
-    this.socket.onmessage = function (event: any) {
-      let message = JSON.parse(event.data);
-    };
+    // this.socket.onmessage = function (event: any) {
+    //   let message = JSON.parse(event.data);
+    // };
 
-    this.socket.onopen = function (e: any) {
-      // console.log('Socket connected!!');
-    };
+    // this.socket.onopen = function (e: any) {
+    //   // console.log('Socket connected!!');
+    // };
   }
 
   /**
