@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/base.scss';
+@import "./assets/css/login.scss";
+@import "./assets/css/main.scss";
+@import "./assets/css/default.scss";
+@import "./app/components/shared/sidebar/sidebar.component.scss";
+@import "~lightgallery/scss/lightgallery";
+@import "~ngx-toastr/toastr.css";
+
+.show {
+  display: $inline-block;
+}
+.hide {
+  display: $none;
+}

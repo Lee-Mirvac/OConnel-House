@@ -1,0 +1,98 @@
+// @import "../../../../assets/css/base.scss";
+// .login-top-btn{
+//   justify-content: space-between;
+//   .login-back {
+//     background: $base-color;
+//     color: $white;
+//     padding: 20px 50px 20px 40px;
+//     font-size: $f16;
+//     line-height: 1;
+//     border-radius: 0 40px 40px 0;
+//     // position: $fixed;
+//     // left: 0;
+//     // top: 0;
+//     align-items: $center;
+//     cursor: $pointer;
+//     .bck-icon {
+//       padding: 0 15px 0 0;
+//     }
+//   }
+//   .admin-btn{
+//     padding: 20px 40px;
+//     border-radius: 40px 0 0 40px;
+//   }
+// }
+
+// .login-form {
+//   @include flexbox;
+//   @include align-items($center);
+//   @include justify-content($center);
+//   height: calc(100vh - 56px - 70px - 40px);
+//   margin: 20px 0;
+//   overflow-y: auto;
+//   @media (max-width:830px){
+//     height: calc(100vh - 56px - 60px - 40px);
+//   }
+//   h1 {
+//     font-weight: $font-regular;
+//     color: $primary-color;
+//     line-height: 1.2;
+//     margin-top: 0;
+//   }
+//   .login-form-inner {
+//     background: $white;
+//     padding: 40px;
+//     width: 430px;
+//     height: auto;
+//     margin: auto;
+//     @media (max-width: 576px) {
+//       max-width: 90%;
+//     }
+//     .form-control {
+//       width: 100%;
+//       background: $transparent;
+//       font-weight: $font-regular;
+//       @include border-radius(0);
+//       border: 2px solid $grey-color5;
+//       padding-right: 45px;
+//       color: #595a5c;
+//       margin: 5px 0;
+//       &::placeholder {
+//         color: #b5b5b5;
+//       }
+//       &.is-invalid{
+//         border-color: #db0808;
+//       }
+//     }
+//     .btn {
+//       width: 100%;
+//       min-height: 48px;
+//       border-radius: 30px;
+//       font-size: $f16;
+//       text-transform: capitalize;
+//     } 
+//     a {
+//       cursor: $pointer;
+//       font-family: "Circular Std";
+//       color: $base-color;
+//     }
+    
+//   }
+// }
+
+// .input_field {
+//     position: $relative;
+// }
+
+// .show_pwd {
+//   position: $absolute;
+//   right:10px;
+//   top: 50%;
+//   @include transform (translateY(-50%));
+//   img {
+//     cursor: $pointer;
+//   }
+// }
+// .invalid-feedback{
+//   color:#8f1603;
+// }

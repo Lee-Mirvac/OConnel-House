@@ -1,0 +1,145 @@
+//@import '../master-plan.component.scss';
+@import '../../../../assets/css/base.scss';
+// @import '../../../pages/apartments/views/views.component.scss';
+@import "../../../../assets/css/modal.scss";
+.masterplan-main{
+    padding: 0;
+    // height: calc(100vh - 84px - 44px);
+    @media (max-width:991px){
+        height: calc(100vh - 50px);
+        overflow-y: initial;
+    }
+    @media (min-width: 1900px) and (min-height:815px){
+        height: calc(100vh - 44px); 
+    }
+    @media (min-width: 1600px) and (min-height:726px){
+        height: calc(100vh - 40px); 
+    }
+    .masterplan-sec {
+        width: 100%;
+        height: 100%;
+        picture{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+              //  object-fit: $contain;
+                @media (min-width:1600px){
+                    object-position: top;
+                }
+                @media (max-width:1600px){
+                   //  object-fit: $contain;
+                }
+                //AK 21June// @media (max-width:991px){
+                //     object-position: 50% 85%;
+                //     @media (min-width:600px){
+                //         object-position: 50% 85%;
+                //     }
+                // }
+                &.mb-pic{
+                    display: $none;
+                    @media (max-width:991px){
+                        display:$block;
+                    }
+                }
+                &.dsk-pic{
+                    @media (max-width:991px){
+                        display:$none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.masterplan-main {
+    p {
+        font-size: calc(12px - 1px);
+        overflow-y: $auto;
+        max-height: 300px;
+        margin-bottom: 0;
+        padding: 0 10px;
+        color: $white;
+        position: $absolute;
+        bottom: 10px;
+        left:0; 
+        z-index: 1;
+        width: 100%; 
+        scrollbar-width: thin;
+        scrollbar-color: #e3d1c4 transparent;
+        max-width: 300px;
+        right: 0;
+        margin-left: auto;    
+        text-align: justify;
+        @media (min-width:1440px){
+            bottom:30px;
+        }
+    }
+    // AK 12 July @at-root .masterplan-sec {
+    //     picture {
+    //         img {
+    //           @media (min-width:1400px){
+    //              object-fit: $none !important;
+    //           }
+    //       }
+    //    }
+    // }
+}
+
+.map_fill {
+    width: 100%;
+    height: 100%;
+    overflow: $hidden;
+  background: #54565b;
+    svg {
+        width: 100%;
+        height: 100%;
+        // position: $fixed;    
+        .fill_color {
+            fill:#43c7e7;
+        }
+        path ,text{
+            cursor: $pointer;
+        }
+       
+       
+    }
+}
+
+.svg_popup {
+    overflow: $hidden;
+    background: rgba($rounded_color,0.9);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding:0;
+    .modal-content {
+        height: 100%;
+        padding:0;
+        @include justify-content (center);
+        .modal-body {
+            position: $relative;
+            padding: 30px;
+            border-radius: 0;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            .close-btn {
+                // top: 25px;
+                    top: 45px;
+    right: 45px;
+            }
+            img.svg_img {
+                width: 100%;
+               // object-fit: $contain;
+                height: 100%;
+            }
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

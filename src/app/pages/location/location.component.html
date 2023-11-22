@@ -1,0 +1,13 @@
+<div class="main-sec location-main">
+
+
+
+  <div class="location-sec frame_cls">
+    <iframe src="assets/pin-marker/index.html" scrolling="no" width="100%" height="330" frameborder="0"
+      [ngClass]="!flag?'show':'hide'"></iframe>
+    <video width="100%" height="100%" autoplay="true" muted="muted" id="video" [src]="videoUrl" type="video/mp4" loop
+      [ngClass]="flag?'video_map show':'hide'">
+    </video>
+
+  </div>
+</div>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script> -->
+    <title>Document</title>
+    <style>
+        .ct-box-slider {
+            margin-right: -15px;
+        }
+
+        @media (max-width: 991px) {
+            .ct-box-slider {
+                margin-left: -15px;
+            }
+        }
+
+        .ct-box-slider__arrows .slick-arrow {
+            padding: 0 1px 0 0;
+            opacity: 0.3;
+        }
+
+        .ct-box-slider__arrows .slick-arrow:hover {
+            opacity: 0.5;
+        }
+
+        .ct-box-slider__arrows .slick-arrow:hover:active {
+            opacity: 0.55;
+        }
+
+        .ct-box {
+            font-family: 'stenciletta-solid', sans-serif;
+            font-size: 23px;
+            line-height: 1.15;
+            padding: 15px 0;
+            display: block;
+            color: #000;
+        }
+
+        .ct-box .hover {
+            display: none;
+        }
+
+        .ct-box span {
+            padding-top: 15px;
+            display: block;
+            max-width: 100%;
+        }
+
+        .ct-box .inner {
+            background: #f6f4f4;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 25px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .ct-box .inner .fa {
+            font-size: 64px;
+        }
+
+        .ct-box:hover {
+            color: #00719b;
+        }
+
+        .ct-box:hover .normal {
+            display: none;
+        }
+
+        .ct-box:hover .hover {
+            display: block;
+        }
+
+        @media (max-width: 479px) {
+            .ct-box {
+                font-size: 18px;
+            }
+
+            .ct-box img {
+                max-width: 50%;
+            }
+
+            .ct-box .inner {
+                height: 150px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct-box-slider ct-js-box-slider" id="slider">
+    </div>
+
+    <script>
+        let content = '';
+        let slides = [
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery1.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery2.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery3.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery4.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery5.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery6.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery1.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery2.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery3.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery4.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery5.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery6.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery1.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery2.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery3.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery4.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery5.jpg',
+            },
+            {
+                src: 'http://localhost:4200/assets/img/gallery/gallery6.jpg',
+            },
+        ];
+
+        const innerContent = (index) => {
+            let html = '';
+            for (let i = index; i <= index + 5; i++) {
+                html = html + `<div class="col-xs-6 col-sm-4">
+      <div  class="ct-box">
+      <div class="inner" role="presentation"><img src= ${slides[i]?.src}></i>
+      </div>
+    </div>
+   </div>`
+            }
+            return html;
+        }
+
+        $(document).ready(function () {
+            content = '';
+            for (let i = 0; i <= slides.length; i++) {
+                if ((i + 1) % 6 == 0) {
+                    content =
+                        content +
+                        `
+        <div class="item">
+        <div class="container-fluid">
+        <div class="row">
+         ${innerContent(i)}
+       </div>
+     
+       </div>
+      </div>`;
+                }
+            }
+            document.getElementById('slider').innerHTML = content
+            $('.ct-box-slider').slick({
+                autoplay: false,
+                autoplaySpeed: 4000,
+                arrows: false,
+            });
+            $('#ct-js-box-slider--prev').on('click', function () {
+                $('.ct-js-box-slider').slick('slickPrev');
+            });
+            $('#ct-js-box-slider--next').on('click', function () {
+                $('.ct-js-box-slider').slick('slickNext');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

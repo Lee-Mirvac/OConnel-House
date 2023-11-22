@@ -1,0 +1,7 @@
+<div class="main-sec location-main aerial_location">
+  <div class="masterPlan_sec" *ngFor="let items of aerialSidebar">
+    <img [src]="items?.src" alt="Car Parking" [id]="items?.id" alt="{{items?.alt}}" [class]="items?.class" />
+  </div>
+  <p [innerHTML]="disclaimerText">
+  </p>
+</div>

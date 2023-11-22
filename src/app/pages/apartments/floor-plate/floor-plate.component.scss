@@ -1,0 +1,58 @@
+@import '../../../../assets/css/base.scss';
+@import '../model-three-d/model-three-d.component.scss';
+.floorplate-sec {
+    @media (min-width:991px){
+        // padding: 30px 70px 30px 15px;
+        padding: 0;
+    }
+    
+    &.main-sec-step3-view {
+        padding: 20px 0;
+        @media (min-width:991px){
+            padding: 30px 0;
+        }
+        @media (min-width:1280px){
+            padding:30px 80px 30px 30px;
+        }
+    }
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
+    .select-txt {
+        @include flexbox;
+        @include align-items (center);
+        @include justify-content (center);
+        height: 100%;
+        margin: 0;
+        font-size: $f20;
+        font-weight: $font-bold;
+        text-transform: $capitalize;
+    }
+    .apartment-pic {
+        @media (min-width:992px){
+           padding: 30px 60px;
+        }
+        @media (min-width:1200px){
+            padding: 50px 60px;
+         }
+        
+    }
+}
+.opened {
+    .floorplate-sec {
+        width: calc(100% - 480px);
+    }
+}
+// css edited 28-06-22
+.main-sec.main-sec-step3{
+    .apartment-pic {
+        @include flexbox;
+        @include align-items (center);
+        @include justify-content (center);
+    }
+}
+
+.green{
+    background-color: green !important;
+}

@@ -1,0 +1,40 @@
+/*Fonts */
+// @font-face {
+//     font-family: 'ogglight';
+//     src: url('../fonts/ogglight-webfont.woff2') format('woff2'),
+//          url('../fonts/ogglight-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//   }
+//   @font-face {
+//       font-family: 'sweet_sans_probold';
+//       src: url('../fonts/sweetsanspro-bold.woff2') format('woff2'),
+//            url('../fonts/sweetsanspro-bold.woff') format('woff');
+//       font-weight: normal;
+//       font-style: normal;
+
+//   }
+// _fonts.scss
+@font-face {
+  font-family: "sweet_sans_probold";
+  src: url('../fonts/sweetsanspro-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ogg_light";
+  src: url("../fonts/OGG-LIGHT.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UNTITLEDSANS-LIGHT";
+  src: url("../fonts/UNTITLEDSANS-LIGHT.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

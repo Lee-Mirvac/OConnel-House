@@ -1,0 +1,123 @@
+@import '../../../../assets/css/base.scss';
+//@import '../master-plan.component.scss';
+@import '../../location/location.component.scss';
+.masterplan-main{
+    padding: 0;
+    height: calc(100vh - 74.86px - 44px);
+    @media (max-width:991px){
+        height: calc(100vh - 50px);
+        overflow-y: initial;
+    }
+    @media (min-width: 1600px){
+        height: calc(100vh - 80px - 44px); 
+    }
+    .masterplan-sec {
+        width: 100%;
+        height: 100%;
+        picture{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: $contain;
+                @media (min-width:1600px){
+                    object-position: top;
+                }
+                //AK 21June// @media (max-width:991px){
+                //     object-position: 50% 85%;
+                //     @media (min-width:600px){
+                //         object-position: 50% 85%;
+                //     }
+                // }
+                &.mb-pic{
+                    display: $none;
+                    @media (max-width:991px){
+                        display:$block;
+                    }
+                }
+                &.dsk-pic{
+                    @media (max-width:991px){
+                        display:$none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aerial_location{
+  p {
+    font-size: calc(12px - 1px);
+    overflow-y: $auto;
+    max-height: 120px;
+    margin-bottom: 0;
+    padding: 0 10px;
+    color: $white;
+    position: $absolute;
+    bottom: 160px;
+    left:0; 
+    z-index: 1;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #e3d1c4 transparent;
+    @media (max-width: 1600px) {
+      bottom: 140px;
+    }
+    @media (max-width: 991px) {
+      bottom: 60px;
+    }
+  }
+}
+
+::ng-deep {
+  .opened {
+    .main-sec{
+      &.aerial_location{
+        width: calc(100% - 260px) !important;        
+      }
+    }
+  }
+}
+
+.masterPlan_sec { 
+  img {    
+    height: 100vh;
+    width: 100%;
+    pointer-events: $none;
+    //object-fit: cover;
+    padding-bottom: 154px; 
+    object-position: $right;
+    position: $absolute;
+    object-fit: $cover;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    visibility: $hidden;
+    opacity: 0;
+    @media (max-width: 1600px) {
+       padding-bottom: 118px; 
+    }
+    @media (max-width: 1024px) {
+      padding-bottom: 110px;
+    } 
+    @media (max-width: 991px) {
+      padding-bottom: 50px;
+    }
+    &.main_map {
+      visibility: $visible;
+      z-index: -1;
+      opacity: 1;
+      transition: none 0.5s ease-in-out;
+    }
+    &.show {
+      visibility: $visible;
+      opacity: 1;
+    }
+    &.initial_show {
+      visibility: $visible;
+      opacity: 1;
+    }
+  }  
+}

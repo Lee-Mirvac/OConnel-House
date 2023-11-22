@@ -1,0 +1,56 @@
+@import 'base.scss';
+.login-bg {
+    position: $fixed;
+    z-index: -1;
+    width: 100%;
+    height: calc(100vh - 80px);
+    img {
+        width: 100%;
+        height: 100vh;
+    }
+}
+.login_screen {
+    background: $light-blue;
+    max-width: 500px;
+    width: 500px;
+    padding: 55px 65px 65px;
+    h1 {
+        font-family: $ogg_light;
+        line-height: 50px;
+        font-weight: 300;
+        text-align: $center;
+        margin: 0 0 40px;
+    }
+    .btn {
+        width: 100%;
+        text-transform: $uppercase;
+    }
+}
+.front-screen {
+    min-height: calc(100vh - 74.44px);
+    height: calc(100vh - 74.44px);
+    @include flexbox;
+    align-items: $center;
+    justify-content: $center;
+    @media (min-width:1680px){
+        min-height: calc(100vh - 80px);
+        height: calc(100vh - 80px);
+    }
+}
+.forgot-sec {
+    display: $flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 45px 0 35px;
+}
+
+@media (max-width: 767px){
+    .login_screen {max-width: 90%;width: 90%;padding:15px 25px 25px;}
+    .login_screen h1 {line-height: 35px;}
+    .front-screen{margin: 20px 0;}
+    
+}
+@media (min-width: 1600px){
+    .login_screen {max-width: 700px;width: 700px;padding: 65px 75px 75px;}
+    .login_screen h1 {line-height: 50px;}
+}

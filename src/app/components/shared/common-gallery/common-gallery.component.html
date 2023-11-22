@@ -1,0 +1,23 @@
+<div class="main-sec gallery_slider">
+    <div class="gallery-main">
+        <div class="gallery-sec">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide">
+                    <h6>
+                        {{slide?.caption}}
+                    </h6>
+                    <figure class="gallery_block">
+                        <img [src]="slide.src" alt="" width="100%" (click)="openGallery(i)" />
+                        <figcaption class="fig-caption">
+                            <small>{{slide?.disclaimer}}</small>
+                        </figcaption>
+                    </figure>
+                    <br>
+                </div>
+
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <lightgallery [settings]="settings" [onInit]="onInit"> </lightgallery>
+</div>

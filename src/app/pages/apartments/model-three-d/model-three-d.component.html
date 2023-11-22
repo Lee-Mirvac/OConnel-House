@@ -1,0 +1,116 @@
+<div id="step3">
+
+  <div class="apartment-pic">
+    <div class="floor-img model3D_img" [class]="showimgSrc? 'show': 'hide'" id="imgID">
+    </div>
+    <div class="floor-img model3D_img" [class]="showFloorplan? 'show' : 'hide'" [innerHTML]="imgSrc"></div>
+    <div class="view-detail apartment_view model3D_img" id="active" *ngIf="showView">
+      <h6 class="view-heading">LEVEL {{viewData.field_286}} <span>ASPECT: {{viewData.field_296}}</span></h6>
+      <div class="view-picmodal">
+        <div [innerHTML]="imgSrc"></div>
+      </div>
+      <div class="view-info d-flex align-items-center">
+        <p [innerHTML]="viewData.field_299"></p>
+        <div class="mail-sec">
+          <i>
+            <img src=".././../../../assets/img/icons/email-icon.svg" alt="icon" />
+          </i>
+        </div>
+      </div>
+    </div>
+    <div class="popup_btn">
+      <button class="cstm_btn" (click)="disclaimer()">3D MODEL DISCLAIMER</button>
+    </div>
+  </div>
+
+  <!--<div id="demo" style="position:relative">
+
+   <img height="45px" width="45px"
+      src="https://cdn.iconscout.com/icon/premium/png-256-thumb/jpeg-image-file-document-extension-filetype-39818.png"> 
+  </div>-->
+
+</div>
+
+
+<div id="disclaimer" class="modalDialog view-disclaim">
+  <div class="modal-content">
+
+    <div class="modal-body">
+      <div class="modal_inner_text">
+        <div class="close-btn" (click)="disclaimer()">
+          <a><i> <img src="assets/img/icons/close.svg" alt="icon" /> </i></a>
+        </div>
+        <p>This 3D model was prepared as at June 2022 for the information of prospective purchasers only and is subject
+          to
+          change.
+          Images contained within are indicative only and not intended to be a true representation of the finished
+          development.
+          Changes may be made to all aspects of the development including, without limitation, to the layout,
+          composition,
+          streetscape, dimensions, specifications, fittings and finishings) during development without notice.
+          Prospective
+          purchasers should continue to make and rely on their own inquiries. Mirvac does not give any warranty or make
+          any
+          representations, expressed or implied in relation to the information in this 3D model (including without
+          limitation its
+          accuracy, reliability, completeness or suitability) and Mirvac does not accept any liability (including
+          without
+          limitation, liability in negligence) for any loss, damage or costs (including consequential damage) relating
+          to
+          any use
+          of the information. Views and view corridors may be affected by other developments and planning issues outside
+          of
+          Mirvac’s control. Purchasers should make their own enquiries as to the extent and possibility of any future
+          development
+          which may impact on views.</p>
+        <p>The outline of the future development depicted as ‘OzCare’ does not form part of Mirvac’s development site
+          and
+          is not
+          the responsibility of or under the control of Mirvac. The outline is indicative only based on information
+          available to
+          Mirvac as at February 2022, and is not to be relied on as a representation of the final location, massing,
+          height,
+          design or number of buildings of the Ozcare development. The Ozcare development may not be complete at the
+          time
+          of
+          settlement of the Isle development.</p>
+        <p>Design options for ‘Future Development Stage 3’ and ‘Future Development Lake’ are indicative only and are
+          subject to
+          change based on factors such as market conditions and development approvals. Changes may be made to all
+          aspects
+          of the
+          developments including, without limitation, to the layout, composition, streetscape, dimensions, massing,
+          height
+          and
+          number of buildings during development without notice. These design options/schemes are not representative of
+          the final
+          design which is unknown at this time. The timing for these developments is unknown. The outline of these areas
+          indicates
+          the general outline of the developable footprint for the ground floor which is permitted by the relevant
+          planning
+          controls. Development may be permitted outside the ground floor footprint subject to receipt of development
+          approval.
+          Above the ground floor, development may, subject to receipt of planning approval, also extend beyond the
+          footprint and
+          extend over the area of future privately owned public open space.</p>
+        <p>The outline of development depicted as ‘Future Development Stage 3’ is indicative only based on early design
+          options/approvals. As at 17 June, 2022, the Newstead and Teneriffe Waterfront Neighbourhood Plan indicated
+          that
+          this
+          area can be developed up to RL 55m (approx. 15 storeys) high as a “Code Assessable” Development Application.
+          Mirvac has
+          depicted the development at 25 levels (same as Quay and Isle), but may explore a range of development and
+          height
+          options
+          for the site including options above or below 25 storeys. Any development application for a building over RL
+          55m
+          (approx. 15 levels) will require an “Impact Assessable” Development Application.</p>
+        <p>The images for Quay Waterfront Newstead and LIV Anura are artist’s impressions based on design documentation
+          as
+          at May
+          2022. Architecture and landscaping are indicative only and subject to change.</p>
+      </div>
+
+    </div>
+  </div>
+</div>

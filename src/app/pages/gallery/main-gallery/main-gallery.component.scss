@@ -1,0 +1,35 @@
+// @import '../../../../assets/css/base.scss';
+// @import '../../.././../assets/css/default.scss';
+
+// .galelry_slider {
+//   padding: 0;
+//   @media (max-width:1600px) {
+//     height: calc(100vh - 110px);
+//   }
+// }
+// .gallery-main {
+//   @media (min-width: 768px) {
+//     position: $relative;    
+//   }
+//   .slide {
+//     margin: 10px $auto 0;
+//     height: calc(50vh - 20px - 78px);
+//     @media (max-width:1600px){
+//       height: calc(50vh - 20px - 62px);
+//     }
+//     overflow: $hidden;
+//     img {
+//       cursor: $pointer;
+//       height: 100%;
+//       object-fit: $cover;
+//     }
+//   }
+// }
+
+// ::ng-deep {
+//   .slick-slide.slick-active,
+//   .slick-slide.slick-cloned {
+//     margin: $auto 10px;
+//     overflow: $hidden;
+//   }
+// }

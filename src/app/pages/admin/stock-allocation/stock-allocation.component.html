@@ -1,0 +1,30 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Apartment No.</th>
+                <th>Agent</th>
+                <th>Company</th>
+
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody *ngIf="displayTable">
+            <tr *ngFor=" let items of stockAllocatonList;let i = index">
+                <td>{{ items?.level }}</td>
+                <td>{{ items?.apartmentNo}}</td>
+                <td>{{ items?.agentName }}</td>
+                <td>{{ items?.company }}</td>
+
+
+                <td>
+                    <span>Delete</span>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
