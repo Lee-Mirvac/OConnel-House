@@ -2,7 +2,7 @@
 // @import "../../gallery/main-gallery/main-gallery.component.scss";
 @import "../model-three-d/model-three-d.component.scss";
 .floorplan_sec {
-  background: rgba(227, 209, 196, 0.7);
+  background: $primary-color;
   @include flexbox;
   @include align-items(center);
   @media (max-width: 1599px) {
@@ -16,7 +16,7 @@
       color: $secondary-color;
     }
     .slide {
-      background: $cream;
+      background: $primary-color;
       padding: 15px;
     }
     &.floor-apartment {

@@ -25,7 +25,7 @@
   transition: all 0.5s ease-in-out; 
   width: 260px;
   // background: $light-blue1;
-  background: $primary-color;
+  background: $secondary-color;
   padding: 20px 2px 20px 15px;
   transform: translateX(100%);
   @media (max-width: 991px) {     
@@ -112,6 +112,7 @@
         letter-spacing: 0.2em;
         font-size: $f11 - 1;         
         line-height: 1.5;
+        color: $primary-color;
         @media screen and (min-width: 992px) and (max-width: 1199px) {
           padding: 0;
         }

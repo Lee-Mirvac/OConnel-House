@@ -62,6 +62,10 @@
         font-family: 'UNTITLEDSANS-LIGHT';
         color: $secondary-color;
     }
+    h2 {
+        font-family:$ogg_light;
+        font-weight:$font-bold;
+    }
 }
 .button-container {
     border: 2px solid ;

@@ -18,9 +18,10 @@ export class AppComponent implements OnInit {
   displayHeader: boolean = true;
   showBtn: boolean = false;
   showHeaderToggle=true;
+  addCssToHamburger=false;
   constructor(private router: Router, private apartmentService: ApartmentService,) {
     this.apartmentService.getFloarPlainImage().subscribe((res) => {
-      if (typeof res === 'object') {
+      if (typeof res === 'object') { 
         document.getElementById('step3')?.classList.add('main-sec-step3-view');
         document.getElementById('active')?.classList.add('active');
         this.modalClassChange = false;
@@ -50,6 +51,7 @@ export class AppComponent implements OnInit {
 
         if (data) {
           if (data.includes('location')) {
+            this.addCssToHamburger=true
             this.displayHeader = false;
             this.showBtn = true;
             this.modalClassChange = false;
@@ -77,6 +79,7 @@ export class AppComponent implements OnInit {
   }
   toggelHeader() {
     this.displayHeader = !this.displayHeader;
+    this.addCssToHamburger =!this.addCssToHamburger
     if (document.getElementById("hemp")?.classList.contains('active')) {
       document.getElementById("hemp")?.classList.remove('active')
     } else {
