@@ -3,8 +3,8 @@
 .hdr-main {
     width: 100%;
     padding: 14px 60px;    
-    background: rgb(89, 133, 167);
-    background: linear-gradient(270deg, #5985a7 0%, #d3a08d 26%, #5985a7 80%);    
+    background:$primary-color;
+    background: linear-gradient(270deg, #ffefc7 0%, #ffefc7 26%, #ffefc7 80%);    
     @include flexbox;
     @include align-items (center);
     position: $fixed;
@@ -86,11 +86,11 @@
                 li {
                     a,span {
                         font-size: $f14+1;
-                        color: $white;
+                        color: $secondary-color;
                         text-align: $center;
                         padding: 10px 13px;
                         text-decoration: $none;
-                        font-weight: $font-extrabold;
+                        font-weight: $font-bold;
                         font-family: $font-SweetSans;
                         line-height: 24px;
                         align-items: $center;
@@ -106,7 +106,7 @@
                         &::before {
                             content: '';
                             position: $absolute;
-                            background: $sky-blue;
+                            background: $secondary-color;
                             width: 80%;
                             height: 3px;
                             bottom: -14px;
@@ -148,7 +148,7 @@
 
                     .sub-menu {
                         left: 0;
-                        background-color: $light-orange;
+                        background-color: $secondary-color;
                         width: 100%;
                         z-index: 1;
                         text-align: $center;
@@ -188,7 +188,7 @@
                         }
                         li {
                             a,span {
-                                color: $base-color;
+                                color: $primary-color;
                                 text-decoration: $none;
                                 padding: 15px 18px;
                                 @media (max-width: 1600px) {
@@ -198,8 +198,13 @@
                                     padding: 6px 10px;
                                 }
                                 &::before {
-                                    background: $base-color;
+                                    background: $white;
                                     bottom: -1px;
+                                }
+                            }
+                            span {
+                                &.active{
+                                    color: $white;
                                 }
                             }
                         }
@@ -222,7 +227,8 @@
                         left: 0;
                         width: 100%;
                         padding: 10px;
-                        background: $light-blue1;
+                        // background: $light-blue1;
+                        background: $primary-color;
                         height: calc(100% - 50px);
                         overflow-x: $hidden;
                         overflow-y: $auto;
@@ -264,7 +270,7 @@
 .hamburger_menu {
     margin-left: 10px;
     background-color: $transparent;
-    border: 1px solid $white;
+    border: 1px solid $secondary-color;
     @include flexbox;
     @include align-items (center);
     border-radius: 50%;
@@ -280,7 +286,7 @@
         height: 24px;
         width: 24px;
         path {
-            stroke: $white;
+            stroke: $secondary-color;
         }
         
     }   
@@ -329,7 +335,7 @@
 
 .home_title{
     width: 219px;
-    color: $white;
+    color: $secondary-color;
     font-size: larger;
     cursor: pointer;
     /* font-family: 'UNTITLEDSANS-LIGHT'; */

@@ -55,8 +55,9 @@
 .modal-body {
   position: $relative;
   padding: 20px;
-  border-radius: 0;
-  background: $light-blue;
+  border-radius: 50px;
+  // background: $light-blue;
+  background: $secondary-color;
   height: 100%;
 }
 .close {
@@ -127,8 +128,10 @@
   }
   .modal-body {
     padding: 30px;
+    text-align: center;
     p{
-      text-align: justify;
+      text-align: center;
+      color: $white;
     }
   }
 } 

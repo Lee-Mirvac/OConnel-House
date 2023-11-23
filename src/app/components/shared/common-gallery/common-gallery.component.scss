@@ -5,7 +5,8 @@
 
 ::ng-deep {
   .lg-container .lg-outer {
-    background: $rounded_color;
+    // background: $rounded_color;
+    background: $primary-color;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -87,6 +88,7 @@
       color:$white;
       line-height: 1;
       width: 100%;
+      text-align: center;
       small {
         font-size: $f10 - 2;
         color: $white;
@@ -99,10 +101,11 @@
       }
     }
     h6 {
-      margin:10px 0 0;
+      margin:0px 0 10px;
       font-size: $f16;
       text-align: $center;
       font-weight: $font-bold;
+      color:$secondary-color;
     }
   }  
 }
