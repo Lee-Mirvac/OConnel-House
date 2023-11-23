@@ -144,7 +144,7 @@ label {
   font-family: $untitledsans-light;
   font-weight: $font-regular;
   font-size: $f14;
-  color: $base-color;
+  color: $secondary-color;
 }
 .btn {
   width: 100%;
@@ -227,7 +227,7 @@ label {
 }
 select,
 select.form-control {
-  background: $light-blue url(../img/icons/down_arrow_orange.svg);
+  background: transparent url(../img/icons/down_arrow_orange.svg);
   background-repeat: no-repeat;
   background-position: 97% center;
   background-size: 24px;
@@ -239,13 +239,14 @@ select.form-control {
   outline: $none !important;
   font-size: $f14;
   text-align: center;
-  border: 0;
+  border: 2px solid $secondary-color;
   min-height: 50px;
   border-radius: 50px;
+  color: $secondary-color;
 }
 select option {
-  background: $light-blue;
-  color: $base-color;
+  background: $secondary-color;
+  color: $white;
   border: 0;
 }
 select.counrty_code {
@@ -618,10 +619,12 @@ input[type="checkbox"] {
     @include justify-content(center);
     padding: 17px 20px;
     position: $fixed;
-    top: calc(50% - 30px);
+    // top: calc(50% - 30px);
+    top: calc(0px + 360px/2 - 30px);
     width: 360px;
     cursor: $pointer;
     color: $primary-color;
+    border-radius:  0 0 25px 0;
     @media (max-width: 575px) {
       right: 47.5%;
       padding: 14px 20px;
@@ -795,6 +798,7 @@ input[type="checkbox"] {
       .btn {
         &.active {
           background: $white;
+          color: $secondary-color;
         }
       }
     }
@@ -970,7 +974,7 @@ input[type="checkbox"] {
   //   margin: $auto;
   li {
     width: 100%;
-    border-bottom: 1px solid $base-color;
+    border-bottom: 1px solid $secondary-color;
     padding: 25px 5px 10px;
     cursor: $pointer;
     &:hover {
@@ -1002,6 +1006,7 @@ input[type="checkbox"] {
   font-weight: $font-regular;
   font-size: $f14;
   cursor: $pointer;
+  color: $secondary-color;
 }
 .result-sec {
   @include justify-content(space-between);
@@ -1060,6 +1065,7 @@ input[type="checkbox"] {
     // max-width: 44px;
     font-family: $untitledsans-light;
     font-size: $f14;
+    color: $secondary-color;
     &:last-child {
       padding-right: 0;
       // min-width: 80px;
@@ -1091,7 +1097,7 @@ input[type="checkbox"] {
 // }
 .type-result {
   @include justify-content(space-between);
-  border-bottom: 1px solid $base-color;
+  border-bottom: 1px solid $secondary-color;
   padding: 40px 0 15px;
   margin: 0 0 10px;
   @media (max-width: 991px) {
@@ -1109,7 +1115,7 @@ input[type="checkbox"] {
 .type-detail {
   margin: 0 0 10px 0;
   li {
-    border-bottom: 1px solid $base-color;
+    border-bottom: 1px solid $secondary-color;
     @include justify-content(space-between);
     padding: 8px 0;
     @media (min-width: 1400px) and (max-width: 1800px) {
@@ -1122,6 +1128,7 @@ input[type="checkbox"] {
   @include align-items(center);
   font-size: $f16;
   font-weight: $font-bold;
+  color: $secondary-color;
   i {
     padding: 0 15px 0 0;
     @media (max-width: 767px) {

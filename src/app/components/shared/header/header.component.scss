@@ -168,7 +168,7 @@
                         }
                         @media (max-width:991px) {
                             position: $relative;
-                            margin: 0;
+                            margin: 0;                            
                         }                        
                         &.highLight {
                             display: $none;
@@ -184,7 +184,8 @@
                         }
                         @media (max-width:991px) {
                             height: $auto;
-                            background-color: $light-blue;
+                            // background-color: $light-blue;
+                            background-color: $secondary-color;
                         }
                         li {
                             a,span {
@@ -200,11 +201,40 @@
                                 &::before {
                                     background: $white;
                                     bottom: -1px;
+                                    @media (min-width:1200px) {
+                                        opacity: 0;
+                                    }
                                 }
                             }
                             span {
                                 &.active{
                                     color: $white;
+                                }
+                            }
+                           
+                                &:not(:last-child) {
+                                    a,span {
+                                        &::before {
+                                            @media (min-width:1200px) {
+                                            background: $primary-color;                                  
+                                            width: 3px;
+                                            height: 20px;
+                                            right: 0;
+                                            margin-left: auto;
+                                            margin-right: 0;
+                                            bottom: calc(50% - 20px/2);
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                                &:last-child {
+                                    a,span {
+                                        &::before {
+                                            @media (min-width:1200px) {
+                                               opacity: 0;
+                                        }
+                                    }
+                                    }
                                 }
                             }
                         }
@@ -245,7 +275,7 @@
                         }
                         a,span {
                             padding: 10px;
-                            color: $base-color;
+                            color: $secondary-color;
                             @include flexbox;
                             @include align-items (center);
                             @include justify-content (space-between);

@@ -105,6 +105,10 @@ iframe {
       scrollbar-color: #e3d1c4 transparent;
       height:$auto;
       margin:1rem 0;
+      @media (min-width:1200px) {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
       @media (min-width:992px) and (max-width:1199px){
         
         max-height: calc(100% - (1.75rem * 1) - 50px);
