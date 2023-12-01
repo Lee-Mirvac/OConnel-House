@@ -43,7 +43,9 @@
     }
 
     .hdr-right {
-        width: 7%;
+        // width: 7%;
+        width: 90px;
+        margin-left: auto;
         text-align: right;
         @media (max-width: 991px) {
             width: 50%;
@@ -77,6 +79,9 @@
         width: 83%;
         @media (max-width: 991px) {
             width: 50%;
+        }
+        @media (max-width:767px) {
+            width: auto;
         }
         .main-menu {
             @media (max-width: 991px) {
@@ -371,4 +376,8 @@
     /* font-family: 'UNTITLEDSANS-LIGHT'; */
     font-family:$ATSackersCornwel_Light;
     font-weight:$font-bold;
+    @media (max-width:767px) {
+        width: 170px;
+        font-size: medium;
+    }
 }

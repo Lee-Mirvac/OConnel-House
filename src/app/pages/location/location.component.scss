@@ -2,7 +2,8 @@
 
 .location-main {
   height: 100vh;
-  background: $light-blue1;
+ // background: $light-blue1;
+  background: rgba($primary-color , 0.25);
   position: $fixed;
   top: 0; left: 0;
   width: 100%;

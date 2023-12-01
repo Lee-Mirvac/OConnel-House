@@ -99,7 +99,7 @@ iframe {
     .modal-body {
       padding-top: 50px;
       display: $block; 
-      max-height: calc(100% - (1.75rem * 2) - 50px);
+      max-height: calc(100% - (1.75rem * 2));
       overflow-y: $auto;
       scrollbar-width: thin;
       scrollbar-color: #e3d1c4 transparent;
