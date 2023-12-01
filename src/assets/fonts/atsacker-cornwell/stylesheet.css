@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'ATSackersCornwell';
+    src: url('ATSackersCornwell-Light.eot');
+    src: url('ATSackersCornwell-Light.eot?#iefix') format('embedded-opentype'),
+        url('ATSackersCornwell-Light.woff2') format('woff2'),
+        url('ATSackersCornwell-Light.woff') format('woff'),
+        url('ATSackersCornwell-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ATSackersCornwell Med';
+    src: url('ATSackersCornwell-Medium.eot');
+    src: url('ATSackersCornwell-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ATSackersCornwell-Medium.woff2') format('woff2'),
+        url('ATSackersCornwell-Medium.woff') format('woff'),
+        url('ATSackersCornwell-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

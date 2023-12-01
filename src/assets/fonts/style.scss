@@ -38,3 +38,27 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'ATSackersCornwell';
+  src: url('../fonts/atsacker-cornwell/ATSackersCornwell-Light.eot');
+  src: url('../fonts/atsacker-cornwell/ATSackersCornwell-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Light.woff2') format('woff2'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Light.woff') format('woff'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ATSackersCornwell Med';
+  src: url('../fonts/atsacker-cornwell/ATSackersCornwell-Medium.eot');
+  src: url('../fonts/atsacker-cornwell/ATSackersCornwell-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Medium.woff2') format('woff2'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Medium.woff') format('woff'),
+      url('../fonts/atsacker-cornwell/ATSackersCornwell-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

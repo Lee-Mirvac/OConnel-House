@@ -16,7 +16,7 @@
       color: $secondary-color;
     }
     .slide {
-      background: $primary-color;
+      background: rgba($white , 0.5);
       padding: 15px;
     }
     &.floor-apartment {

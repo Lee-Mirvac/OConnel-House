@@ -619,12 +619,12 @@ input[type="checkbox"] {
     @include justify-content(center);
     padding: 17px 20px;
     position: $fixed;
-    // top: calc(50% - 30px);
-    top: calc(0px + 360px/2 - 30px);
+    top: calc(50% - 30px);
+    // top: calc(0px + 360px/2 - 30px);
     width: 360px;
     cursor: $pointer;
     color: $primary-color;
-    border-radius:  0 0 25px 0;
+   
     @media (max-width: 575px) {
       right: 47.5%;
       padding: 14px 20px;
@@ -703,7 +703,7 @@ input[type="checkbox"] {
     // }
     h2 {
       text-align: $center;
-      font-family: $ogg_light;
+      font-family: $ATSackersCornwel_Light;
       font-weight: $font-light;
       margin: 0 0 30px;
       color: $secondary-color;
