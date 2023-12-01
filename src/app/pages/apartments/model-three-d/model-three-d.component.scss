@@ -97,7 +97,7 @@ iframe {
         }
       }
     .modal-body {
-      padding-top: 50px;
+      padding-top: 0px;
       display: $block; 
       max-height: calc(100% - (1.75rem * 2));
       overflow-y: $auto;
@@ -110,11 +110,9 @@ iframe {
         padding-right: 80px;
       }
       @media (min-width:992px) and (max-width:1199px){
-        
-        max-height: calc(100% - (1.75rem * 1) - 50px);
+         max-height: calc(100% - (1.75rem * 1) - 50px);
       }
-      @media (min-width:1200px) and (max-width:1440px){
-         
+      @media (min-width:1200px) and (max-width:1440px){         
         max-height: calc(100% - (1.75rem * 2) - 50px);
       }
       @media (max-width:991px){ 
@@ -125,7 +123,14 @@ iframe {
         margin-bottom: 0;
       }
     }
-      
+    .close-btn {
+      position: sticky;
+      top: 0;
+      right: 0;
+      background: $secondary-color;
+      text-align: right;
+      padding-top: 20px;
+  }
     }
   }
 

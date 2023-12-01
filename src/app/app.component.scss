@@ -91,7 +91,7 @@
         right: 5px;
     }
     @media (min-width:1280px) and (max-width:1366px) {
-        bottom: 20px;
+        bottom: calc(8px + 34px/2);
         right: 10px;
     }
     

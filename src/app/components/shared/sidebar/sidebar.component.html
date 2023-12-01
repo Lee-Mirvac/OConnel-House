@@ -39,9 +39,13 @@
 </aside>
 
 <aside class="right-sidebar apartment-sidebar" *ngIf="apartmentSidebar">
+  <i class="circle-icon mobile_toogle" (click)="myFunction('hidesidebar')">
+    <img src="assets/img/icons/left-arrow.svg" alt="left-arrow" width="26" />
+  </i>
   <div class="close-btn" *ngIf="displayCloseBtn" (click)="resetStepbar3()">
     <a><i> <img src="assets/img/icons/close_orange.svg" alt="icon" /> </i></a>
   </div>
+
   <div class="show-sidebar-inner" (click)="myFunction('hidesidebar')">
     <span class="show-txt">APARTMENT SELECTOR</span>
     <span class="hide-txt">Hide SELECTOR</span>
@@ -51,6 +55,7 @@
   </div>
   <form>
     <div class="step step1" *ngIf="sidebarStep1">
+
       <div class="step-content">
         <h2>{{ title }}</h2>
 

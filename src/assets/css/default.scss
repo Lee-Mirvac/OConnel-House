@@ -613,7 +613,7 @@ input[type="checkbox"] {
     // background: $light-blue;
     background: $secondary-color;
     transform: rotate(90deg);
-    right: 68%;
+    right: 68.25%;
     @include flexbox;
     @include align-items(center);
     @include justify-content(center);
@@ -712,6 +712,11 @@ input[type="checkbox"] {
       }
       @media (max-width: 991px) {
         margin: 0 0 15px;
+        overflow-wrap: break-word;
+      }
+      @media (max-width: 767px) {
+        max-width: 80%;
+        margin:0 auto 15px auto;
       }
        @media (min-width: 1400px) and (max-width: 1800px) {
         margin: 0 0 10px;
@@ -1214,4 +1219,21 @@ input[type="checkbox"] {
 
 .rounded-50{
   border-radius:50px;
+}
+
+.main {
+  &.opened{
+    .right-sidebar {
+      @media (max-width:767px) {
+        width: 100%;
+      }
+      .show-sidebar-inner {
+        @media (max-width:767px) {
+        visibility: $hidden;
+        opacity: 0;
+        transition:all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
 }
