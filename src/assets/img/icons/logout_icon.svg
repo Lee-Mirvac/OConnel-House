@@ -1,5 +1,20 @@
-<svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18.8623 13.7401V6.47725C18.8623 3.52827 21.2658 1.13765 24.2307 1.13765H47.4939C50.4588 1.13765 52.8623 3.52827 52.8623 6.47725V40.7981C52.8623 43.747 50.4588 46.1376 47.4939 46.1376H24.2307C21.2658 46.1376 18.8623 43.747 18.8623 40.7981V34" stroke="black" stroke-width="2"/>
-<path d="M0 24H33" stroke="black" stroke-width="2"/>
-<path d="M27 17L34 24L27 31" stroke="black" stroke-width="2"/>
+<!-- <svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.8623 13.7401V6.47725C18.8623 3.52827 21.2658 1.13765 24.2307 1.13765H47.4939C50.4588 1.13765 52.8623 3.52827 52.8623 6.47725V40.7981C52.8623 43.747 50.4588 46.1376 47.4939 46.1376H24.2307C21.2658 46.1376 18.8623 43.747 18.8623 40.7981V34" stroke="#bb6228" stroke-width="2"/>
+<path d="M0 24H33" stroke="#bb6228" stroke-width="2"/>
+<path d="M27 17L34 24L27 31" stroke="#bb6228" stroke-width="2"/>
+</svg> -->
+
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100"/>
+<g clip-path="url(#clip0_0_1)">
+<path d="M50 97C75.9574 97 97 75.9574 97 50C97 24.0426 75.9574 3 50 3C24.0426 3 3 24.0426 3 50C3 75.9574 24.0426 97 50 97Z" stroke="#BB6228" stroke-width="6"/>
+<path d="M34 36.6024V29.3396C34 26.3906 36.4035 24 39.3684 24H62.6316C65.5965 24 68 26.3906 68 29.3396V63.6604C68 66.6093 65.5965 69 62.6316 69H39.3684C36.4035 69 34 66.6093 34 63.6604V56.8624" stroke="#BB6228" stroke-width="6"/>
+<path d="M19 46H52" stroke="#BB6228" stroke-width="6"/>
+<path d="M46 39L53 46L46 53" stroke="#BB6228" stroke-width="6"/>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
 </svg>

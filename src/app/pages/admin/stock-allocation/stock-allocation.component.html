@@ -1,30 +1,116 @@
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Level</th>
-                <th>Apartment No.</th>
-                <th>Agent</th>
-                <th>Company</th>
+<div class="re_pon_cstmthem">
+    <div class="main-sec admin-agent-main admin_Customtheme">
+        <div class="container-fluid admin_table-div">
+            <div class="admin-agent-sec">
+                <h1 class="h5 text-uppercase">Project:Mirvac ISLE</h1>
+                <div class="agent-tbl stock_table table-responsive">
+                    <p-table #dt styleClass="p-datatable-striped" [value]="stockAllocatonList" [rows]="10"
+                        [paginator]="true" [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+                        [totalRecords]="total_records" [pageLinks]="3" *ngIf="displayTable">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 3rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th>Level
+                                    <div class="filter_th">
+                                        <p-columnFilter field="apartmentLot" matchMode="in" display="menu"
+                                            [showMatchModes]="false" [showApplyButton]="false" [showOperator]="false"
+                                            [showAddButton]="false">
 
-                <th></th>
+                                            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                                <p-multiSelect [ngModel]="value" [options]="filterLevel"
+                                                    placeholder="Any" (onChange)="filter($event.value)"
+                                                    optionLabel="level">
+                                                    <ng-template let-option pTemplate="item">
+                                                        <div class="p-multiselect-representative-option">
+                                                            <span class="p-ml-1">{{ option.level }}</span>
+                                                        </div>
 
-            </tr>
-        </thead>
-        <tbody *ngIf="displayTable">
-            <tr *ngFor=" let items of stockAllocatonList;let i = index">
-                <td>{{ items?.level }}</td>
-                <td>{{ items?.apartmentNo}}</td>
-                <td>{{ items?.agentName }}</td>
-                <td>{{ items?.company }}</td>
+                                                    </ng-template>
+                                                </p-multiSelect>
+                                            </ng-template>
+
+                                        </p-columnFilter>
+                                    </div>
+                                </th>
+                                <th>Apartment No. <p-sortIcon field="appartmentNo">
+                                    </p-sortIcon>
+                                </th>
+                                <th class="agent_filtr">Agent&nbsp;&nbsp;
+                                    <div class="filter_th custom_th">
+                                        <div class="filter_btn_icn">
+                                            <ng-select [items]="filterAgentList" bindLabel="firstName" bindValue="id"
+                                                [(ngModel)]="selectedFilterItems" [searchable]="true"
+                                                (clear)="clearFilter()" [placeholder]="placeholderText"
+                                                (change)="filterAgent(dt,$event)">
+                                            </ng-select>
+
+                                        </div>
+                                    </div>
+                                    <!-- <p-sortIcon field="agent"></p-sortIcon>
+                                    <span>&nbsp;&nbsp;(select for all visible apartments)</span> -->
+                                </th>
+                                <th>Company
+                                    <!-- <p-sortIcon field="company"></p-sortIcon> -->
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-product let-i="rowIndex">
+                            <tr>
+                                <td>
+                                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                                </td>
+                                <td>{{product.apartmentLot.level}}</td>
+                                <td>{{product.appartmentNo}}</td>
+                                <td>
+                                    <ng-multiselect-dropdown [placeholder]="'Select Agent'"
+                                        [settings]="dropdownSettings" [data]="agentList" [(ngModel)]="selectedItems[i]"
+                                        class="cstom_dropdown" id="agentList"
+                                        (onSelect)="onItemSelect($event, product.id)"
+                                        (onSelectAll)="onSelectAll($event)">
+                                    </ng-multiselect-dropdown>
+
+                                </td>
+
+                                <td>{{product.company}}</td>
 
 
-                <td>
-                    <span>Delete</span>
-                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
 
-            </tr>
 
-        </tbody>
-    </table>
+                </div>
+            </div>
+            <div class="table_actions_btn" id="tableAction">
+                <button (click)=" addSelectedLots('addStock')">Add</button>
+                <button (click)="deleteSelectedLots('deleteStock')">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal_delete modal_stock_table modal_disclaimer" *ngIf="showModal">
+    <div class="modal_dialogue">
+        <div class="modal-content">
+            <button class="close_btn btn-transparent">
+                <img src="../../../../assets/img/icons/close.svg" alt="close" (click)="showModal = !showModal" />
+            </button>
+            <h2>Please confirm your selection</h2>
+            <!-- <h2 *ngIf="editMode">Edit details of this agent</h2> -->
+            <p>You are {{showText}} {{stockCount}} {{apartmentText}}</p>
+
+            <div class="table_actn_btn">
+                <button class="btn btn-primary btn-lg delete-btn" (click)="reStocks()">
+                    Ok
+                </button>
+                <button class="btn btn-primary btn-lg delete-btn" (click)="cancelStockAllocation()">
+                    Cancel
+                </button>
+            </div>
+
+        </div>
+    </div>
 </div>

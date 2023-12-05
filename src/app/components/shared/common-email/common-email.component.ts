@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { REGEX, APIS } from 'src/app/common/constants';
@@ -16,11 +16,11 @@ export class CommonEmailComponent implements OnInit {
   sendEmailItems: Array<any> = [];
   attachments: Array<any> = [];
   pdfImg = 'assets/img/pdf1.png'
-  addAgent!: any;
+  addAgent!: FormGroup;
   submitted: boolean = false;
   showRecords: boolean = false;
   newArray: Array<any> = [];
-  constructor(private fb:FormBuilder, private http: HttpService,
+  constructor(private fb: FormBuilder, private http: HttpService,
     private swal: SweetService, private toastr: ToastrService, private commonService: CommonService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {      Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { APIS, REGEX } from 'src/app/common/constants';
 import { CommonService } from 'src/app/core/services/common.service';

@@ -1,0 +1,152 @@
+@import './base.scss';
+.login-bg {
+    position: $fixed;
+    z-index: -1;
+    width: 100%;
+    height: calc(100vh - 80px);
+    img {
+        width: 100%;
+        height: 100vh;
+    }
+}
+// css edited 20-07 for amin panel login
+.admin_panel {
+    .admin_screen {
+        background: $white;
+        max-width: 500px;
+        width: 500px;
+        padding: 40px;
+        font-family: $inter;
+        @media (min-width: 1600px){
+        //    max-width: 700px;width: 700px;padding: 65px 75px 75px;
+        }
+        @media (max-width: 767px){
+            max-width: 90%;width: 90%;
+            padding:25px 20px;
+        }
+        @media (min-width: 1200px) and (max-width: 1400px){
+            padding:45px;
+        }
+        h1 {
+            font-family: $inter;
+            color: $black-500;
+            line-height: 40px;
+            font-weight: $font-regular;
+            text-align: $center;
+            margin: 0 0 30px;
+            @media (max-width: 1366px){
+                line-height: 35px;
+                margin-bottom: 20px;
+            }
+        }
+        .btn {
+            width: 100%;
+            text-transform: $uppercase;
+            border-radius: 50px;
+        }
+        form {
+            .form-group {
+                @media (min-width:1200px) {
+                    margin-bottom: 25px;
+                }
+                label {
+                    font-size: $f16;
+                    color: $black;
+                    display: $block;
+                    font-weight: $font-semibold;
+                    margin-bottom: 0.5rem;
+                    font-family: $inter;
+                }
+                .input_field {
+                    position: $relative;
+                    .show_pwd {
+                        transform: translateY(-50%);
+                        position: $absolute;
+                        right: 10px;
+                        top: 50%;
+                        cursor: $pointer;
+                    }
+                    .form-control {
+                        padding-right: 45px;
+                    }
+                }
+                .form-control {
+                    background: transparent;
+                    border: 1px solid $black-500;
+                    width: 100%;
+                    min-height: 50px;
+                    color:  $black-500;
+                    font-size: $f16 ;
+                    font-weight: $font-regular;
+                    outline: 0 !important;
+                    padding: 14px;
+                    font-family: $inter;
+                    line-height: 20px;
+                    letter-spacing: 0.1em;
+                    text-transform: $none;
+                    transition: all 0.5s ease-in-out;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    text-align: $left;
+                }
+            }
+            .forgot-sec {
+                margin: 25px  0px;
+                .custom-chkbox {
+                    label {
+                        font-size: $f16;
+                        color: $black;
+                        font-weight: $font-regular;
+                        &:before {
+                          margin: -6px 10px 0 0;
+                        }
+                    }
+                   input:checked + label:after {
+                        top: 0px;
+                        left: 9px;
+                        width: 4px;
+                        height: 12px;
+                        border: solid $grey-400;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+// Error
+.is-invalid {
+    border-color: #ff0000!important;
+}
+.error {
+    color: #ff0000!important;
+    font-weight: $font-regular;
+}
+
+
+.front-screen {
+    min-height: calc(100vh - 74.44px);
+    height: calc(100vh - 74.44px);
+    @include flexbox;
+    align-items: $center;
+    justify-content: $center;
+    @media (min-width:1680px){
+        min-height: calc(100vh - 80px);
+        height: calc(100vh - 80px);
+    }
+    @media (max-width: 767px){
+      .front-screen{margin: 20px 0;}    
+    }
+}
+.forgot-sec {
+    display: $flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 45px 0 35px;
+}
+
+.mt-0 {
+    margin-top: 0!important;
+}

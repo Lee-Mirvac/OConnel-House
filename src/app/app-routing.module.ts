@@ -6,6 +6,7 @@ import { MasterPlanComponent } from './pages/master-plan/master-plan.component';
 import { LocationComponent } from './pages/location/location.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { ROUTE_DEFINATION } from './common/constants';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 const appRoutes=ROUTE_DEFINATION?.APP_ROUTING
 const routes: Routes = [
@@ -17,6 +18,12 @@ const routes: Routes = [
   {
     path:appRoutes.HOME,
     component: HomeComponent,
+  },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./pages/admin/admin.module').then((m) => m.AdminModule),
   },
   {
     path:appRoutes.LOCATION,

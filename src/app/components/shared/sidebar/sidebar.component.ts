@@ -14,6 +14,7 @@ import {
 } from 'src/app/common/constants';
 import { AmenityService } from 'src/app/core/services/amenity.service';
 import { ApartmentService } from 'src/app/core/services/apartment.service';
+import { CommonService } from 'src/app/core/services/common.service';
 import { FloorplanService } from 'src/app/core/services/floorplan.service';
 import { FloorplateService } from 'src/app/core/services/floorplate.service';
 import { HttpService } from 'src/app/core/services/http.service';
@@ -67,6 +68,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
   totalApartments: any;
   clientId: any;
   jsonData = [];
+  storeData: any;
+  sendLevel: any;
+  sendEmailData: any;
 
   constructor(
     private router: Router,
@@ -80,7 +84,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
     private viewService: ViewsService,
     private locationService: LocationService,
     private masterPlanService: MasterplanService,
-    private sidebarListService: SidebarService
+    private sidebarListService: SidebarService,
+    private commonService: CommonService
 
   ) {
     window.document.addEventListener("click_on_building", (e: any) => {
@@ -252,7 +257,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
           }
 
           if (
-            data.includes('location') 
+            data.includes('location') && !data.includes('stock-allocation') 
             // || data.includes('masterplan/aerial')
             // || data === 'masterplan'
           ) {
@@ -780,5 +785,53 @@ export class SidebarComponent implements OnInit, OnDestroy {
         });
       this.locationService.sendLocationID(value);
     }
+  }
+  navToEmail() {
+    let data = document.getElementById('file')
+    if (data) {
+      console.log(data)
+    }
+
+    // this.commonService.getEmailData().subscribe((res: any) => {
+    //   console.log(res)
+    //   if (res.length === 0) {
+    //      this.storeData = []
+    //   }
+    // })
+
+
+
+    let getEmailData: any = localStorage.getItem('emailData');
+
+    if (getEmailData) {
+      this.storeData = JSON.parse(getEmailData);
+      this.storeData.push({ level: this.sendLevel, img: this.sendEmailData })
+    } else {
+      this.storeData.push({ level: this.sendLevel, img: this.sendEmailData })
+
+
+
+    }
+    let newArray = [...new Map(this.storeData.map((item: any) => [item.level, item])).values()]
+    localStorage.setItem('emailData', JSON.stringify(newArray));
+
+    this.commonService.emailData(newArray)
+    //this.storeData.push({ level: this.sendLevel, img: this.sendEmailData });
+    //  this.getFileSize(this.sendEmailData)
+
+  }
+
+  getFileSize(url: any) {
+
+    var fileSize = '';
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send(null);
+    // if (http.status === 200) {
+    fileSize = http.getResponseHeader('content-length') || '';
+    console.log('fileSize = ' + fileSize);
+    console.log(fileSize)
+    // }
+    return fileSize;
   }
 }

@@ -44,10 +44,10 @@ export const APIS = {
     FILE: '/v1/file',
   },
   ADMIN: {
-    GET_STOCK_LIST: '/v1/admin/stocks/list'
-    // SEND_BROCHURE: '/v1/admin/sendBrochure',
-    // INFORMATION_MEMORANDUM: '/v1/user/IM',
-    // GET_DOCUMENTS: '/v1/user/logs',
+    GET_STOCK_LIST: '/v1/admin/stocks/list',
+    STOCK_LIST: '/v1/admin/stocks',
+    GET_LOTS_LIST: '/v1/admin/lots',
+    SEND_BROCHURE: '/v1/user/attachments'
   },
   PDF_FILES: '/v1/user/files',
   GET_PDF_BY_ID: '/v1/file/link',
@@ -219,8 +219,280 @@ export const HEADER = {
       src: '',
       link: '',
       id: 'video'
-    }
+    },
+    {
+      path: '/admin',
+      title: 'Admin',
+      src: '',
+      link: '',
+      isDisplay: false,
+      id: 'admin',
+      sub_menu: [
+        {
+          path: '/admin/agent-management',
+          title: 'Manage Agents',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/admin/stock-allocation',
+          title: 'Allocate Stock',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/admin/email',
+          title: 'Email',
+          src: '',
+          link: '',
+        },
+      ],
+    },
    
+  ],
+  LIST_MIRVAC:  [
+    {
+      path: '/apartments',
+      title: 'Apartments',
+      src: '',
+      link: '',
+      isDisplay: true,
+      id: 'apartments',
+      sub_menu: [
+        {
+          path: '/apartments/model',
+          title: '3D Model',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/floorplan',
+          title: 'Floorplans',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/floor-plate',
+          title: 'Floorplates',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/apartments/views',
+          title: 'Views',
+          src: '',
+          link: '',
+        },
+      ],
+    },
+    {
+      path: '/location',
+      title: 'Location',
+      src: '',
+      link: '',
+      isDisplay: true,
+      id: 'location',
+    },
+    {
+      path: '/masterplan',
+      title: 'MASTERPLAN',
+      src: '',
+      link: '',
+      id: 'masterplan',
+      isDisplay: true,
+      sub_menu: [
+        {
+          path: '/masterplan/aerial',
+          title: 'Aerial',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/masterplan/masterplan',
+          title: 'Masterplan',
+          src: '',
+          link: '',
+        },
+      ],
+    },
+    // {
+    //   path: '/finishes-selector',
+    //   title: 'Finishes selector',
+    //   src: '',
+    //   link: '',
+    //   id: '',
+    // },
+    {
+      path: '/gallery',
+      title: 'Gallery',
+      src: '',
+      link: '',
+      isDisplay: true,
+      id: 'gallery',
+      sub_menu: [
+        {
+          path: '/gallery/all',
+          title: 'All',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/gallery/exterior',
+          title: 'Exterior & Amenity',
+          src: '',
+          link: '',
+        },
+        // {
+        //   path: '/gallery/amenity',
+        //   title: 'Amenity',
+        //   src: '',
+        //   link: '',
+        // },
+        {
+          path: '/gallery/residences',
+          title: 'Residences',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/gallery/pavilions',
+          title: 'Pavilions',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/gallery/penthouses',
+          title: 'Penthouses',
+          src: '',
+          link: '',
+        },
+
+
+        // {
+        //   path: '/gallery/video',
+        //   title: 'Video',
+        //   src: '',
+        //   link: '',
+        // },
+      ],
+    },
+    {
+      path: '/amenity',
+      title: 'Amenity',
+      src: '',
+      link: '',
+      isDisplay: true,
+      id: 'amenity',
+      sub_menu: [
+        {
+          path: '/amenity/rooftop',
+          title: 'Rooftop',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/amenity/lounge',
+          title: 'Isle Lounge',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/amenity/gym',
+          title: 'Gym',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/amenity/ground',
+          title: 'Ground',
+          src: '',
+          link: '',
+        },
+      ],
+    },
+    {
+      path: '/admin',
+      title: 'Admin',
+      src: '',
+      link: '',
+      isDisplay: false,
+      id: 'admin',
+      sub_menu: [
+        {
+          path: '/admin/agent-management',
+          title: 'Manage Agents',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/admin/stock-allocation',
+          title: 'Allocate Stock',
+          src: '',
+          link: '',
+        },
+        {
+          path: '/admin/email',
+          title: 'Email',
+          src: '',
+          link: '',
+        },
+      ],
+    },
+    {
+      path: '/agent',
+      title: 'Agent',
+      src: '',
+      link: '',
+      isDisplay: false,
+      id: 'agent',
+      sub_menu: [
+        // {
+        //   path: '/agent/presentation',
+        //   title: 'Personalise Presentation',
+        //   src: '',
+        //   link: '',
+        // },
+        {
+          path: '/agent/email',
+          title: 'Email',
+          src: '',
+          link: '',
+        },
+      ],
+    },
+    // {
+    //   path: '/mirvac',
+    //   title: 'Mirvac',
+    //   src: '',
+    //   link: '',
+    //   id: 'mirvac',
+    //   sub_menu: [
+    //     {
+    //       path: '/mirvac/history',
+    //       title: 'History',
+    //       src: '',
+    //       link: '',
+    //     },
+    //     {
+    //       path: '/mirvac/news',
+    //       title: 'Mirvac Newstead History',
+    //       src: '',
+    //       link: '',
+    //     },
+    //     {
+    //       path: '/mirvac/quality',
+    //       title: 'Quality & Care',
+    //       src: '',
+    //       link: '',
+    //     },
+    //     {
+    //       path: '/mirvac/awards',
+    //       title: 'Awards',
+    //       src: '',
+    //       link: '',
+    //     },
+    //   ],
+    // },
   ],
 };
 

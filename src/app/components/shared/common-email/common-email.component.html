@@ -1,0 +1,93 @@
+<div class="main-sec admin-agent-main admin_Customtheme">
+    <div class="admin_docs_secn">
+        <div class="document_div email_doc_sec">
+
+            <div class="wrapper row">
+                <div class="flex-50 left_secn">
+                    <h2 class="h5 text-uppercase mt-0">Documents/attachments</h2>
+                    <div class="document_box" *ngIf="showRecords">
+                        <div class="docs_list d-flex" *ngFor="let items of sendEmailItems">
+                            <div class="thumbnail_col">
+                                <div class="thumbImg">
+                                    <span>
+                                        <img [src]="items.imgSrc" alt="" width="100%" /></span>
+                                </div>
+                                <div class="thumbnail_content">
+                                    <p>{{items.level}} </p>
+                                    <!-- <span>{{items.size}}</span> -->
+                                </div>
+                            </div>
+
+                            <button class="btn-transparent thumb_delete" (click)="deleteData(items.level)">
+                                <img src="../../../../assets/img/icons/bin.svg" class="img-fluid" alt="delete" />
+                            </button>
+                        </div>
+                    </div>
+                    <p class="textClass" *ngIf="!showRecords">No Records</p>
+                </div>
+
+                <div class="flex-50 right_secn document_sec">
+                    <h1 class="h5 text-uppercase">Customer</h1>
+
+                    <form [formGroup]="addAgent" (ngSubmit)="onSubmit()" class="">
+
+                        <!-- <div class="d-flex row_main">
+                            <label> Name</label>
+                            <div class="form-group">
+                                <input formControlName="name" appInputRestriction class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                <div class="error is-invalid"
+                                    *ngIf="(submitted || f.name?.touched) && f.name?.errors?.required">
+                                    Name is required</div>
+                            </div>
+                        </div> -->
+
+                        <div class="d-flex row_main">
+                            <label>Contact first name</label>
+                            <div class="form-group">
+                                <input appInputRestriction formControlName="firstName" class="form-control"
+                                    [ngClass]="{'is-invalid': submitted && f.firstName.errors}" />
+                                <div class="error is-invalid"
+                                    *ngIf=" (submitted || f.firstName?.touched) && f.firstName?.errors?.required">
+                                    First name is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex row_main">
+                            <label class="col-sm-4">Contact surname</label>
+                            <div class="form-group">
+                                <input appInputRestriction formControlName="lastName" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                <div class="error is-invalid"
+                                    *ngIf="(submitted || f.lastName?.touched) && f.lastName?.errors?.required">
+                                    Surname is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex row_main">
+                            <label>Email</label>
+                            <div class="form-group">
+                                <input formControlName="email" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div class="error is-invalid"
+                                    *ngIf="(submitted || f.email?.touched) && f.email?.errors?.required">
+                                    Email is required</div>
+                                <div class="error is-invalid"
+                                    *ngIf="(submitted || f.email?.touched) && f.email?.errors?.pattern">
+                                    Enter a valid email </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex send_mail">
+                            <button class="btn btn-primary btn-lg">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

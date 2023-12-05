@@ -22,34 +22,63 @@ export class HeaderComponent implements OnInit {
   role: any;
   roleBased: any;
   showHeader=true;
+  list: any;
+  emailCount: any;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
     private http: MainHttpService,
     private toastr: ToastrService,
     private swal: SweetService,
-    private authService: AuthService,) { }
+    private authService: AuthService,) { 
+     
+    }
 
   ngOnInit(): void {
-    this.role = localStorage.getItem('role');
-    // if (this.role) {
-    //   this.role = JSON.parse(this.role);
-    // }
-    if (sessionStorage.getItem('isLoggedIn') == 'true') {
-      this.showLogout = true;
-    } else {
-      this.showLogout = false;
-    }
-    this.authService.role.subscribe((res) => {
-      this.role = res;
-      localStorage.setItem('role', res);
+    this.list = HEADER.LIST_VIEW;
+        this.role = localStorage.getItem('role');
+        if (this.role) {
+          this.role = JSON.parse(this.role);
+        }
+        if (sessionStorage.getItem('isLoggedIn') == 'true') {
+          this.showLogout = true;
+        } else {
+          this.role = '';
+          this.showLogout = false;
+        }
 
-      if (this.role === USER_CONSTANTS.USER_TYPES.SUPER_ADMIN) {
-        this.roleBased = 'Admin';
-      } else {
-        this.roleBased = 'Agent';
-      }
-    });
+        if (this.role === USER_CONSTANTS.USER_TYPES.SUPER_ADMIN) {
+          this.roleBased = 'Admin';
+
+          if (this.menu_list) {
+            // this.menu_list = this.menu_list.map((x: any) => {
+            //   if (x.id == 'admin') {
+            //     isDisplay: true
+            //   }
+
+            // });
+            this.menu_list.forEach((x:any) => {
+              if (x.id == 'admin') {
+                x.isDisplay = true
+              }
+            });
+          }
+        } else if (this.role === USER_CONSTANTS.USER_TYPES.AGENT) {
+          this.roleBased = 'Agent';
+          this.menu_list.forEach((x:any) => {
+            if (x?.id == 'agent') {
+              x.isDisplay = true
+            }
+          });
+        } else {
+          this.selectedID = '';
+          this.menu_list = this.menu_list.map((x: any) => ({
+            ...x,
+            isDisplay: x.id === 'admin' ? false : x.id === 'agent' ? false : true
+          }));
+
+        }
+
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         if(event?.url=='/'){
@@ -58,6 +87,44 @@ export class HeaderComponent implements OnInit {
         else{
           this.showHeader=true;
         }
+        this.list = HEADER.LIST_VIEW;
+        this.role = localStorage.getItem('role');
+        if (this.role) {
+          this.role = JSON.parse(this.role);
+        }
+        if (sessionStorage.getItem('isLoggedIn') == 'true') {
+          this.showLogout = true;
+        } else {
+          this.role = '';
+          this.showLogout = false;
+        }
+
+        if (this.role === USER_CONSTANTS.USER_TYPES.SUPER_ADMIN) {
+          this.roleBased = 'Admin';
+
+          if (this.menu_list) {
+            this.menu_list.forEach(x => {
+              if (x.id == 'admin') {
+                x.isDisplay = true
+              }
+            });
+          }
+        } else if (this.role === USER_CONSTANTS.USER_TYPES.AGENT) {
+          this.roleBased = 'Agent';
+          this.menu_list.forEach(x => {
+            if (x.id == 'agent') {
+              x.isDisplay = true
+            }
+          });
+        } else {
+          this.selectedID = '';
+          this.menu_list = this.menu_list.map((x: any) => ({
+            ...x,
+            isDisplay: x.id === 'admin' ? false : x.id === 'agent' ? false : true
+          }));
+
+        }
+
         var data = (event.url).substring(1);
         if (data) {
           if (data.includes('masterplan')) {
@@ -75,18 +142,30 @@ export class HeaderComponent implements OnInit {
           else if (data.includes('apartments')) {
             this.selectedID = "apartments"
           }
+          else if (data.includes('admin')) {
+            this.selectedID = "admin"
+          }
+          else if (data.includes('agent')) {
+            this.selectedID = "agent"
+          }
+          else if (data.includes('login')) {
+            // localStorage.clear()
+            this.emailCount = ''
+          }
           else {
-
+            this.selectedID=''
           }
         }
       })
   }
 
   checkID(id?: any) {
-    this.selectedID = id;
+    try{this.selectedID = id;
+      console.log(id,this.selectedID)
     let element = document.getElementById(id);
     element?.classList.toggle("active");
     // document.getElementById('sub')?.classList.add('active')
+    }catch(e){console.log(e)}
   }
 
   myFunction1() {
@@ -97,7 +176,7 @@ export class HeaderComponent implements OnInit {
   }
 
   navLogin() {
-    // this.router.navigateByUrl(PAGE_ROUTES.LOGIN);
+    this.router.navigateByUrl(PAGE_ROUTES.LOGIN);
   }
   async logout() {
     let swal_data = await this.swal.logoutSwal();

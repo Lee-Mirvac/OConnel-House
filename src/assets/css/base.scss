@@ -2,11 +2,11 @@
 @import 'variable';
 @import 'flexbox';
 @import '../fonts/style.scss';
-
+$grey-200: #D8D8D8;
 $base-color: #58585A;
 $white: #ffffff;
 $black: #000000;
-
+$inter: "Inter", sans-serif;
 $primary-color: #ffefc7;
 $secondary-color: #bb6228;
 
@@ -21,7 +21,6 @@ $light-blue: #C6D9EF;
 $light-blue1: #D7E4F3;
 
 $light-orange: #E3D1C4;
-
 
 $cream: #F6F1ED;
 $red: #CF1B1B;

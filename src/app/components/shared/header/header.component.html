@@ -6,6 +6,7 @@
   <div class="hdr-center">
     <div class="navbar main-menu" id="main-menu">
       <ul class="d-flex">
+        
         <li id="show-sub-menu" *ngFor="let menu of menu_list"><span routerLinkActive="active" [routerLink]="menu?.path"
             (click)="checkID(menu?.id)">{{menu?.title}}<i *ngIf="menu?.sub_menu" class="sub-menu-icon"><img
                 src="assets/img/icons/down-arrow-icon.svg" alt="O'Connell_House" width="15"></i></span>
@@ -25,7 +26,7 @@
       <li>
         <span *ngIf="!showLogout" (click)="navLogin()"><img src="assets/img/icons/setting-icon.svg" alt="O'Connell_House"
             class="img-fluid" width="30" /></span>
-        <span *ngIf="showLogout" (click)="logout()"><img src="assets/images/icons/logout_icon.svg" alt="O'Connell_House"
+        <span *ngIf="showLogout" (click)="logout()"><img src="assets/img/icons/logout_icon.svg" alt="O'Connell_House"
             class="img-fluid" width="30" /></span>
 
       </li>

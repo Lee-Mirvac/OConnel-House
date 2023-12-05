@@ -1,0 +1,243 @@
+// @import '../../../../assets/css/base.scss';
+// @import '../../../../assets/css/admin-theme.scss';
+
+// .admin_docs_secn {
+//     .document_div {
+//         max-width: 90%;
+//         margin: 0px auto;
+
+//         @media (max-width:1200px) {
+//             max-width: 100%;
+//         }
+//     }
+
+//     .row {
+//         @include flexbox;
+//         @include justify-content (space-between);
+//         @include align-items (flex-start);
+
+//         .flex-50 {
+//             flex: 0 0 50%;
+//             width: 50%;
+//             padding: 15px;
+
+//             @media (max-width:767px) {
+//                 flex: 0 0 100%;
+//                 width: 100%;
+//             }
+//         }
+
+//         .document_box {
+//             @media (min-width:1280px) {
+//                 max-width: 510px;
+//             }
+
+//             @media (min-width:1600px) {
+//                 margin-top: 25px;
+//             }
+
+//             .docs_list {
+//                 @include flexbox;
+//                 @include justify-content (space-between);
+//                 @include align-items (center);
+//                 margin: 10px 0 0;
+
+//                 .thumbnail_col {
+//                     @include flexbox;
+//                     @include align-items (center);
+
+//                     .thumbImg {
+//                         min-width: 90px;
+//                         min-height: 90px;
+//                         max-width: 90px;
+//                         max-height: 90px;
+//                         border: 1px solid #ccc;
+//                         margin-right: 30px;
+//                         @include flexbox;
+//                         @include justify-content (center);
+//                         @include align-items (center);
+
+//                         @media (max-width:1024px) {
+//                             min-width: 80px;
+//                             min-height: 80px;
+//                             max-width: 80px;
+//                             max-height: 80px;
+//                         }
+
+//                         span {
+//                             font-size: $f16 + 1;
+//                             line-height: 22px;
+//                             font-weight: $font-regular;
+
+//                         }
+//                     }
+
+//                     .thumbnail_content {
+//                         p {
+//                             font-size: $f20;
+//                             line-height: 30px;
+//                             margin-bottom: 0;
+//                             font-weight: $font-regular;
+//                         }
+//                     }
+
+
+//                 }
+
+//                 .thumb_delete {
+//                     cursor: pointer;
+
+//                     img {
+//                         max-width: 24px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .btn-transparent {
+//     background: transparent;
+//     border: 0;
+// }
+
+// .mt-0 {
+//     margin-top: 0 !important;
+// }
+
+
+
+// ::ng-deep {
+//     .admin_docs_secn{
+
+
+// .email_doc_sec {
+//     max-height: calc(100vh - 240px);
+//     overflow-y: auto;
+
+
+//     @media (min-width: 1920px){
+//     .form-group {
+//         margin-bottom: 16px;
+//         .form-control {
+//             min-height: 30px;
+//             padding: 12px;
+//         }
+//     }
+
+//     .document_sec {
+//         .h5 {
+
+//              margin-top: 0px;
+//          }
+//          }
+//     }
+//     @media (max-width:767px) {
+//         max-height: calc(100vh - 170px);
+//     }
+
+//     .wrapper {
+//         align-items: flex-start;
+
+//         @media (max-width:767px) {
+//             flex-direction: column;
+//         }
+//     }
+// }
+// }
+// }
+// // 
+// .document_sec {
+//     @media (min-width:1441px) {
+//         padding-right: 100px !important;
+//     }
+
+//     .h5 {
+//         margin-bottom: 25px;
+//     }
+
+//     form {
+//         @media (min-width:1600px) {
+//             margin-top: 25px;
+//         }
+//     }
+// }
+
+// .row_main {
+//     width: 100%;
+
+//     label {
+//         min-width: 240px;
+//         font-size: 18px;
+//         font-weight: 600;
+//         margin: 15px 0 0;
+
+//         @media (min-width:1600px) {
+//             margin: 10px 0 0;
+//         }
+//     }
+
+//     .form-group {
+//         width: 100%;
+//         font-family: $inter;
+
+//         .form-control {
+//             width: 100%;
+//             text-align: left;
+//             border-color: #A0A0A0;
+//             text-transform: none;
+//             font-family: "Inter", sans-serif;
+//             font-size: 16px;
+//             color: #58595B;
+//             font-weight: 400;
+//         }
+
+//     }
+// }
+
+// .send_mail {
+//     width: 100%;
+//     padding: 0 100px;
+//     position: fixed;
+//     bottom: 170px;
+//     left: 0;
+//     z-index: 1;
+//     justify-content: end;
+
+//     @media (max-width:1440px) {
+//         bottom: 140px;
+//     }
+
+//     @media (max-width:1200px) {
+//         padding: 0 30px;
+//     }
+
+//     @media (max-width:991px) {
+//         bottom: 60px;
+//     }
+
+//     .btn {
+//         background: transparent;
+//         max-width: 120px;
+//         color: #58585A;
+//         border: 1px solid #58585A;
+
+//         &:disabled {
+//             opacity: .5;
+//             pointer-events: none;
+//         }
+//     }
+// }
+
+// .thumbImg {
+//     img {
+//         display: block;
+//         width: 90px;
+//         height: 90px;
+//         object-fit: cover;
+//     }
+// }
+
+// .textClass {
+//     font-size: $f14;
+// }

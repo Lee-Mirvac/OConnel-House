@@ -9,7 +9,7 @@ import { ApartmentService } from './core/services/apartment.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Mirvac';
+  title = "O'CONNELL";
   modalUrl = 'assets/modal/index.html';
   flag: boolean = false;
   isLoading: boolean = true;
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
         var data = (event.url).substring(1);
 
         if (data) {
-          if (data.includes('location')) {
+          if (data.includes('location') && !data.includes('stock-allocation') ) {
             this.addCssToHamburger=true
             this.displayHeader = false;
             this.showBtn = true;
@@ -60,6 +60,13 @@ export class AppComponent implements OnInit {
             this.displayModal = true;
             this.modalClassChange = true;
             this.showBtn = false;
+            this.displayHeader = true;
+
+          }
+          else if (data.includes('home') ) {
+            this.showBtn = false;
+            this.displayHeader = false;
+            this.modalClassChange = false;
 
           }
           else {

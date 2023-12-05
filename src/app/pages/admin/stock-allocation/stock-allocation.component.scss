@@ -1,0 +1,777 @@
+@import '../agent-management/agent-management.component.scss';
+
+$grey-d8: #d8d8d8;
+@import '../agent-management/agent-management.component.scss';
+
+
+.main-sec .admin-agent-main .admin_Customtheme input[type="checkbox"] {
+    display: $block;
+}
+
+::ng-deep {
+    .admin_Customtheme {
+        .stock_table {
+            p-table {
+                .p-datatable {
+                    table {
+                        border: 1px solid $base-color;
+
+                        tr {
+
+                            th,
+                            td {
+                                text-transform: capitalize;
+                                text-align: left;
+                                border-top: 1px solid $base-color;
+                                font-family: $inter;
+                                padding: 8px 8px;
+                                font-size: $f14;
+
+                                &:first-child {
+                                    border: 1px solid $base-color
+                                }
+                            }
+
+                            th {
+                                .p-column-filter-menu {
+                                    .p-column-filter-menu-button {
+                                        background: url(../../../../assets/img/icons/filter-solids.svg) no-repeat;
+                                        background-size: contain;
+                                        background-position: 50% 50%;
+                                        padding: 0px;
+                                        width: 20px;
+                                        height: 20px;
+                                        border: none;
+                                        cursor: $pointer;
+                                        margin-left: 8px;
+                                    }
+                                }
+
+                                &:nth-child(2) {
+                                    @include flexbox;
+                                    // @include justify-content (space-between);
+                                    @include align-items (center);
+                                    border-top: none;
+                                    position: relative;
+
+
+                                }
+
+                                &:nth-last-child(2) {
+                                    @include flexbox;
+                                    @include justify-content (flex-start);
+                                    @include align-items (center);
+                                    border-top: none;
+
+
+                                }
+
+                                //  .filter_th {
+                                // position: absolute;
+                                // right: 0px;
+                                // }
+                            }
+
+                            td {
+                                select {
+                                    background: $white;
+                                    background-repeat: no-repeat;
+                                    background-position: 97% center;
+                                    background-size: 24px;
+                                    appearance: revert;
+                                    -webkit-appearance: revert;
+                                    text-overflow: ellipsis;
+                                    padding: 8px;
+                                    padding-right: 25px;
+                                    outline: none !important;
+                                    font-size: $f14;
+                                    text-align: center;
+                                    border: 0.5px solid $black-500;
+                                    min-height: 32px;
+                                    color: $black-500;
+
+                                }
+
+                                .cstom_dropdown {
+                                    .multiselect-dropdown {
+                                        max-width: 215px;
+                                        background: #fff;
+                                        border: 0.5px solid #58595B;
+
+                                        .dropdown-btn {
+
+                                            border: none;
+                                        }
+                                    }
+                                }
+
+                                &:nth-last-child(2) {
+
+                                    width: 40%;
+
+                                }
+                            }
+                        }
+                    }
+
+                    //table div ends above
+                }
+            }
+        }
+
+        .table_actions_btn {
+            margin-top: 30px;
+            @include flexbox;
+            @include justify-content (flex-end);
+            @include align-items (center);
+
+            button {
+                min-width: 150px;
+                padding: 10px;
+                margin-right: 14px;
+                color: $black-500;
+                font-size: 14px;
+                background: transparent;
+                text-transform: $uppercase;
+                border: 1px solid $black-500;
+                cursor: $pointer;
+
+                &:nth-last-of-type(1) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    //admin custom theme ends
+    .p-checkbox .p-checkbox-box {
+        background: $grey-200;
+        width: 26px;
+        height: 26px;
+        color: $base-color;
+        border-radius: 0px;
+        transition: background-color .15s, border-color .15s, box-shadow .15s;
+        margin: 0px auto;
+    }
+
+    .p-checkbox-box {
+        @include flexbox;
+        @include justify-content (center);
+        @include align-items (center);
+    }
+
+    .p-checkbox .p-checkbox-box.p-highlight {
+        border-color: $white;
+        background: $white;
+    }
+
+    .p-checkbox .p-checkbox-box .p-checkbox-icon {
+        transition-duration: .15s;
+        color: $white;
+        font-size: $f14;
+        position: $relative;
+    }
+
+    .pi-check:before {
+        content: "";
+        display: $block;
+        position: $absolute;
+        top: -1px;
+        left: -5px;
+        width: 4px;
+        height: 11px;
+        border-color: $black-500;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    .pi:before {
+        --webkit-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    //pagination css for table
+
+    .stock_table .p-paginator {
+        @include flexbox;
+        @include justify-content (flex-end);
+        @include align-items (center);
+        @include flex-wrap (wrap);
+        margin: 15px 0px;
+    }
+
+    .stock_table .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+        background: $rounded_color;
+        color: $white;
+    }
+
+    .stock_table .p-paginator .p-paginator-pages .p-paginator-page {
+        background-color: transparent;
+        border: 0 none;
+        color: $base-color;
+        min-width: 30px;
+        height: 30px;
+        margin: 0.143rem;
+        transition: box-shadow 0.2s;
+        border-radius: 0%;
+        font-size: $f14;
+    }
+
+    .stock_table .p-paginator-page,
+    .stock_table .p-paginator-next,
+    .stock_table .p-paginator-last,
+    .stock_table .p-paginator-first,
+    .stock_table .p-paginator-prev,
+    .stock_table .p-paginator-current {
+        cursor: pointer;
+        @include flexbox;
+        @include justify-content (center);
+        @include align-items (center);
+        display: inline-flex;
+        line-height: 1;
+        -webkit-user-select: none;
+        user-select: none;
+        overflow: $hidden;
+        position: $relative;
+        margin: 1px;
+        border: 1px solid $grey-d8;
+    }
+
+    .stock_table .p-ink {
+        display: $block;
+        position: $absolute;
+        background: $grey-400;
+        border-radius: 100%;
+        transform: scale(0);
+    }
+
+    .stock_table .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+        background: $grey-200;
+        border-color: transparent;
+        color: #343a40;
+    }
+
+    .stock_table .p-paginator-first {
+        background: url(../../../../assets/img/icons/angle-double-left-solid.svg) no-repeat;
+        background-size: 14px;
+        background-position: 50% 50%;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: $pointer;
+    }
+
+    .stock_table .p-paginator-last {
+        background: url(../../../../assets/img/icons/angle-double-right-solid.svg) no-repeat;
+        background-size: 14px;
+        background-position: 50% 50%;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: $pointer;
+    }
+
+    .stock_table .p-paginator-next.p-disabled {
+        background-color: $grey-d8;
+        cursor: not-allowed;
+    }
+
+    .stock_table .p-paginator-prev.p-disabled {
+        background-color: $grey-d8;
+        cursor: not-allowed;
+    }
+
+    .stock_table .p-paginator-last.p-disabled {
+        background-color: $grey-d8;
+        cursor: not-allowed;
+    }
+
+    .stock_table .p-paginator-first.p-disabled {
+        background-color: $grey-d8;
+        cursor: not-allowed;
+    }
+
+    .stock_table .p-paginator-prev {
+        background: url(../../../../assets/img/icons/chevron-left-solid.svg) no-repeat;
+        background-size: 9px;
+        background-position: 50% 50%;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: $pointer;
+    }
+
+    .stock_table .p-paginator-next {
+        background: url(../../../../assets/img/icons/chevron-right-solid.svg) no-repeat;
+        background-size: 9px;
+        background-position: 50% 50%;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: $pointer;
+    }
+
+    //css for filter dropdown
+    .p-column-filter-overlay {
+        background: #ffffff;
+        color: #495057;
+        border: 0 none;
+        border-radius: 6px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        min-width: 12.5rem;
+
+        .p-multiselect {
+            .p-hidden-accessible {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+        }
+
+        .p-column-filter-constraint {
+            padding: 1rem;
+            border-bottom: 1px solid $grey-d8;
+            position: relative;
+        }
+
+        .p-column-filter-constraint:last-child {
+            border-bottom: 0 none;
+        }
+
+        // .p-column-filter-constraint::after {
+        //     background: url(../../../../assets/img/icons/filter-solids.svg) no-repeat;
+        //     background-size: 10px;
+        //     background-position: 50% 50%;
+        //     padding: 0px;
+        //     width: 20px;
+        //     height: 20px;
+        //     cursor: pointer;
+        //     position: absolute;
+        //     content: '';
+        //     right: 0;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        // }
+
+        .p-multiselect {
+            background: $white;
+            border: 1px solid #ced4da;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            border-radius: 6px;
+        }
+
+        .p-multiselect .p-multiselect-label.p-placeholder {
+            color: #6c757d;
+        }
+
+        .p-multiselect .p-multiselect-label {
+            padding: 0.75rem 0.75rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .p-multiselect .p-multiselect-label {
+            padding: 0.75rem 0.75rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+
+        .p-multiselect-label {
+            display: block;
+            white-space: nowrap;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .p-column-filter-buttonbar {
+            padding: 1rem;
+            // display: none;
+        }
+
+        .p-column-filter-buttonbar .p-button {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            color: $black-500;
+            background: transparent;
+            border: 1px solid #000;
+            border-radius: 6px;
+        }
+
+        .p-multiselect .p-multiselect-trigger {
+            background: transparent;
+            color: $base-color;
+            width: 3rem;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .p-multiselect-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .p-multiselect-trigger span.p-multiselect-trigger-icon {
+            background: url(../../../../assets/img/icons/chevron-down-solid.svg) no-repeat;
+            background-size: 15px;
+            background-position: 50% 50%;
+            padding: 10px;
+            width: 30px;
+            height: 30px;
+            cursor: $pointer;
+        }
+
+        .p-multiselect-panel .p-multiselect-header {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid $grey-d8;
+            color: #343a40;
+            background: #f8f9fa;
+            margin: 0;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+        }
+
+        .p-multiselect-filter-container {
+            position: relative;
+            flex: 1 1 auto;
+
+            input {
+                width: 100%;
+                font-size: 1rem;
+                color: $base-color;
+                background: $white;
+                padding: 0.5rem 0.5rem;
+                padding-right: 1.25rem;
+                border: 1px solid $grey-d8;
+                transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                appearance: none;
+                border-radius: 6px;
+                outline: 0;
+            }
+
+            .p-multiselect-filter-icon {
+                background: url(../../../../assets/img/icons/search-solid.svg) no-repeat;
+                background-size: 10px;
+                background-position: 50% 50%;
+                padding: 0px;
+                width: 15px;
+                height: 100%;
+                cursor: pointer;
+                position: $absolute;
+                right: 7px;
+                top: 50%;
+                margin-top: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        .p-multiselect-panel .p-multiselect-header .p-multiselect-close {
+            margin-left: 3px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            color: $base-color;
+            border: 0 none;
+            background: transparent;
+            border-radius: 50%;
+            transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+            .p-multiselect-close-icon {
+                background: url(../../../../assets/img/icons/times-solid.svg) no-repeat;
+                background-size: 9px;
+                background-position: 50% 50%;
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                cursor: $pointer;
+            }
+
+            span.p-ink {
+                display: $none;
+            }
+        }
+
+
+
+        .p-multiselect-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        //css for search icon with input top header
+
+        .p-multiselect-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .p-multiselect-items-wrapper {
+            overflow: auto;
+        }
+
+        .p-multiselect-panel .p-multiselect-items {
+            padding: 0.75rem 0;
+        }
+
+        .p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+            margin: 0;
+            padding: 0.75rem 1rem;
+            border: 0 none;
+            color: $base-color;
+            background: transparent;
+            transition: box-shadow 0.2s;
+            border-radius: 0;
+            border-bottom: 1px solid $grey-d8;
+        }
+
+        .p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
+            color: $base-color;
+            background: $grey-200;
+            outline: 0;
+        }
+
+        .p-multiselect-panel .p-multiselect-items .p-multiselect-item .p-ink.p-ink-active {
+            height: auto !important;
+            position: $static;
+        }
+
+        .p-multiselect-panel .p-multiselect-empty-message {
+            text-align: center;
+        }
+
+        .p-checkbox.p-component {
+            margin-right: 10px;
+            display: inline-flex;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+            vertical-align: bottom;
+            position: relative;
+
+            .p-checkbox-box {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .p-multiselect-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
+            color: $base-color;
+            background: #f8f9fa;
+        }
+
+        .p-multiselect-panel {
+            background: #ffffff;
+            color: #495057;
+            border: 0 none;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+
+        .p-column-filter-overlay:last-child {
+            .p-column-filter-buttonbar {
+
+                display: none !important;
+                padding: 0 !important;
+            }
+        }
+
+
+    }
+}
+
+//popup css for edit delete actions
+.modal_stock_table {
+    .modal-content {
+        @include flexbox;
+        @include justify-content (space-between);
+        @include align-items (center);
+        @include flex-flow (column);
+
+        .table_actn_btn {
+            @include flexbox;
+            @include justify-content (space-between);
+            @include align-items (center);
+            column-gap: 20px;
+        }
+
+        p {
+            font-size: $f24;
+            color: $base-color;
+            font-weight: $font-semibold;
+        }
+    }
+
+}
+
+.admin-agent-sec h1,
+.agent-form h2 {
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.agent-tbl table {
+    width: 100%;
+    border-spacing: 0;
+    margin: 10px 0 0;
+}
+
+.agent-tbl table th,
+.agent-tbl table td {
+    text-transform: capitalize;
+    text-align: left;
+    border-top: 1px solid #58585A;
+    font-family: $inter;
+    padding: 8px 0;
+}
+
+.agent-tbl table td {
+    font-size: $f12 +2;
+}
+
+.agent-tbl table tr:last-child td {
+    border-bottom: 1px solid #58585A;
+}
+
+.agent-tbl table td:last-child,
+.agent-tbl table th:last-child {
+    border-right: 1px solid #58585A;
+    border-left: 1px solid #58585A;
+    text-align: center;
+}
+
+.agent-tbl table td:nth-last-child(2),
+.agent-tbl table th:nth-last-child(2) {
+    border-left: 1px solid #58585A;
+    text-align: center;
+}
+
+.tbl-btn {
+    text-align: right;
+    display: block;
+    margin: 20px 0 0;
+}
+
+.tbl-btn .btn {
+    font-family: $inter;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+}
+
+/*** HS CHM ***/
+.filter_btn_icn {
+    button.p-element.p-button.p-component {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        color: #58595B;
+        background: transparent;
+        border: 1px solid #000;
+        border-radius: 6px;
+    }
+}
+
+.agent_filtr {
+    .dropdown-list {
+        max-width: 214px !important;
+    }
+}
+
+::ng-deep {
+    .custom_th {
+        min-width: 166px;
+        ;
+
+        .multiselect-dropdown {
+            .dropdown-btn {
+                min-height: 34px;
+                position: relative;
+                background-color: #fff;
+                border-radius: 0px;
+                border: 1px solid #6a6262;
+            }
+        }
+        .filter_btn_icn{
+         .ng-select {
+            background-color: #fff;
+            padding: 7px;
+            border: 1px solid #00000085;
+        }
+        .ng-dropdown-panel {
+           position: absolute;
+           left: 0px;
+        }
+        .ng-option {
+            background-color: #fff;
+            padding: 6px 13px;
+    }
+    .ng-select .ng-arrow-wrapper 
+        {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: url(../../../../assets/img/icons/chevron-down-solid.svg) no-repeat;
+        background-size: 9px;
+        background-position: 97%;
+       
+        width: 100%;
+        height: 100%;
+        cursor: $pointer;
+       
+    }
+}
+}
+}
+
+// @media (max-width:1600px) {
+// .re_pon_cstmthem{
+// .main-sec{
+//     padding: 7px 15px 30px 15px;
+    
+// .agent-tbl{
+//     td {
+//         padding: 4px 8px;
+      
+//      }
+//     }
+     
+// }        
+// }
+// }

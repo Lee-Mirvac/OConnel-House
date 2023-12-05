@@ -14,11 +14,20 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { VideoComponent } from 'src/app/pages/video/video.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
+import { CommonEmailComponent } from './common-email/common-email.component';
 
 const route: Routes = [];
 
 @NgModule({
-  declarations: [HomeComponent,VideoComponent,HeaderComponent, SidebarComponent, SpinnerComponent, SafePipe, CommonGalleryComponent],
+  declarations: [
+    HomeComponent,
+    VideoComponent,
+    HeaderComponent,
+    SidebarComponent,
+    SpinnerComponent, 
+    SafePipe, 
+    CommonGalleryComponent,
+    CommonEmailComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -29,6 +38,6 @@ const route: Routes = [];
     LightgalleryModule,
     SlickCarouselModule
   ],
-  exports: [HeaderComponent, SidebarComponent, SpinnerComponent, SafePipe, CommonGalleryComponent],
+  exports: [HeaderComponent, SidebarComponent, SpinnerComponent, SafePipe, CommonGalleryComponent,CommonEmailComponent],
 })
 export class SharedModule { }

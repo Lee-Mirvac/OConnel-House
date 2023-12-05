@@ -12,7 +12,8 @@ export class MainHttpService {
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
-  private API_SERVER = environment.apiUrl;
+  private API_SERVER = 'https://api.isleapartments.releaseplan.habitatdigital.com.au/'|| environment.apiUrl;;
+
 
   constructor(private httpClient: HttpClient) {
     this.handleError = this.handleError.bind(this);
@@ -56,6 +57,7 @@ export class MainHttpService {
     // if (data) {
     //   data['isNotFormdata'] = true;
     // }
+    // console.log(this.API_SERVER)
     return this.httpClient
       .post(`${this.API_SERVER}${apiPath}`, data, { headers: this.headers })
       .pipe(catchError(this.handleError));
