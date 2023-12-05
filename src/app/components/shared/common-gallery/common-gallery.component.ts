@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { LightGallery } from 'lightgallery/lightgallery';
 import lgAutoplay from 'lightgallery/plugins/autoplay';
-import { API_PATH } from 'src/app/common/constants';
+import { API_PATH, USER_CONSTANTS } from 'src/app/common/constants';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -18,7 +18,8 @@ export class CommonGalleryComponent implements OnInit {
   settings: any;
   slides: any = [];
   openSlides: any = [];
-
+  roles = USER_CONSTANTS.USER_TYPES;
+  role:any;
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -120,27 +121,60 @@ export class CommonGalleryComponent implements OnInit {
     this.needRefresh = true;
   };
 
+  // openGallery(data: any) {
+
+  //   if (this.slides.length > 0) {
+  //     this.openSlides = this.slides.map((x: any, index: number) => ({
+  //       id: index,
+  //       src: x.mainSrc,
+  //       caption: x.caption,
+  //       subHtml: `<div class="lightGallery-captions">
+  //           <h4>${x.caption}</h4>
+  //           <p>${x.disclaimer}</p>
+  //       </div>`,
+  //     }));
+
+  //   } this.lightGallery.refresh(this.openSlides);
+
+  //   this.lightGallery.openGallery(data);
+  //   this.addImage();
+
+  // }
+
+  // // getData() {
+  // // }
   openGallery(data: any) {
-
-    if (this.slides.length > 0) {
-      this.openSlides = this.slides.map((x: any, index: number) => ({
-        id: index,
-        src: x.mainSrc,
-        caption: x.caption,
-        subHtml: `<div class="lightGallery-captions">
-            <h4>${x.caption}</h4>
-            <p>${x.disclaimer}</p>
-        </div>`,
-      }));
-
-    } this.lightGallery.refresh(this.openSlides);
-
+    if (this.role) {
+      this.role = JSON.parse(this.role);
+    }
+    if (this.role === this.roles.AGENT || this.role === this.roles.SUPER_ADMIN) {
+      if (this.slides.length > 0) {
+        this.openSlides = this.slides.map((x: any, index: number) => ({
+          id: index,
+          src: x.mainSrc,
+          caption: x.caption,
+          subHtml: `<div class="lightGallery-captions">
+            <h4>${x.caption}</h4> <p>${x.disclaimer}</p>
+      <div class="glry_icn"> <img src="assets/img/icons/email-icon-whitwnew.svg"   onclick = "checkImage('${x.caption}','${x.mainSrc}')" /></div>
+ </div>`,
+        }));
+      }
+    } else {
+      if (this.slides.length > 0) {
+        this.openSlides = this.slides.map((x: any, index: number) => ({
+          id: index,
+          src: x.mainSrc,
+          caption: x.caption,
+          subHtml: `<div class="lightGallery-captions">
+            <h4>${x.caption}</h4> <p>${x.disclaimer}</p> </div>`,
+        }
+        )
+        );
+      }
+    }
+    this.lightGallery.refresh(this.openSlides);
     this.lightGallery.openGallery(data);
     this.addImage();
 
   }
-
-  // getData() {
-  // }
-
 }

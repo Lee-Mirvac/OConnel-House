@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, ROUTES, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { filter } from 'rxjs/operators';
 import { APIS, HEADER, PAGE_ROUTES, USER_CONSTANTS } from 'src/app/common/constants';
@@ -19,11 +19,13 @@ export class HeaderComponent implements OnInit {
   showLogout: boolean = false;
   home_icon = "assets/img/logo.svg";
   selectedID: any;
-  role: any;
+  role:any = localStorage.getItem('role');
   roleBased: any;
   showHeader=true;
   list: any;
   emailCount: any;
+  roles = USER_CONSTANTS.USER_TYPES;
+  newArray: any;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -51,16 +53,10 @@ export class HeaderComponent implements OnInit {
           this.roleBased = 'Admin';
 
           if (this.menu_list) {
-            // this.menu_list = this.menu_list.map((x: any) => {
-            //   if (x.id == 'admin') {
-            //     isDisplay: true
-            //   }
-
-            // });
             this.menu_list.forEach((x:any) => {
-              if (x.id == 'admin') {
+              // if (x.id == 'admin') {
                 x.isDisplay = true
-              }
+              // }
             });
           }
         } else if (this.role === USER_CONSTANTS.USER_TYPES.AGENT) {
@@ -79,10 +75,37 @@ export class HeaderComponent implements OnInit {
 
         }
 
+        let getEmailData: any = localStorage.getItem('emailData');
+        let galleyItems: any = localStorage.getItem('galleryItem');
+    
+        if (getEmailData) {
+          getEmailData = JSON.parse(getEmailData);
+          this.newArray = getEmailData;
+        }
+        if (galleyItems) {
+          galleyItems = JSON.parse(galleyItems);
+          this.newArray = galleyItems;
+        }
+    
+        if (getEmailData?.length && galleyItems?.length > 0) {
+          this.newArray = getEmailData.concat(galleyItems);
+        }
+    
+        if (this.newArray) {
+          let emailCounts = [...new Map(this.newArray.map((item: any) => [item.level, item])).values()].length;
+          if (emailCounts > 0) {
+            this.emailCount = emailCounts;
+          } else {
+            this.emailCount = ''
+          }
+        }
+    
+
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
+    .subscribe((event: any) => {
+        debugger
         if(event?.url=='/'){
-          this.showHeader=false
+          this.showHeader=false;
         }
         else{
           this.showHeader=true;
@@ -160,8 +183,8 @@ export class HeaderComponent implements OnInit {
   }
 
   checkID(id?: any) {
-    try{this.selectedID = id;
-      console.log(id,this.selectedID)
+    try{
+    this.selectedID = id;
     let element = document.getElementById(id);
     element?.classList.toggle("active");
     // document.getElementById('sub')?.classList.add('active')
@@ -189,9 +212,48 @@ export class HeaderComponent implements OnInit {
         this.toastr.success(res?.msg);
         localStorage.clear();
         sessionStorage.clear();
-        this.router.navigate([PAGE_ROUTES.HOME]);
+        this.showLogout = false;
+        this.router.navigate(['']);
       });
 
     }
   }
+
+  navToEmail() {
+    let data = ''
+    if (this.role === this.roles.AGENT) {
+      data = 'agent'
+      this.router.navigate(['/agent/email']);
+    } else if (this.role === this.roles.SUPER_ADMIN) {
+      data = 'admin'
+      this.router.navigate(['/admin/email'])
+    }
+
+  }
+  buttonPress() {
+    let getEmailData: any = localStorage.getItem('emailData');
+    let galleyItems: any = localStorage.getItem('galleryItem');
+
+    if (getEmailData) {
+      getEmailData = JSON.parse(getEmailData);
+      this.newArray = getEmailData;
+    }
+    if (galleyItems) {
+      galleyItems = JSON.parse(galleyItems);
+      this.newArray = galleyItems;
+    }
+
+    if (getEmailData?.length && galleyItems?.length > 0) {
+      this.newArray = getEmailData.concat(galleyItems);
+    }
+
+    if (this.newArray) {
+      let emailCounts = [...new Map(this.newArray.map((item: any) => [item.level, item])).values()].length;
+      if (emailCounts > 0) {
+        this.emailCount = emailCounts;
+      }
+    }
+
+  }
+
 }

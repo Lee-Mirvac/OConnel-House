@@ -1,0 +1,11 @@
+<div class="main-sec amenity-main">
+    <div class="amenity-sec">
+        <picture>
+            <source media="(max-width:1024px)" [srcset]="src">
+            <img [src]="src" alt="Rooftop" />
+        </picture>
+    </div>
+    <div class="glry_icn" *ngIf="role=== roles.AGENT || role===roles.SUPER_ADMIN">
+        <img [src]="emailIcon" alt="Rooftop" (click)="storeData(src)" />
+    </div>
+</div>

@@ -1,0 +1,32 @@
+@import '../../../pages/amenity/amenity.component.scss';
+
+
+.glry_icn {
+    position: absolute;
+    right: 14px;
+    bottom: 40px;
+    max-width: 58px;
+    height: 52px;
+}
+.glry_icn img {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  &:active {
+    background: $base-color;
+    border-radius: 50%;
+    outline: auto;
+  }
+  }
+
+  
+  @media (max-width: 1280px){
+    .amenity-main {
+    height: calc(100vh - 74px - 44px);
+    .glry_icn {
+        bottom: 13px;
+        
+     }
+}
+
+  }

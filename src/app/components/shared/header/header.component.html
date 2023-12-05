@@ -7,7 +7,7 @@
     <div class="navbar main-menu" id="main-menu">
       <ul class="d-flex">
         
-        <li id="show-sub-menu" *ngFor="let menu of menu_list"><span routerLinkActive="active" [routerLink]="menu?.path"
+        <li id="show-sub-menu" *ngFor="let menu of menu_list"><span *ngIf="menu.isDisplay" routerLinkActive="active" [routerLink]="menu?.path"
             (click)="checkID(menu?.id)">{{menu?.title}}<i *ngIf="menu?.sub_menu" class="sub-menu-icon"><img
                 src="assets/img/icons/down-arrow-icon.svg" alt="O'Connell_House" width="15"></i></span>
           <ul [id]="menu?.id" class="sub-menu d-flex" [class]="selectedID==menu.id?'highLight active_sub_menu':'' ">
@@ -19,9 +19,11 @@
     </div>
   </div>
   <div class="hdr-right" >
-    <ul class="d-flex" *ngIf="true">
-      <li>
-        <span href="#"><img src="assets/img/icons/mail-icon.svg" alt="O'Connell_House" class="img-fluid" width="30"></span>
+    <ul class="d-flex">
+      <li *ngIf="role=== roles.AGENT || role===roles.SUPER_ADMIN">
+        <span (click)="navToEmail()" class="count_prnt">
+          <span class="count_ing">{{emailCount}}</span>
+          <img src="assets/img/icons/mail-icon.svg" alt="mirvac" class="img-fluid" width="30"></span>
       </li>
       <li>
         <span *ngIf="!showLogout" (click)="navLogin()"><img src="assets/img/icons/setting-icon.svg" alt="O'Connell_House"
