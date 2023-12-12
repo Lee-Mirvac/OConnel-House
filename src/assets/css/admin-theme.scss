@@ -9,6 +9,17 @@
         height: 100vh;
     }
 }
+
+.input_field{
+    position: relative;
+        .show_pwd{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+    
+        }
+    }
 // css edited 20-07 for amin panel login
 .admin_panel {
     .admin_screen {
