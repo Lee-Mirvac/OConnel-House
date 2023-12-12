@@ -5,6 +5,7 @@
     padding: 30px 15px;
     z-index: 1;
     position: $relative;
+    overflow-y:auto ;
     transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;    
     @media (min-width: 1681px){

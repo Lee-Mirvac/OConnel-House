@@ -1,25 +1,50 @@
 @import './base.scss';
+
 .login-bg {
     position: $fixed;
     z-index: -1;
     width: 100%;
     height: calc(100vh - 80px);
+
     img {
         width: 100%;
         height: 100vh;
     }
 }
 
-.input_field{
-    position: relative;
-        .show_pwd{
+.form-group {
+    .form-control {
+        text-align: left;
+        text-transform: lowercase;
+        font-weight: 400;
+    }
+
+    .input_field {
+        position: relative;
+
+        .show_pwd {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             right: 10px;
-    
+            img{
+                vertical-align: middle;
+                cursor: pointer;
+            }
+
         }
     }
+
+}
+
+.custom-chkbox {
+    label {
+        &::before {
+            margin: -0px 10px 0 0;
+        }
+    }
+}
+
 // css edited 20-07 for amin panel login
 .admin_panel {
     .admin_screen {
@@ -28,16 +53,21 @@
         width: 500px;
         padding: 40px;
         font-family: $inter;
-        @media (min-width: 1600px){
-        //    max-width: 700px;width: 700px;padding: 65px 75px 75px;
+
+        @media (min-width: 1600px) {
+            //    max-width: 700px;width: 700px;padding: 65px 75px 75px;
         }
-        @media (max-width: 767px){
-            max-width: 90%;width: 90%;
-            padding:25px 20px;
+
+        @media (max-width: 767px) {
+            max-width: 90%;
+            width: 90%;
+            padding: 25px 20px;
         }
-        @media (min-width: 1200px) and (max-width: 1400px){
-            padding:45px;
+
+        @media (min-width: 1200px) and (max-width: 1400px) {
+            padding: 45px;
         }
+
         h1 {
             font-family: $inter;
             color: $black-500;
@@ -45,21 +75,28 @@
             font-weight: $font-regular;
             text-align: $center;
             margin: 0 0 30px;
-            @media (max-width: 1366px){
+
+            @media (max-width: 1366px) {
                 line-height: 35px;
                 margin-bottom: 20px;
             }
         }
+
         .btn {
             width: 100%;
             text-transform: $uppercase;
             border-radius: 50px;
         }
+
         form {
             .form-group {
+
+
+
                 @media (min-width:1200px) {
                     margin-bottom: 25px;
                 }
+
                 label {
                     font-size: $f16;
                     color: $black;
@@ -68,8 +105,10 @@
                     margin-bottom: 0.5rem;
                     font-family: $inter;
                 }
+
                 .input_field {
                     position: $relative;
+
                     .show_pwd {
                         transform: translateY(-50%);
                         position: $absolute;
@@ -77,16 +116,19 @@
                         top: 50%;
                         cursor: $pointer;
                     }
+
                     .form-control {
                         padding-right: 45px;
                     }
+
                 }
+
                 .form-control {
                     background: transparent;
                     border: 1px solid $black-500;
                     width: 100%;
                     min-height: 50px;
-                    color:  $black-500;
+                    color: $black-500;
                     font-size: $f16 ;
                     font-weight: $font-regular;
                     outline: 0 !important;
@@ -100,18 +142,22 @@
                     text-align: $left;
                 }
             }
+
             .forgot-sec {
-                margin: 25px  0px;
+                margin: 25px 0px;
+
                 .custom-chkbox {
                     label {
                         font-size: $f16;
                         color: $black;
                         font-weight: $font-regular;
+
                         &:before {
-                          margin: -6px 10px 0 0;
+                            margin: -6px 10px 0 0;
                         }
                     }
-                   input:checked + label:after {
+
+                    input:checked+label:after {
                         top: 0px;
                         left: 9px;
                         width: 4px;
@@ -122,17 +168,18 @@
                     }
                 }
             }
-            
+
         }
     }
 }
 
 // Error
 .is-invalid {
-    border-color: #ff0000!important;
+    border-color: #ff0000 !important;
 }
+
 .error {
-    color: #ff0000!important;
+    color: #ff0000 !important;
     font-weight: $font-regular;
 }
 
@@ -143,21 +190,26 @@
     @include flexbox;
     align-items: $center;
     justify-content: $center;
-    @media (min-width:1680px){
+
+    @media (min-width:1680px) {
         min-height: calc(100vh - 80px);
         height: calc(100vh - 80px);
     }
-    @media (max-width: 767px){
-      .front-screen{margin: 20px 0;}    
+
+    @media (max-width: 767px) {
+        .front-screen {
+            margin: 20px 0;
+        }
     }
 }
+
 .forgot-sec {
     display: $flex;
     justify-content: space-between;
     align-items: end;
-    margin: 45px 0 35px;
+    margin: 25px 0px;
 }
 
 .mt-0 {
-    margin-top: 0!important;
+    margin-top: 0 !important;
 }
