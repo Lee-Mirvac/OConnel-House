@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '', component: AmenityComponent, children: [
       {
-        path: '', redirectTo:amenityRoutes.ROOF_TOP, pathMatch: 'full'
+        path: '', redirectTo:amenityRoutes.GROUND_LEVEL_2, pathMatch: 'full'
       },
       {
         path: amenityRoutes.ROOF_TOP, component: RooftopComponent

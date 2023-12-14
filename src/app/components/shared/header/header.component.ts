@@ -103,7 +103,6 @@ export class HeaderComponent implements OnInit {
 
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((event: any) => {
-        debugger
         if(event?.url=='/'){
           this.showHeader=false;
         }

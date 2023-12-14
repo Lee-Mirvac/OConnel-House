@@ -47,6 +47,7 @@ export class StockAllocationComponent implements OnInit {
     this.primengConfig.ripple = true;
     this.dropdownSettings = {
       singleSelection: true,
+      enableCheckAll:false,
       idField: 'id',
       textField: 'firstName',
       selectAllText: 'Select All',

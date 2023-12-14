@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'https://api.knack.com/v1/objects',
-  apiUrl:'https://api.isleapartments.releaseplan.habitatdigital.com.au',
+  apiUrl: 'https://api.knack.com/v1/objects',
+  // apiUrl:'https://api.isleapartments.releaseplan.habitatdigital.com.au',
   socketUrl: 'wss://websocket.intuiface.frimustechnologies.com',
   // apiUrl: 'http://192.180.3.52:5000',
   basePath: '',
