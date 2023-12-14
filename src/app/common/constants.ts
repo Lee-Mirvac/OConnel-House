@@ -161,14 +161,14 @@ export const HEADER = {
       id: 'amenity',
       sub_menu: [
         {
-          path: '/amenity/rooftop',
-          title: 'Rooftop',
+          path: '/amenity/ground_level_2',
+          title: 'Ground Level + Level 2',
           src: '',
           link: '',
         },
         {
-          path: '/amenity/ground_level_2',
-          title: 'Ground & Level',
+          path: '/amenity/rooftop',
+          title: 'Rooftop',
           src: '',
           link: '',
         },
