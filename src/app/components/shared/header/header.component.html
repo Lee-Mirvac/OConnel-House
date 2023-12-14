@@ -1,11 +1,13 @@
 <header class="hdr-main" *ngIf="showHeader">
   <div>
       <!-- <img [src]="home_icon" alt="O'Connell_House" class="img-fluid" (click)="checkID()" /> -->
-      <div class="home_title" [routerLink]="'/'" (click)="checkID()" >O'CONNELL HOUSE</div>
+      <div class="home_title" [routerLink]="'/'" (click)="checkID()" >
+      <img src="../../../../assets/img/oco.svg" alt="">
+      </div>
   </div>
   <div class="hdr-center">
     <div class="navbar main-menu" id="main-menu">
-      <ul class="d-flex">
+      <ul class="d-flex justify-content-center">
         
         <li id="show-sub-menu" *ngFor="let menu of menu_list"><span *ngIf="menu.isDisplay" routerLinkActive="active" [routerLink]="menu?.path"
             (click)="checkID(menu?.id)">{{menu?.title}}<i *ngIf="menu?.sub_menu" class="sub-menu-icon"><img

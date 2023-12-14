@@ -129,6 +129,9 @@
   .modal-body {
     padding: 30px;
     text-align: center;
+    border-radius: 50px;
+    max-width: 1100px;
+    margin: auto;
     p{
       text-align: center;
       color: $white;

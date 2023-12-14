@@ -508,15 +508,15 @@ export const LOCATION = {
   },
   SIDE_MENU: [
     {
-      id: 'ParksRiverwalk',
-      src: 'assets/img/icons/park-icon.svg',
+      id: 'ParksRiverwalk',  
       title: 'PARKS <br/> & RIVERWALK',
+      src: 'assets/img/icons/park.svg',
       path: 'PARKS',
     },
     {
       id: 'EatDrink',
-      src: 'assets/img/icons/eat-icon.svg',
       title: 'EAT<br/> & DRINK',
+      src: 'assets/img/icons/eat-icon.svg',
       path: 'Eat',
     },
     // {
@@ -526,14 +526,14 @@ export const LOCATION = {
     // },
     {
       id: 'retailLifestyle',
-      src: 'assets/img/icons/lifestyle-icon.svg',
       title: 'LIFESTYLE<br/> & DESIGN',
+      src: 'assets/img/icons/lifestyle-icon.svg',
       path: 'Lifestyle',
     },
     {
       id: 'BeautyWellbeing',
-      src: 'assets/img/icons/beauty-icon.svg',
       title: 'BEAUTY<br/> & WELLBEING',
+      src: 'assets/img/icons/beauty-icon.svg',
       path: 'Beauty',
     },
     // {
@@ -543,14 +543,14 @@ export const LOCATION = {
     // },
     {
       id: 'Transports',
-      src: 'assets/img/icons/transport-icon.svg',
       title: 'TRANSPORT',
+      src: 'assets/img/icons/transport-icon.svg',
       path: 'Transports',
     },
     {
       id: 'Education',
-      src: 'assets/img/icons/education-icon.svg',
       title: 'EDUCATION',
+      src: 'assets/img/icons/education-icon.svg',
       path: 'Education',
     },
   ],
@@ -612,7 +612,7 @@ export const LOCATION = {
   ],
 };
 export const MASTERPLAN = {
-  IMAGE_URL:'/assets/images/splash/masterplan.png',
+  IMAGE_URL:'/assets/images/splash/conell-house.svg',
   SIDE_MENU: [
     {
       id: 'pier',

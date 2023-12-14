@@ -75,9 +75,7 @@
   }
   .location-menu {
     height: 100%;
-    @include flexbox;
-    @include flex-direction(column);
-    @include justify-content($center);     
+   
     .location-menu-detail {
       margin: auto 0;
       overflow-y: $auto;
@@ -86,11 +84,13 @@
       cursor: $pointer;
       text-align: $center;
       margin: 0 0 15px;
+      display: flex;
+      flex-direction: column-reverse;
       @media (max-width: 767px) {
         margin: 0 0 10px;
       }
       @media (min-width: 1600px) {
-        margin: 0 0 20px;
+        margin: 0 0 30px;
       }
       @media screen and (min-width: 992px) and (max-width: 1199px) {
         margin: 0 0 8px;
@@ -108,7 +108,7 @@
         font-weight: $font-extrabold;
         font-family: $font-SweetSans;
         text-transform: $uppercase;
-        padding: 5px 0 0;
+        padding: 0 0 5px;
         letter-spacing: 0.2em;
         font-size: $f11 - 1;         
         line-height: 1.5;
@@ -120,6 +120,7 @@
       img {
         width: 50px;
         border-radius: 100%;
+        filter: sepia(1);
         @media screen and (min-width: 992px) and (max-width: 1199px) {
           width: 45px;
         }

@@ -14,9 +14,10 @@
     h6 {
       margin: 0 0 14px;
       color: $secondary-color;
+      text-align: center;
     }
     .slide {
-      background: rgba($white , 0.5);
+      // background: rgba($white , 0.5);
       padding: 15px;
     }
     &.floor-apartment {

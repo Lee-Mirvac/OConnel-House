@@ -216,6 +216,24 @@ label {
   }
 }
 
+.splash_buttons {
+  img {
+    max-width: 60px;
+  }
+
+  .splash_card {
+    h5 {
+      font-family: "ATSackersCornwell", sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    }
+    h6{
+
+    }
+  }
+}
+
 .btn-lg {
   font-size: $f16;
   min-height: 50px;
@@ -363,7 +381,7 @@ input[type="number"] {
 
 /* scroll */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 4px;
   height: 7px;
 }
 
@@ -441,6 +459,10 @@ input[type="checkbox"] {
 
 .d-flex {
   display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
 }
 
 .flex-wrap {
@@ -536,7 +558,7 @@ input[type="checkbox"] {
       .lg-toolbar {
         .lg-icon {
           &.lg-close {
-            background: url(../../assets/img/icons/close_orange.svg) no-repeat;
+            background: url(../../assets/img/icons/close.svg) no-repeat;
             background-size: 34px;
             border: 0 !important;
             height: 37px;
@@ -545,6 +567,7 @@ input[type="checkbox"] {
             right: 10px;
             top: 10px;
             padding: 0;
+            background-size: 25px;
 
             &:after {
               display: $none;
@@ -554,13 +577,12 @@ input[type="checkbox"] {
       }
 
       .lg-next {
-        background: url(../../assets/img/icons/left-arrow-white.svg) no-repeat;
+        background: url(../../assets/img/icons/right-arow.svg) no-repeat;
         background-size: 34px;
         border: 0 !important;
         height: 40px;
         width: 40px;
         padding: 0;
-        transform: rotate(180deg);
 
         // display: $none;
         &::before {
@@ -576,7 +598,7 @@ input[type="checkbox"] {
       }
 
       .lg-prev {
-        background: url(../../assets/img/icons/left-arrow-white.svg) no-repeat;
+        background: url(../../assets/img/icons/left-arow.svg) no-repeat;
         background-size: 34px;
         border: 0 !important;
         height: 40px;
@@ -622,11 +644,17 @@ input[type="checkbox"] {
             h4 {
               font-size: $f20 + 2;
               font-weight: $font-bold;
+              text-transform: uppercase;
+              font-size: 12px;
+              font-weight: 700;
+
             }
 
             p {
               font-size: $f12;
               font-weight: $font-bold;
+              max-width: 50%;
+              margin: 0 auto;
             }
           }
         }
@@ -817,7 +845,8 @@ input[type="checkbox"] {
     // }
     h2 {
       text-align: $center;
-      font-family: $ATSackersCornwel_Light;
+      font-family: 'Kudryashev Headline';
+      text-transform: uppercase;
       font-weight: $font-light;
       margin: 0 0 30px;
       color: $secondary-color;
@@ -1505,6 +1534,7 @@ input[type="checkbox"] {
 .item1 {
   .filter-textbox {
     position: relative;
+
     &::before {
       content: "";
       width: 13px;
@@ -1518,14 +1548,15 @@ input[type="checkbox"] {
     }
   }
 }
+
 .multiselect-item-checkbox {
-  div{
+  div {
 
     color: #58585a !important;
   }
-  &:hover{
+
+  &:hover {
 
     background-color: #e4e3e3;
   }
 }
-

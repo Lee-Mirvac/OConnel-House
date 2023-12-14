@@ -62,3 +62,53 @@
   font-style: normal;
   font-display: swap;
 }
+
+
+@font-face {
+  font-family: 'Kudryashev Display Sans';
+  src: url('../fonts/kudryashev/KudryashevDisplay-Sans.eot');
+  src: local('../fonts/kudryashev/Kudryashev Display Sans'), local('KudryashevDisplay-Sans'),
+      url('../fonts/kudryashev/KudryashevDisplay-Sans.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/kudryashev/KudryashevDisplay-Sans.woff2') format('woff2'),
+      url('../fonts/kudryashev/KudryashevDisplay-Sans.woff') format('woff'),
+      url('../fonts/kudryashev/KudryashevDisplay-Sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kudryashev Headline';
+  src: url('../fonts/kudryashev/KudryashevHeadline-Sans.eot');
+  src: local('../fonts/kudryashev/Kudryashev Headline Sans'), local('KudryashevHeadline-Sans'),
+      url('../fonts/kudryashev/KudryashevHeadline-Sans.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/kudryashev/KudryashevHeadline-Sans.woff2') format('woff2'),
+      url('../fonts/kudryashev/KudryashevHeadline-Sans.woff') format('woff'),
+      url('../fonts/kudryashev/KudryashevHeadline-Sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kudryashev Display';
+  src: url('../fonts/kudryashev/KudryashevDisplay-Regular.eot');
+  src: local('../fonts/kudryashev/Kudryashev Display'), local('KudryashevDisplay-Regular'),
+      url('../fonts/kudryashev/KudryashevDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/kudryashev/KudryashevDisplay-Regular.woff2') format('woff2'),
+      url('../fonts/kudryashev/KudryashevDisplay-Regular.woff') format('woff'),
+      url('../fonts/kudryashev/KudryashevDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kudryashev Headline';
+  src: url('../fonts/kudryashev/KudryashevHeadline-Regular.eot');
+  src: local('../fonts/kudryashev/Kudryashev Headline'), local('KudryashevHeadline-Regular'),
+      url('../fonts/kudryashev/KudryashevHeadline-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/kudryashev/KudryashevHeadline-Regular.woff2') format('woff2'),
+      url('../fonts/kudryashev/KudryashevHeadline-Regular.woff') format('woff'),
+      url('../fonts/kudryashev/KudryashevHeadline-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

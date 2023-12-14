@@ -24,6 +24,7 @@
         @include align-items (center);
         @include justify-content (center);
         height: 100%;
+        font-family: "Kudryashev Headline";
         margin: 0;
         font-size: $f20;
         font-weight: $font-bold;
@@ -42,6 +43,7 @@
 .opened {
     .floorplate-sec {
         width: calc(100% - 480px);
+
     }
 }
 // css edited 28-06-22

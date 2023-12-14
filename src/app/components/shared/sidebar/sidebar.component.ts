@@ -345,7 +345,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
   getLevel() {
-    for (let i = 1; i <= 25; i++) {
+    for (let i = 1; i <= 13; i++) {
       if (this.id === 'views') {
         this.floorLevel.push({
           name: 'L' + `${i}`,

@@ -1,56 +1,84 @@
 @import '../../../assets/css/base.scss';
-.masterplan-main{
+
+.masterplan-main {
     padding: 0;
     height: calc(100vh - 74.86px - 44px);
-    @media (max-width:991px){
+
+    @media (max-width:991px) {
         height: calc(100vh - 50px);
         overflow-y: initial;
     }
-    @media (min-width: 1600px){
-        height: calc(100vh - 80px - 44px); 
+
+    @media (min-width: 1600px) {
+        height: calc(100vh - 80px - 44px);
     }
+
     .masterplan-sec {
         width: 100%;
         height: 100%;
-        picture{
+
+        picture {
             width: 100%;
             height: 100%;
-            img{
+
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: $contain;
-                @media (min-width:1600px){
+
+                @media (min-width:1600px) {
                     object-position: top;
                 }
+
                 //AK 21June// @media (max-width:991px){
                 //     object-position: 50% 85%;
                 //     @media (min-width:600px){
                 //         object-position: 50% 85%;
                 //     }
                 // }
-                &.mb-pic{
+                &.mb-pic {
                     display: $none;
-                    @media (max-width:991px){
-                        display:$block;
+
+                    @media (max-width:991px) {
+                        display: $block;
                     }
                 }
-                &.dsk-pic{
-                    @media (max-width:991px){
-                        display:$none;
+
+                &.dsk-pic {
+                    @media (max-width:991px) {
+                        display: $none;
                     }
                 }
             }
         }
     }
 }
+
 .full_vh_height {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 100px);
     text-align: $center;
+    position: relative;
     width: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: $contain;
-      object-position: $center;
+
+    h5 {
+        position: absolute;
+        bottom: 12px;
+        max-width: 80%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        font-size: clamp(10px,10px, 12px);
+        color: #fff;
+        // background: rgb(0 0 0 / 55%);
+        padding: 10px;
+        line-height: 1.4;
+        border-radius: 5px;
     }
-  }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: $contain;
+        object-position: $center;
+    }
+}

@@ -381,9 +381,8 @@
     color: $secondary-color;
     font-size: larger;
     cursor: pointer;
-    /* font-family: 'UNTITLEDSANS-LIGHT'; */
-    font-family:$ATSackersCornwel_Light;
-    font-weight:$font-bold;
+    font-family: 'Kudryashev Headline';
+    font-weight:400;
     @media (max-width:767px) {
         width: 170px;
         font-size: medium;
