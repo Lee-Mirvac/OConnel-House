@@ -120,7 +120,8 @@
       img {
         width: 50px;
         border-radius: 100%;
-        filter: sepia(1);
+     border: 2px solid #ffefc7;
+
         @media screen and (min-width: 992px) and (max-width: 1199px) {
           width: 45px;
         }
