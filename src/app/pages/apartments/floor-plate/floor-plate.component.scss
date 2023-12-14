@@ -24,7 +24,8 @@
         @include align-items (center);
         @include justify-content (center);
         height: 100%;
-        font-family: "Kudryashev Headline";
+        font-family: $ATSackersCornwel_Light;
+
         margin: 0;
         font-size: $f20;
         font-weight: $font-bold;
