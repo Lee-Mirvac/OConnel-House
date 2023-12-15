@@ -77,15 +77,13 @@
 
   .slide {
     margin: 10px $auto 0;
-    height: calc(50vh - 130px - 5px);
+    height: calc(50vh - 140px - 5px);
     position: $relative;
 
-    @media (max-width:1600px) {
-      height: calc(50vh - 37px - 72px);
-    }
+ 
 
     @media (max-width:840px) {
-      height: calc(50vh - 37px - 30px);
+      height: calc(50vh - 55px - 30px);
     }
 
     overflow: $visible;
@@ -111,6 +109,9 @@
       line-height: 1;
       width: 100%;
       text-align: center;
+      @media(max-width:576px){
+        padding:0 10px;
+      }
 
       small {
         font-size: $f10 - 2;
