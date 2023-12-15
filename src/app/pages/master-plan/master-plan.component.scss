@@ -60,6 +60,18 @@
     position: relative;
     width: 100%;
 
+    @media(max-width:1600px) {
+        height: calc(100vh - 80px);
+
+    }
+    @media(max-width:1400px) {
+        height: calc(100vh - 70px);
+
+    }
+    @media(max-width:991px) {
+        height: calc(100vh - 50px);
+
+    }
     h5 {
         position: absolute;
         bottom: 12px;
@@ -67,7 +79,7 @@
         margin: auto;
         left: 0;
         right: 0;
-        font-size: clamp(10px,10px, 12px);
+        font-size: clamp(10px, 10px, 12px);
         color: #fff;
         // background: rgb(0 0 0 / 55%);
         padding: 10px;
