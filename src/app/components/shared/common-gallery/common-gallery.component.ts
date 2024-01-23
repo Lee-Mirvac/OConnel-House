@@ -46,7 +46,7 @@ export class CommonGalleryComponent implements OnInit {
 
   ngOnInit(): void {
     let requestData = [{ field: 'field_445', operator: 'is', value: this.keys }];
-    this.http.get(API_PATH.GET_GALLERY + `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`).subscribe((res: any) => {
+    this.http.postData('',{filters:requestData,object:API_PATH.GET_GALLERY?.split('/')[1]}).subscribe((res: any) => {
 
       this.slides = res?.records.map((x: any, index: number) => ({
         id: index,

@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { PrimeNGConfig } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { APIS } from 'src/app/common/constants';
-import { HttpService } from 'src/app/core/services/http.service';
+import { MainHttpService } from 'src/app/core/services/main-http.service';
 
 
 @Component({
@@ -39,8 +39,9 @@ export class StockAllocationComponent implements OnInit {
   dropdownSettings: any = {};
   agentSettings: any = {};
   allFilterData: any = [];
+  parseInt=Number.parseInt;
 
-  constructor(private http: HttpService, private primengConfig: PrimeNGConfig, private toastr: ToastrService) { }
+  constructor(private http: MainHttpService, private primengConfig: PrimeNGConfig, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getList();
@@ -105,7 +106,6 @@ export class StockAllocationComponent implements OnInit {
             let decryptData = res?.data;
             this.total_records = res?.data.total_records;
             this.stockAllocatonList = decryptData.records;
-
             let data: any = [];
             this.selectedItems = [];
 
@@ -125,7 +125,7 @@ export class StockAllocationComponent implements OnInit {
               ...x,
               company: x?.companyName ? x?.companyName?.identifier : 'Mirvac',
               apartmentLot: {
-                level: x.level
+                level:parseInt(x.level.toString().split('.')[1],10)
               }
             }));
 
@@ -137,7 +137,7 @@ export class StockAllocationComponent implements OnInit {
               this.restData = this.stockAllocatonList;
             }
             this.filterLevel = [];
-            for (let i = 2; i <= 25; i++) {
+            for (let i = 1; i <= 14; i++) {
               this.filterLevel.push({
                 level: i
               })

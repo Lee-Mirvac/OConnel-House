@@ -166,8 +166,11 @@ export class ViewsComponent implements OnInit {
   ngOnInit(): void {
     // this.getDisclaimer();
     document.getElementById('disclaim')?.classList.add('show');
-    this.http
-      .get(API_PATH.GET_BUILDING_VIEWS + `?rows_per_page=100`)
+    const floorPlanCondition=[       
+      // OH Condition
+      { field: 'field_486', operator: 'is', value: 'Oconnell House' },
+      { field: 'field_485', operator: 'is', value: '2' },]
+      this.http.postData(API_PATH.GET_BUILDING_VIEWS,{filters:floorPlanCondition,rows_per_page:100})
       .subscribe((res: any) => {
         this.showMainContent = true;
         this.allLevelViews = res.records;

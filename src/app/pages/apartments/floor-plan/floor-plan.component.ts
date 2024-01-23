@@ -192,15 +192,19 @@ export class FloorPlanComponent implements OnInit {
     this.displaySlide = true;
     this.slides = [];
     this.slideConfig = { ...this.slideConfig };
-    this.http
-      .get(
-        API_PATH.GET_FLOOR_PLAN).subscribe((res: any) => {
+    const floorPlanCondition=[       
+      // OH Condition
+      { field: 'field_486', operator: 'is', value: 'Oconnell House' },
+      { field: 'field_485', operator: 'is', value: '2' },]
+      this.http.postData(API_PATH.GET_FLOOR_PLAN,{filters:floorPlanCondition,rows_per_page:1000}
+      ).subscribe((res: any) => {
+        console.log(res)
           this.slides = res?.records.map((x: any) => ({
-            value: x.field_330,
-            src: x.field_333_raw.url
+            value: x?.field_330,
+            src: x?.field_333_raw?.url
           }))
           this.totalFloorplanSlides = this.slides;
-          this.slidesCount = this.slides.length;
+          this.slidesCount = this.slides?.length;
         });
   }
 

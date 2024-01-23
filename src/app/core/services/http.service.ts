@@ -13,15 +13,16 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class HttpService {
   baseUrl = 'https://api.knack.com/v1/objects';
-  API_KEY = '9d68237e-8640-4c69-bf24-9427830ecb97';
-  APPLICATION_ID = '623bc5f90a90ad001f2ced53';
-
+  // API_KEY = '9d68237e-8640-4c69-bf24-9427830ecb97';
+  // APPLICATION_ID = '623bc5f90a90ad001f2ced53';
+  API_KEY = '79f46fe9-492e-42a2-bc27-5bc680f2da72';
+  APPLICATION_ID = '656eab0f16c55700294de6e4';
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'X-Knack-Application-Id': this.APPLICATION_ID,
-    'X-Knack-REST-API-KEY': this.API_KEY,
+    // 'X-Knack-Application-Id': this.APPLICATION_ID,
+    // 'X-Knack-REST-API-KEY': this.API_KEY,
   });
-  private API_SERVER = environment.apiUrl;
+  private API_SERVER = environment.apiUrl+'/v1/knack/data';
 
   constructor(private httpClient: HttpClient) {
     this.handleError = this.handleError.bind(this);
@@ -69,8 +70,12 @@ export class HttpService {
   }
 
   public postData(apiPath: string, data?: any) {
+    delete data?.['limit'];
+    delete data?.['rows_per_page']
+    // debugger
+    console.warn(apiPath,data,{object:apiPath?.split('/').length>2?apiPath?.split('/')[1]:apiPath})
     return this.httpClient
-      .post(`${this.API_SERVER}${apiPath}`, data, { headers: this.headers })
+      .post(`${this.API_SERVER}`, {...data,...(apiPath&&{object:apiPath?.split('/').length>2?apiPath?.split('/')[1]:apiPath})}, { headers: this.headers })
       .pipe(catchError(this.handleError));
   }
 

@@ -12,7 +12,7 @@ export class MainHttpService {
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
-  private API_SERVER = 'https://api.isleapartments.releaseplan.habitatdigital.com.au/'|| environment.apiUrl;;
+  private API_SERVER = environment.apiUrl;;
 
 
   constructor(private httpClient: HttpClient) {
@@ -138,4 +138,15 @@ export class MainHttpService {
       }),
     });
   }
+
+  public getData(apiPath: string, data?: any) {
+    // data['isNotFormdata'] = true;
+    let headers = new HttpHeaders({
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    });
+    return this.httpClient
+    .get(`${this.API_SERVER}${apiPath}`, { params: data ,headers:headers})
+  }
+
 }

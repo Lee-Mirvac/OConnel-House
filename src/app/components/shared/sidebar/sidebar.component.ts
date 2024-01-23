@@ -95,21 +95,28 @@ export class SidebarComponent implements OnInit, OnDestroy {
       if (data) {
         this.id = 'intuifaceData';
         let requestData = [
-          { field: 'field_7', operator: 'is', value: data.apartment.slice(-4) },]
+          { field: 'field_7', operator: 'is', value: data.apartment.slice(-4) },
+           // OH Condition
+          { field: 'field_481', operator: 'is', value: 'Oconnell House' },
+          { field: 'field_482', operator: 'is', value: '2' },
+        ]
 
         this.http
-          .get(
-            API_PATH.GET_BUILDING_DATA +
-            `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`
+          .postData(
+            API_PATH.GET_BUILDING_DATA ?.split('/')[1],{filters:requestData,limit:1000}
+            // `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`
           )
           .subscribe((res: any) => {
-            console.log(res)
-            console.log(res.records[0].field_286)
-            let levelData = [{ field: 'field_286', operator: 'is', value: res.records[0].field_286 }];
+
+            let levelData = [
+            { field: 'field_286', operator: 'is', value: res.records[0].field_286 },
+            // OH Condition
+            { field: 'field_481', operator: 'is', value: 'Oconnell House' },
+            { field: 'field_482', operator: 'is', value: '2' },];
             this.http
-              .get(
-                API_PATH.GET_BUILDING_DATA +
-                `?filters=${JSON.stringify(levelData)}&rows_per_page=1000`
+              .postData(''
+                 ,
+                {filters:levelData,limit:1000,object:API_PATH.GET_BUILDING_DATA?.split('/')[1]}
               )
               .subscribe((res: any) => {
                 this.sidebarStep2List = [];
@@ -163,11 +170,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
       this.selectedLevel = [];
       this.bedroomSet = [];
       this.getLevel();
-      let requestData = [{ field: 'field_235', operator: 'is', value: res }];
+      let requestData = [{ field: 'field_235', operator: 'is', value: res },
+            // OH Condition
+            { field: 'field_481', operator: 'is', value: 'Oconnell House' },
+            { field: 'field_482', operator: 'is', value: '2' },
+          ];
       this.http
-        .get(
-          API_PATH.GET_BUILDING_DATA +
-          `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`
+        .postData(
+          API_PATH.GET_BUILDING_DATA?.split('/')[1],{filters:requestData,limit:1000}
         )
         .subscribe((res: any) => {
 
@@ -182,7 +192,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
             floorPlanID = this.sidebarStep2List.map((x) => x.field_435_raw);
             displayFloorplan = floorPlanID.map((x) => ({
-              value: x[0].identifier,
+              value: x[0]?.identifier,
             }));
             this.sidebarListService.setSidebarList(this.sidebarStep2List);
             this.floorService.setSliderData(displayFloorplan);
@@ -202,10 +212,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
     window.onresize = (e) => {
       this.iframeService.emitEvent('jsonData', { data: this.jsonData });
     }
-    this.http.get(API_PATH.GET_FLOOR_PLAN).subscribe((res: any) => {
-      this.apartmentTypes = res?.records.map((x: any) => ({
-        value: x.field_330,
-        src: x.field_333_raw.url,
+    const floorPlanCondition=[       
+    // OH Condition
+    { field: 'field_486', operator: 'is', value: 'Oconnell House' },
+    { field: 'field_485', operator: 'is', value: '2' },]
+    this.http.postData(API_PATH.GET_FLOOR_PLAN?.split('/')[1],{filters:floorPlanCondition,limit:1000}).subscribe((res: any) => {
+      this.apartmentTypes = res?.records?.map((x: any) => ({
+        value: x?.field_330,
+        src: x?.field_333_raw?.url,
       }));
     });
     this.getLevel();
@@ -345,7 +359,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
   getLevel() {
-    for (let i = 1; i <= 13; i++) {
+    for (let i = 1; i <= 14; i++) {
       if (this.id === 'views') {
         this.floorLevel.push({
           name: 'L' + `${i}`,
@@ -449,6 +463,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   chooseFloor(index: any) {
     this.selectedLevel = [
       { field: 'field_286', operator: 'is not', value: '200' },
+      { field: 'field_286', operator: 'is', value: index+1 },
     ];
     if (!this.showFloorPlate) {
       this.floorLevel = this.floorLevel.map((x, i) => ({
@@ -467,7 +482,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
       this.searchLevel();
 
       if (this.id === 'floorPlate') {
-        this.http.get(API_PATH.GET_BUILDING_LEVEL).subscribe((res: any) => {
+        const condition = [       { field: 'field_484', operator: 'is', value: 'Oconnell House' },
+        { field: 'field_483', operator: 'is', value: '2' }]
+        this.http.postData(API_PATH.GET_BUILDING_LEVEL?.split('/')[1],{filters:condition}).subscribe((res: any) => {
           let data = res?.records.reverse();
           // this.floorPlateSErvice.sendFloorPlateImg(data[index].field_329);
           this.floorPlateSErvice.sendFloorPlateImg({ image: data[index].field_329, floorPlate: true });
@@ -508,6 +525,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
         { field: 'field_9', operator: 'is not', value: 'Sold' },
         { field: 'field_9', operator: 'is not', value: 'Reserved' },
         { field: 'field_15', operator: 'is not', value: '200' },
+        // OH Condition
+        { field: 'field_481', operator: 'is', value: 'Oconnell House' },
+        { field: 'field_482', operator: 'is', value: '2' },
       ];
       if (this.apartmentType.length > 0) {
         requestData.push(...this.apartmentType);
@@ -520,9 +540,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
       }
 
       this.http
-        .get(
-          API_PATH.GET_BUILDING_DATA +
-          `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`
+        .postData(
+          API_PATH.GET_BUILDING_DATA?.split('/')[1], { filters: requestData, limit: 1000 }
         )
         .subscribe((res: any) => {
           this.totalApartments = res?.total_records;
@@ -536,7 +555,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
             floorPlanID = this.sidebarStep2List.map((x) => x.field_435_raw);
             displayFloorplan = floorPlanID.map((x) => ({
-              value: x[0].identifier,
+              value: x[0]?.identifier,
             }));
 
             this.floorService.setSliderData(displayFloorplan);
@@ -693,6 +712,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
   viewFloorplan(imgPath: any) {
+    console.log(imgPath)
     this.selectedID = 'floorPlan';
     if (this.id === 'floorPlan') {
       this.floorService.hideModal(true);
@@ -709,10 +729,12 @@ export class SidebarComponent implements OnInit, OnDestroy {
   viewFloorplate(level: any) {
     let plateImg;
     this.sidebarListService.setSidebarList(this.sidebarStep2List);
-    this.http.get(API_PATH.GET_BUILDING_LEVEL).subscribe((res: any) => {
-
-      let data = res?.records.filter((x: any) => x.field_328 === level);
-      plateImg = data[0].field_329;
+    const filterFields = [{ field: 'field_481', operator: 'is', value: 'Oconnell House' },
+    { field: 'field_482', operator: 'is', value: '2' }]
+    this.http.postData(API_PATH.GET_BUILDING_LEVEL?.split('/')[1], { filters: filterFields }).subscribe((res: any) => {
+      console.log(res, level)
+      let data = res?.records?.filter((x: any) => x?.field_328 == '2.' + String(level)?.padStart(2, '0'));
+      plateImg = data?.[0]?.field_329;
       this.selectedID = 'floorPlate';
       if (this.id === 'floorPlan') {
         this.floorService.hideModal(true);
@@ -775,9 +797,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
         { field: 'field_414', operator: 'contains', value: value },
       ];
       this.http
-        .get(
-          API_PATH.GET_LOCATION +
-          `?filters=${JSON.stringify(requestData)}&rows_per_page=1000`
+        .postData(
+          API_PATH.GET_LOCATION ?.split('/')[1],{filters:requestData,limit:1000}
         )
         .subscribe((res: any) => {
           this.iframeService.emitEvent('jsonData', { data: res?.records });

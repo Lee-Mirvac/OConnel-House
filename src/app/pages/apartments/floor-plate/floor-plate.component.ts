@@ -30,7 +30,7 @@ export class FloorPlateComponent implements OnInit {
     private floorPlateSErvice: FloorplateService,
     private http: HttpService, private sidebarListService: SidebarService
   ) {
-    this.subscription = this.sidebarListService.getSidebarList().subscribe((list) => {
+    this.subscription = this.sidebarListService.getSidebarList()?.subscribe((list) => {
       this.floorplateCords = [];
       this.sidebarList = [];
       this.sidebarList = list
@@ -74,7 +74,7 @@ export class FloorPlateComponent implements OnInit {
             //     resetHeight = currentImgWidth / clientWidth;
             // }
 
-            if (this.floorplateCords.length === 0) {
+            if (this.floorplateCords?.length === 0) {
               this.subscription = this.sidebarListService.getSidebarList().subscribe((list) => {
                 this.floorplateCords = [];
                 this.floorplateCords = list.map((x: any) => {
@@ -89,7 +89,7 @@ export class FloorPlateComponent implements OnInit {
             }
 
 
-            this.floorplateCords = this.floorplateCords.map((x: any) => ({
+            this.floorplateCords = this.floorplateCords?.map((x: any) => ({
               ...x,
               cordY: (((x.cordY / resetHeight) * 100 / clientHeight).toFixed(2)),
               cordX: (((x.cordX / resetWidth) * 100 / clientWidth).toFixed(2)),
